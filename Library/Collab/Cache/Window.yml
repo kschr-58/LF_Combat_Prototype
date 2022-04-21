@@ -1,0 +1,352 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe70aba2e7074048aca5de573b64a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SimpleSelectedItems:
+    m_Keys:
+    - .collabignore
+    - Assets/Animation.meta
+    - Assets/Animation/Cylinder.meta
+    - Assets/Animation/Cylinder/Cylinder AC.controller
+    - Assets/Animation/Cylinder/Cylinder AC.controller.meta
+    - Assets/Animation/Cylinder/Turn 1.anim
+    - Assets/Animation/Cylinder/Turn 1.anim.meta
+    - Assets/Animation/Cylinder/Turn 2.anim
+    - Assets/Animation/Cylinder/Turn 2.anim.meta
+    - Assets/Animation/Cylinder/Turn 3.anim
+    - Assets/Animation/Cylinder/Turn 3.anim.meta
+    - Assets/Animation/Cylinder/Turn 4.anim
+    - Assets/Animation/Cylinder/Turn 4.anim.meta
+    - Assets/Animation/Cylinder/Turn 5.anim
+    - Assets/Animation/Cylinder/Turn 5.anim.meta
+    - Assets/Animation/Cylinder/Turn 6.anim
+    - Assets/Animation/Cylinder/Turn 6.anim.meta
+    - Assets/Animation/Layered.meta
+    - Assets/Animation/Layered/Body.meta
+    - Assets/Animation/Layered/Body/Dodge_Backward.anim
+    - Assets/Animation/Layered/Body/Dodge_Backward.anim.meta
+    - Assets/Animation/Layered/Body/Dodge_Forward.anim
+    - Assets/Animation/Layered/Body/Dodge_Forward.anim.meta
+    - Assets/Animation/Layered/Body/Falling_Loop.anim
+    - Assets/Animation/Layered/Body/Falling_Loop.anim.meta
+    - Assets/Animation/Layered/Body/Falling_Startup.anim
+    - Assets/Animation/Layered/Body/Falling_Startup.anim.meta
+    - Assets/Animation/Layered/Body/Idle.anim
+    - Assets/Animation/Layered/Body/Idle.anim.meta
+    - Assets/Animation/Layered/Body/Jumping_Loop.anim
+    - Assets/Animation/Layered/Body/Jumping_Loop.anim.meta
+    - Assets/Animation/Layered/Body/Jumping_Startup.anim
+    - Assets/Animation/Layered/Body/Jumping_Startup.anim.meta
+    - Assets/Animation/Layered/Body/Landing.anim
+    - Assets/Animation/Layered/Body/Landing.anim.meta
+    - Assets/Animation/Layered/Body/Running_Loop.anim
+    - Assets/Animation/Layered/Body/Running_Loop.anim.meta
+    - Assets/Animation/Layered/Body/Wallhop.anim
+    - Assets/Animation/Layered/Body/Wallhop.anim.meta
+    - Assets/Animation/Layered/Body/Wallhop_Fall.anim
+    - Assets/Animation/Layered/Body/Wallhop_Fall.anim.meta
+    - Assets/Animation/Layered/Body/Wallhop_Loop.anim
+    - Assets/Animation/Layered/Body/Wallhop_Loop.anim.meta
+    - Assets/Animation/Layered/Body/Wallslide_Loop.anim
+    - Assets/Animation/Layered/Body/Wallslide_Loop.anim.meta
+    - Assets/Animation/Layered/Body/Wallslide_Startup.anim
+    - Assets/Animation/Layered/Body/Wallslide_Startup.anim.meta
+    - Assets/Animation/Layered/Both Arms.meta
+    - Assets/Animation/Layered/Both Arms/Reload Bullet.anim
+    - Assets/Animation/Layered/Both Arms/Reload Bullet.anim.meta
+    - Assets/Animation/Layered/Both Arms/Reload Fetch Bullet.anim
+    - Assets/Animation/Layered/Both Arms/Reload Fetch Bullet.anim.meta
+    - Assets/Animation/Layered/Both Arms/Reload Finish.anim
+    - Assets/Animation/Layered/Both Arms/Reload Finish.anim.meta
+    - Assets/Animation/Layered/Both Arms/Reload Startup.anim
+    - Assets/Animation/Layered/Both Arms/Reload Startup.anim.meta
+    - Assets/Animation/Layered/Head.meta
+    - Assets/Animation/Layered/Head/Looking At Camera.anim
+    - Assets/Animation/Layered/Head/Looking At Camera.anim.meta
+    - Assets/Animation/Layered/Head/Looking Down.anim
+    - Assets/Animation/Layered/Head/Looking Down.anim.meta
+    - Assets/Animation/Layered/Head/Looking Forward.anim
+    - Assets/Animation/Layered/Head/Looking Forward.anim.meta
+    - Assets/Animation/Layered/Head/Looking Up.anim
+    - Assets/Animation/Layered/Head/Looking Up.anim.meta
+    - Assets/Animation/Layered/Layered AC.controller
+    - Assets/Animation/Layered/Layered AC.controller.meta
+    - Assets/Animation/Layered/Main Hand.meta
+    - Assets/Animation/Layered/Main Hand/Aim.anim
+    - Assets/Animation/Layered/Main Hand/Aim.anim.meta
+    - Assets/Lighting.meta
+    - Assets/Lighting/New 2D Renderer Data.asset
+    - Assets/Lighting/New 2D Renderer Data.asset.meta
+    - Assets/Lighting/UniversalRenderPipelineAsset.asset
+    - Assets/Lighting/UniversalRenderPipelineAsset.asset.meta
+    - Assets/Lighting/UniversalRenderPipelineAsset_Renderer.asset
+    - Assets/Lighting/UniversalRenderPipelineAsset_Renderer.asset.meta
+    - Assets/Materials.meta
+    - Assets/Materials/Dodge Trail.mat
+    - Assets/Materials/Dodge Trail.mat.meta
+    - Assets/Materials/Solid White.mat
+    - Assets/Materials/Solid White.mat.meta
+    - Assets/Prefabs.meta
+    - Assets/Prefabs/Ceiling Lamp.prefab
+    - Assets/Prefabs/Ceiling Lamp.prefab.meta
+    - Assets/Prefabs/Clone.prefab
+    - Assets/Prefabs/Clone.prefab.meta
+    - Assets/Prefabs/Cylinder.prefab
+    - Assets/Prefabs/Cylinder.prefab.meta
+    - Assets/Prefabs/Dummy.prefab
+    - Assets/Prefabs/Dummy.prefab.meta
+    - Assets/Prefabs/Player.meta
+    - Assets/Prefabs/Player/Animated Rig.prefab
+    - Assets/Prefabs/Player/Animated Rig.prefab.meta
+    - Assets/Prefabs/Player/Player Dodge Trail.prefab
+    - Assets/Prefabs/Player/Player Dodge Trail.prefab.meta
+    - Assets/Prefabs/Player/Player.prefab
+    - Assets/Prefabs/Player/Player.prefab.meta
+    - Assets/Prefabs/Screen Effect Handler.prefab
+    - Assets/Prefabs/Screen Effect Handler.prefab.meta
+    - Assets/Prefabs/Weaponary.meta
+    - Assets/Prefabs/Weaponary/Bullet particles.prefab
+    - Assets/Prefabs/Weaponary/Bullet particles.prefab.meta
+    - Assets/Prefabs/Weaponary/Crosshair.prefab
+    - Assets/Prefabs/Weaponary/Crosshair.prefab.meta
+    - Assets/Prefabs/Weaponary/NMT Bullet.prefab
+    - Assets/Prefabs/Weaponary/NMT Bullet.prefab.meta
+    - Assets/Scenes.meta
+    - Assets/Scenes/Bar.unity
+    - Assets/Scenes/Bar.unity.meta
+    - Assets/Scenes/SampleScene.unity
+    - Assets/Scenes/SampleScene.unity.meta
+    - Assets/Scripts.meta
+    - Assets/Scripts/Character.meta
+    - Assets/Scripts/Character/DodgeTrail.cs
+    - Assets/Scripts/Character/DodgeTrail.cs.meta
+    - Assets/Scripts/Character/PositionClone.cs
+    - Assets/Scripts/Character/PositionClone.cs.meta
+    - Assets/Scripts/Character/SpriteClone.cs
+    - Assets/Scripts/Character/SpriteClone.cs.meta
+    - Assets/Scripts/Player Scripts.meta
+    - Assets/Scripts/Player Scripts/Player Arms.meta
+    - Assets/Scripts/Player Scripts/Player Arms/Arms.cs
+    - Assets/Scripts/Player Scripts/Player Arms/Arms.cs.meta
+    - Assets/Scripts/Player Scripts/Player States.meta
+    - Assets/Scripts/Player Scripts/Player States/PlayerAerialState.cs
+    - Assets/Scripts/Player Scripts/Player States/PlayerAerialState.cs.meta
+    - Assets/Scripts/Player Scripts/Player States/PlayerAerialState_Falling.cs
+    - Assets/Scripts/Player Scripts/Player States/PlayerAerialState_Falling.cs.meta
+    - Assets/Scripts/Player Scripts/Player States/PlayerAerialState_Jumping.cs
+    - Assets/Scripts/Player Scripts/Player States/PlayerAerialState_Jumping.cs.meta
+    - Assets/Scripts/Player Scripts/Player States/PlayerGroundedState.cs
+    - Assets/Scripts/Player Scripts/Player States/PlayerGroundedState.cs.meta
+    - Assets/Scripts/Player Scripts/Player States/PlayerGroundedState_Idle.cs
+    - Assets/Scripts/Player Scripts/Player States/PlayerGroundedState_Idle.cs.meta
+    - Assets/Scripts/Player Scripts/Player States/PlayerGroundedState_Landing.cs
+    - Assets/Scripts/Player Scripts/Player States/PlayerGroundedState_Landing.cs.meta
+    - Assets/Scripts/Player Scripts/Player States/PlayerGroundedState_Running.cs
+    - Assets/Scripts/Player Scripts/Player States/PlayerGroundedState_Running.cs.meta
+    - Assets/Scripts/Player Scripts/Player States/PlayerState.cs
+    - Assets/Scripts/Player Scripts/Player States/PlayerState.cs.meta
+    - Assets/Scripts/Player Scripts/Player States/PlayerStateHandler.cs
+    - Assets/Scripts/Player Scripts/Player States/PlayerStateHandler.cs.meta
+    - Assets/Scripts/Player Scripts/Player States/PlayerState_Dodging.cs
+    - Assets/Scripts/Player Scripts/Player States/PlayerState_Dodging.cs.meta
+    - Assets/Scripts/Player Scripts/Player.cs
+    - Assets/Scripts/Player Scripts/Player.cs.meta
+    - Assets/Scripts/Player Scripts/PlayerAnimationHandler.cs
+    - Assets/Scripts/Player Scripts/PlayerAnimationHandler.cs.meta
+    - Assets/Scripts/Player Scripts/PlayerController.cs
+    - Assets/Scripts/Player Scripts/PlayerController.cs.meta
+    - Assets/Scripts/Player Scripts/PlayerDodging.cs
+    - Assets/Scripts/Player Scripts/PlayerDodging.cs.meta
+    - Assets/Scripts/Player Scripts/PlayerFlipper.cs
+    - Assets/Scripts/Player Scripts/PlayerFlipper.cs.meta
+    - Assets/Scripts/Player Scripts/PlayerJumping.cs
+    - Assets/Scripts/Player Scripts/PlayerJumping.cs.meta
+    - Assets/Scripts/System.meta
+    - Assets/Scripts/System/Crosshair.cs
+    - Assets/Scripts/System/Crosshair.cs.meta
+    - Assets/Scripts/System/CylinderHUD.cs
+    - Assets/Scripts/System/CylinderHUD.cs.meta
+    - Assets/Scripts/System/ParticlesCollection.cs
+    - Assets/Scripts/System/ParticlesCollection.cs.meta
+    - Assets/Scripts/System/ScreenEffect.cs
+    - Assets/Scripts/System/ScreenEffect.cs.meta
+    - Assets/Scripts/System/ScreenEffectHandler.cs
+    - Assets/Scripts/System/ScreenEffectHandler.cs.meta
+    - Assets/Scripts/System/ScreenEffect_Sprite.cs
+    - Assets/Scripts/System/ScreenEffect_Sprite.cs.meta
+    - Assets/Scripts/System/ScreenEffect_Tilemap.cs
+    - Assets/Scripts/System/ScreenEffect_Tilemap.cs.meta
+    - Assets/Scripts/System/UI.cs
+    - Assets/Scripts/System/UI.cs.meta
+    - Assets/Scripts/Weapons.meta
+    - Assets/Scripts/Weapons/Gun.cs
+    - Assets/Scripts/Weapons/Gun.cs.meta
+    - Assets/Scripts/Weapons/Projectile.cs
+    - Assets/Scripts/Weapons/Projectile.cs.meta
+    - Assets/Scripts/Weapons/Revolver.cs
+    - Assets/Scripts/Weapons/Revolver.cs.meta
+    - Assets/Sprites.meta
+    - Assets/Sprites/Materials.meta
+    - Assets/Sprites/Materials/lamp.mat
+    - Assets/Sprites/Materials/lamp.mat.meta
+    - Assets/Sprites/Placeholder.meta
+    - Assets/Sprites/Placeholder/Sprite_Light_Shaft_A.png
+    - Assets/Sprites/Placeholder/Sprite_Light_Shaft_A.png.meta
+    - Assets/Sprites/Placeholder/Sprite_Light_Shaft_B.png
+    - Assets/Sprites/Placeholder/Sprite_Light_Shaft_B.png.meta
+    - Assets/Sprites/Placeholder/cylinder.png
+    - Assets/Sprites/Placeholder/cylinder.png.meta
+    - Assets/Sprites/Placeholder/lamp.png
+    - Assets/Sprites/Placeholder/lamp.png.meta
+    - Assets/Sprites/Placeholder/pistol_bullet.png
+    - Assets/Sprites/Placeholder/pistol_bullet.png.meta
+    - Assets/Sprites/Placeholder/single light beam.png
+    - Assets/Sprites/Placeholder/single light beam.png.meta
+    - Assets/Sprites/Sheets.meta
+    - Assets/Sprites/Sheets/Body fall.png
+    - Assets/Sprites/Sheets/Body fall.png.meta
+    - Assets/Sprites/Sheets/Body hop to fall.png
+    - Assets/Sprites/Sheets/Body hop to fall.png.meta
+    - Assets/Sprites/Sheets/Body jump.png
+    - Assets/Sprites/Sheets/Body jump.png.meta
+    - Assets/Sprites/Sheets/Body land.png
+    - Assets/Sprites/Sheets/Body land.png.meta
+    - Assets/Sprites/Sheets/Body run 1.png
+    - Assets/Sprites/Sheets/Body run 1.png.meta
+    - Assets/Sprites/Sheets/Body run.png
+    - Assets/Sprites/Sheets/Body run.png.meta
+    - Assets/Sprites/Sheets/Body wallhop.png
+    - Assets/Sprites/Sheets/Body wallhop.png.meta
+    - Assets/Sprites/Sheets/Body wallslide.png
+    - Assets/Sprites/Sheets/Body wallslide.png.meta
+    - Assets/Sprites/Sheets/Full-Sheet.png
+    - Assets/Sprites/Sheets/Full-Sheet.png.meta
+    - Assets/Sprites/Sheets/Main arm aim.png
+    - Assets/Sprites/Sheets/Main arm aim.png.meta
+    - Assets/Sprites/Sheets/Main arm reload.png
+    - Assets/Sprites/Sheets/Main arm reload.png.meta
+    - Assets/Sprites/Sheets/Main arm run.png
+    - Assets/Sprites/Sheets/Main arm run.png.meta
+    - Assets/Sprites/Sheets/Off arm reload.png
+    - Assets/Sprites/Sheets/Off arm reload.png.meta
+    - Assets/Sprites/Sheets/arms idle 2.png
+    - Assets/Sprites/Sheets/arms idle 2.png.meta
+    - Assets/Sprites/Sheets/body idle.png
+    - Assets/Sprites/Sheets/body idle.png.meta
+    - Assets/Sprites/Sheets/heads full.png
+    - Assets/Sprites/Sheets/heads full.png.meta
+    - Assets/Sprites/Tileset Sprites.meta
+    - Assets/Sprites/Tileset Sprites/tileset_bar complete.png
+    - Assets/Sprites/Tileset Sprites/tileset_bar complete.png.meta
+    - Assets/Tilesets.meta
+    - Assets/Tilesets/Bar.prefab
+    - Assets/Tilesets/Bar.prefab.meta
+    - Assets/Tilesets/Tiles.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_0.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_0.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_1.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_1.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_10.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_10.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_11.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_11.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_12.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_12.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_13.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_13.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_14.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_14.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_15.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_15.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_16.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_16.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_17.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_17.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_18.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_18.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_19.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_19.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_2.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_2.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_20.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_20.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_21.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_21.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_22.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_22.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_23.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_23.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_24.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_24.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_25.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_25.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_26.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_26.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_27.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_27.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_28.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_28.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_29.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_29.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_3.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_3.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_30.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_30.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_31.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_31.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_32.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_32.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_33.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_33.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_4.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_4.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_5.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_5.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_6.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_6.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_7.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_7.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_8.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_8.asset.meta
+    - Assets/Tilesets/Tiles/tileset_bar complete_9.asset
+    - Assets/Tilesets/Tiles/tileset_bar complete_9.asset.meta
+    - Assets/UniversalRenderPipelineGlobalSettings.asset
+    - Assets/UniversalRenderPipelineGlobalSettings.asset.meta
+    - Packages/manifest.json
+    - Packages/packages-lock.json
+    - ProjectSettings/AudioManager.asset
+    - ProjectSettings/ClusterInputManager.asset
+    - ProjectSettings/DynamicsManager.asset
+    - ProjectSettings/EditorBuildSettings.asset
+    - ProjectSettings/EditorSettings.asset
+    - ProjectSettings/GraphicsSettings.asset
+    - ProjectSettings/InputManager.asset
+    - ProjectSettings/MemorySettings.asset
+    - ProjectSettings/NavMeshAreas.asset
+    - ProjectSettings/Physics2DSettings.asset
+    - ProjectSettings/PresetManager.asset
+    - ProjectSettings/ProjectSettings.asset
+    - ProjectSettings/ProjectVersion.txt
+    - ProjectSettings/QualitySettings.asset
+    - ProjectSettings/TagManager.asset
+    - ProjectSettings/TimeManager.asset
+    - ProjectSettings/UnityConnectSettings.asset
+    - ProjectSettings/VFXManager.asset
+    - ProjectSettings/VersionControlSettings.asset
+    - 
+    m_Values: 010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+  RevisionSummary: 
+  ChangesSearchValue: 
+  SelectedHistoryRevision: 
+  HistoryPageNumber: 0
+  TabIndex: 0

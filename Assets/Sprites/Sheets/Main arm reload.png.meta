@@ -1,0 +1,353 @@
+fileFormatVersion: 2
+guid: 8796635dc7ee75b4f93acb3269730a24
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6083100783049502547
+    second: back arm reload_3
+  - first:
+      213: 343274776518089997
+    second: back arm reload_3
+  - first:
+      213: 3307056505460979882
+    second: back arm reload_3
+  - first:
+      213: 6853636412118351722
+    second: back arm reload_3
+  - first:
+      213: -4970131915484794257
+    second: back arm reload_4
+  - first:
+      213: 3343188092733454348
+    second: back arm reload_5
+  - first:
+      213: 4203089776257852592
+    second: back arm reload_0
+  - first:
+      213: 5819618590102158930
+    second: back arm reload_6
+  - first:
+      213: -7554811100435660608
+    second: back arm reload_7
+  - first:
+      213: 5867207887313086305
+    second: back arm reload_8
+  - first:
+      213: -1700504620805822611
+    second: back arm reload_10
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: back arm reload_1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 12
+        width: 28
+        height: 27
+      alignment: 9
+      pivot: {x: 0, y: 0.22222222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35fe09abee38b6450800000000000000
+      internalID: 6083100783049502547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: back arm reload_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 12
+        width: 28
+        height: 28
+      alignment: 9
+      pivot: {x: 0.071428575, y: 0.21428572}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0d56ba279e83c400800000000000000
+      internalID: 343274776518089997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: back arm reload_3
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 12
+        width: 22
+        height: 28
+      alignment: 9
+      pivot: {x: 0, y: 0.21428572}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa87524ce5605ed20800000000000000
+      internalID: -4496083186909584115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: back arm reload_4
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 12
+        width: 22
+        height: 28
+      alignment: 9
+      pivot: {x: 0, y: 0.21428572}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6272b21b5b860bb0800000000000000
+      internalID: -4970131915484794257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: back arm reload_5
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 12
+        width: 28
+        height: 25
+      alignment: 9
+      pivot: {x: 0, y: 0.28}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0871bc7bd3656e20800000000000000
+      internalID: 3343188092733454348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: back arm reload_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 11
+        width: 29
+        height: 21
+      alignment: 9
+      pivot: {x: 0, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b4ece0f1ef545a30800000000000000
+      internalID: 4203089776257852592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: back arm reload_6
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 2
+        width: 32
+        height: 26
+      alignment: 9
+      pivot: {x: 0.125, y: 0.65384614}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25e7c47264073c050800000000000000
+      internalID: 5819618590102158930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: back arm reload_7
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 29
+        height: 23
+      alignment: 9
+      pivot: {x: 0.1724138, y: 0.82608694}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c0ca5dc45be72790800000000000000
+      internalID: -7554811100435660608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: back arm reload_8
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 0
+        width: 25
+        height: 23
+      alignment: 9
+      pivot: {x: 0.2, y: 0.82608694}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 167aaaadc728c6150800000000000000
+      internalID: 5867207887313086305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      back arm reload_5: 3343188092733454348
+      back arm reload_8: 5867207887313086305
+      back arm reload_6: 5819618590102158930
+      back arm reload_4: -4970131915484794257
+      back arm reload_2: 343274776518089997
+      back arm reload_0: 4203089776257852592
+      back arm reload_3: -4496083186909584115
+      back arm reload_7: -7554811100435660608
+      back arm reload_1: 6083100783049502547
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

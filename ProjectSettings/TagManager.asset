@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Terrain
+  - Player
+  - Enemy
+  - Player projectile
+  - Enemy projectile
+  - Particles
+  - Player Melee Hitbox
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2193357681
+    locked: 0
+  - name: Props
+    uniqueID: 689846445
+    locked: 0
+  - name: Characters
+    uniqueID: 3266769281
+    locked: 0
+  - name: Particles
+    uniqueID: 3321276975
+    locked: 0
+  - name: Terrain
+    uniqueID: 244032445
+    locked: 0
+  - name: Projectiles
+    uniqueID: 2347251955
+    locked: 0
+  - name: Foreground
+    uniqueID: 189519091
+    locked: 0
+  - name: UI
+    uniqueID: 2457084279
+    locked: 0
