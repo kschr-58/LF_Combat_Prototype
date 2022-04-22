@@ -577,10 +577,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.014218009
-    y: 0.013490725
-    width: 0.9706161
-    height: 0.9713322
+    x: 0.060663506
+    y: 0.1618887
+    width: 0.48530805
+    height: 0.4856661
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -4680,23 +4680,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingColor: {r: 0.5019608, g: 0, b: 0, a: 0}
   targetColor: {r: 0, g: 0, b: 0, a: 0}
---- !u!1 &1593897019 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2627576002639896738, guid: e7e381abc7779da4c97fa11766230a8b, type: 3}
-  m_PrefabInstance: {fileID: 3883726431743313132}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1593897025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1593897019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 331240e77ef74bc4a9c0bc82fb50431b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1646461761
 GameObject:
   m_ObjectHideFlags: 0
@@ -51853,14 +51836,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 758354800}
     m_Modifications:
-    - target: {fileID: 750643415, guid: e7e381abc7779da4c97fa11766230a8b, type: 3}
-      propertyPath: knockbackForces.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 750643415, guid: e7e381abc7779da4c97fa11766230a8b, type: 3}
-      propertyPath: knockbackForces.y
-      value: 16
-      objectReference: {fileID: 0}
     - target: {fileID: 1091443001, guid: e7e381abc7779da4c97fa11766230a8b, type: 3}
       propertyPath: dodgeCountText
       value: 
@@ -51869,10 +51844,6 @@ PrefabInstance:
       propertyPath: stateText
       value: 
       objectReference: {fileID: 807259271}
-    - target: {fileID: 3883726431632787572, guid: e7e381abc7779da4c97fa11766230a8b, type: 3}
-      propertyPath: m_animationTransmitter
-      value: 
-      objectReference: {fileID: 1593897025}
     - target: {fileID: 3883726431632787578, guid: e7e381abc7779da4c97fa11766230a8b, type: 3}
       propertyPath: m_Name
       value: Player

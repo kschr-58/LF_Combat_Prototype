@@ -142,8 +142,6 @@ public class PlayerStateHandler : MonoBehaviour
         // Must be jumping or falling
         if (currentState != fallingState && currentState != jumpingState) return;
 
-        Debug.Log("Trying to change to landing state");
-
         ChangeState(landingState);
     }
 
@@ -188,7 +186,11 @@ public class PlayerStateHandler : MonoBehaviour
     {
         this.isPerfomingMelee = isPerfomingMelee;
 
-        // if (!isPerfomingMelee) ChangeState(upwardState);
+        if (!isPerfomingMelee)
+        {
+            HandleUpwardState();
+            HandleFallingState();
+        }
     }
 
     private bool isTouchingGround()

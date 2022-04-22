@@ -4995,7 +4995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2170a323e175eef4896e881b1edd0718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackForces: {x: 0, y: 15}
+  knockbackForces: {x: 1.5, y: 16}
 --- !u!1 &1489900393
 GameObject:
   m_ObjectHideFlags: 0
@@ -5112,6 +5112,7 @@ MonoBehaviour:
   m_animator: {fileID: 2627995935571744477}
   m_arms: {fileID: 1703919755}
   m_stateHandler: {fileID: 2351925836560985736}
+  m_animationTransmitter: {fileID: 1593897025}
   runSpeed: 10
   jumpHeight: 21
   shortHopModifier: 0.5
@@ -5127,7 +5128,6 @@ MonoBehaviour:
   standingDodgeTime: 0.3
   aerialDodgeTime: 0.15
   aerialDodgeSpeed: 28
-  uppercutDuration: 0.15
   uppercutVelocity: {x: 1.5, y: 15}
 --- !u!114 &983534745
 MonoBehaviour:
@@ -5785,6 +5785,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5625, y: 2.8125}
   m_EdgeRadius: 0
+--- !u!114 &1593897025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2627576002639896738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331240e77ef74bc4a9c0bc82fb50431b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1703919755
 MonoBehaviour:
   m_ObjectHideFlags: 0
