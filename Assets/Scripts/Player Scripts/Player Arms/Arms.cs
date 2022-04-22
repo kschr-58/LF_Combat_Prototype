@@ -20,12 +20,12 @@ public class Arms : MonoBehaviour
         {90, "E"},
         {135, "NE"},
         {180, "N"},
-        {-180, "N"},
+        {181, "N(L)"},
         {225, "NW"},
         {270, "W"},
         {-90, "W"},
         {-45, "SW"},
-        {-1, "S"},
+        {-1, "S(L)"},
         {0, "S"},
         {45, "SE"},
     };
@@ -43,16 +43,7 @@ public class Arms : MonoBehaviour
         fireCoroutine = StartCoroutine(FireCoroutine());
     }
 
-    public void Melee()
-    {
-        if (IsPerformingAction()) return;
-
-        m_animator.SetTrigger("Test Melee");
-
-        isPerfomingMelee = true;
-    }
-
-    public void Reload()
+    public void Reload() //TODO put into player state instead
     {
         // Cancel reload if already reloading
         if (isReloading) CancelReload();
@@ -144,15 +135,17 @@ public class Arms : MonoBehaviour
     {
         int newDirection = CalculateClosestDirection();
 
-        m_animator.SetInteger("Direction", newDirection);
         m_animator.SetBool("Aiming", true);
+        m_animator.SetInteger("Direction", newDirection);
 
+        // FIXME find better solution than frame skips to update barrel position
         yield return new WaitForEndOfFrame(); // Required for barrel position to update in animation
 
         m_gun.Fire();
 
         yield return new WaitForSeconds(aimDuration);
         m_animator.SetBool("Aiming", false);
+        m_animator.SetTrigger("Stop Aiming");
 
         fireCoroutine = null;
     }

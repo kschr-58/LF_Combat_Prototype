@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // Serialized fields
     [SerializeField] Player player;
 
+    // Component references
     Arms m_arms;
 
+    // Other references
     Vector2 axis;
-
-    #region Public Methods
-
-    #endregion
 
     #region Private Methods
 
@@ -87,9 +86,9 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMeleeInput()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButton(1))
         {
-            m_arms.Melee();
+            player.GetCurrentState().Melee();
         }
     }
 

@@ -9,15 +9,17 @@ Child components access these stored values and components with getters and sett
 public class Player : MonoBehaviour
 {
     // Serialized fields
-    [Header("Members")]
+    [Header("Components")]
     [SerializeField] Rigidbody2D m_rB;
     [SerializeField] BoxCollider2D m_feetCollider;
     [SerializeField] PlayerJumping m_jumpingComponent;
     [SerializeField] PlayerDodging m_dodgingComponent;
     [SerializeField] DodgeTrail m_dodgeTrailComponent;
+    [SerializeField] PlayerMelee m_meleeComponent;
     [SerializeField] Animator m_animator;
     [SerializeField] Arms m_arms;
     [SerializeField] PlayerStateHandler m_stateHandler;
+    [SerializeField] AnimationTransmitter m_animationTransmitter;
 
     [Header("Movement Properties")]
     [SerializeField] float runSpeed;
@@ -37,15 +39,24 @@ public class Player : MonoBehaviour
     [SerializeField] float aerialDodgeTime;
     [SerializeField] float aerialDodgeSpeed;
 
+    [Header("Melee Properties")]
+    [SerializeField] Vector2 uppercutVelocity;
+
+    // Other references
     PlayerState currentState;
 
     #region Public Methods
+
+    public void ResetVelocity()
+    {
+        m_rB.velocity = new Vector2(0, 0);
+    }
 
     #endregion
 
     #region Private Methods
 
-    private void Awake()
+    private void Start()
     {
         m_stateHandler.OnStateChange += SetState;
     }
@@ -144,9 +155,19 @@ public class Player : MonoBehaviour
         return m_dodgeTrailComponent;
     }
 
+    public PlayerMelee GetMyMeleeComponent()
+    {
+        return m_meleeComponent;
+    }
+
     public Animator GetMyAnimator()
     {
         return m_animator;
+    }
+
+    public AnimationTransmitter GetMyAnimationTransmitter()
+    {
+        return m_animationTransmitter;
     }
 
     public PlayerStateHandler GetMyStateHandler()
@@ -162,6 +183,11 @@ public class Player : MonoBehaviour
     public float GetRunningTreshold()
     {
         return runningTreshold;
+    }
+
+    public Vector2 GetUppercutVelocity()
+    {
+        return uppercutVelocity;
     }
 
     public void SetState(PlayerState newState)

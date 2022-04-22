@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class EnemyStateHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] Enemy enemy;
+
+    EnemyState currentState;
+    EnemyIdleState idleState;
+
+    #region Private Methods
+
+    private void Start()
     {
-        
+        InitializeStates();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void InitializeStates()
     {
-        
+        this.idleState = new EnemyIdleState(enemy);
     }
+
+    private void ChangeState(EnemyState newState)
+    {
+        currentState = newState;
+
+        enemy.SetCurrentState(newState);
+
+        currentState.ResetAnimationVariables();
+        currentState.ChangeAnimation();
+    }
+
+    #endregion
 }

@@ -6,14 +6,14 @@ public class UI : MonoBehaviour
 {
     private static UI singleton;
 
-    void Awake()
-    {
-        if (singleton != null) Destroy(this);
-        singleton = this;
-    }
-
     public static UI GetInstance()
     {
         return singleton;
+    }
+
+    private void Awake()
+    {
+        if (singleton != null) Destroy(this);
+        singleton = this;
     }
 }

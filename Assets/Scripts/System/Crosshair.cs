@@ -13,14 +13,11 @@ public class Crosshair : MonoBehaviour
         return singleton;
     }
 
-    private void Awake()
+    private void Start()
     {
         if (singleton != null) Destroy(this);
         else singleton = this;
-    }
 
-    private void Start()
-    {
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
     }

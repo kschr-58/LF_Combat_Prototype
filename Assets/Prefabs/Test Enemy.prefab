@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1175081159}
   - component: {fileID: 1175081160}
   - component: {fileID: 8879003939679905964}
+  - component: {fileID: 1175081163}
+  - component: {fileID: 1175081162}
   m_Layer: 8
   m_Name: Test Enemy
   m_TagString: Untagged
@@ -50,12 +52,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!61 &1175081160
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -102,6 +104,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1175081163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3751611176340492648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00c1bddec0f0e6e4ea09e20a736ed980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_stateHandler: {fileID: 1175081162}
+  m_rb: {fileID: 1175081159}
+  m_animator: {fileID: 8879003939679905964}
+  defaultGravity: 3
+  launchGravity: 1
+--- !u!114 &1175081162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3751611176340492648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7081571536f309a4e88bc5cdebf96e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 1175081163}
 --- !u!1001 &3751611175933030638
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,15 +4,57 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Members")]
+    [SerializeField] EnemyStateHandler m_stateHandler;
+    [SerializeField] Rigidbody2D m_rb;
+    [SerializeField] Animator m_animator;
+
+    [Header("Damage properties")]
+    [SerializeField] float defaultGravity;
+    [SerializeField] float launchGravity;
+
+    EnemyState currentState;
+
+    #region Private Methods
+
+    private void Start()
     {
-        
+        m_rb.gravityScale = defaultGravity;
     }
 
-    // Update is called once per frame
-    void Update()
+    #endregion
+
+    #region Getters & Setters
+
+    public EnemyState GetCurrentState()
     {
-        
+        return currentState;
     }
+
+    public Rigidbody2D GetMyRB()
+    {
+        return m_rb;
+    }
+
+    public Animator GetMyAnimator()
+    {
+        return m_animator;
+    }
+
+    public float GetDefaultGravity()
+    {
+        return defaultGravity;
+    }
+
+    public float GetLaunchGravity()
+    {
+        return launchGravity;
+    }
+
+    public void SetCurrentState(EnemyState newState)
+    {
+        this.currentState = newState;
+    }
+
+    #endregion
 }

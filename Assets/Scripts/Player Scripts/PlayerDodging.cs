@@ -5,14 +5,19 @@ using UnityEngine.UI;
 
 public class PlayerDodging : MonoBehaviour
 {
+    // Serialized Fields
     [SerializeField] Player player;
     [SerializeField] Text dodgeCountText; //TODO remove
 
+    // Component References
     Rigidbody2D m_rB;
     Vector2 nextVelocity;
     Coroutine dodgeRegenCoroutine;
+
+    // Other References
     int currentDodgeCount;
 
+    // Events
     public delegate void DodgingChange(bool isDodging);
     public event DodgingChange OnDodge;
 
