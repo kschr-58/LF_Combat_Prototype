@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
 
     [Header("Melee Properties")]
     [SerializeField] Vector2 uppercutVelocity;
+    [SerializeField] Vector2 aerialKickVelocity;
 
     // Other references
     PlayerState currentState;
@@ -188,6 +189,11 @@ public class Player : MonoBehaviour
     public Vector2 GetUppercutVelocity()
     {
         return uppercutVelocity;
+    }
+
+    public Vector2 GetAerialKickVelocity()
+    {
+        return aerialKickVelocity;
     }
 
     public void SetState(PlayerState newState)

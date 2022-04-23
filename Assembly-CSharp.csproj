@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Player Scripts\Player States\Grounded\PlayerGroundedState_Idle.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player Arms\Arms.cs" />
      <Compile Include="Assets\Scripts\System\ScreenEffect_Sprite.cs" />
+     <Compile Include="Assets\Scripts\Player Scripts\Player States\Melee\PlayerMeleeState_AerialKick.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\Grounded\PlayerGroundedState_Running.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\PlayerJumping.cs" />
      <Compile Include="Assets\Scripts\System\UI\CylinderHUD.cs" />

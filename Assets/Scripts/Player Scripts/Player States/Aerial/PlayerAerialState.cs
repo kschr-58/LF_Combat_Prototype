@@ -34,7 +34,7 @@ public abstract class PlayerAerialState : PlayerState
 
     public override void Melee()
     {
-        return;
+        m_meleeComponent.AerialKick();
     }
 
     public override bool CanFlip()

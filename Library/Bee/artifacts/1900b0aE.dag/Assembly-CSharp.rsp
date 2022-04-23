@@ -389,6 +389,7 @@
 "Assets/Scripts/Player Scripts/Player States/Grounded/PlayerGroundedState_Landing.cs"
 "Assets/Scripts/Player Scripts/Player States/Grounded/PlayerGroundedState_Running.cs"
 "Assets/Scripts/Player Scripts/Player States/Melee/PlayerMeleeState.cs"
+"Assets/Scripts/Player Scripts/Player States/Melee/PlayerMeleeState_AerialKick.cs"
 "Assets/Scripts/Player Scripts/Player States/Melee/PlayerMeleeState_Uppercut.cs"
 "Assets/Scripts/Player Scripts/Player States/PlayerState.cs"
 "Assets/Scripts/Player Scripts/Player States/PlayerStateHandler.cs"

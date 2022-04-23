@@ -34,6 +34,20 @@ public class PlayerMelee : MonoBehaviour
         m_rb.velocity = nextVelocity;
     }
 
+    public void AerialKick()
+    {
+        if (OnMelee == null) return;
+
+        m_StateHandler.ToAerialKickState();
+        OnMelee(true);
+
+        // player.ResetVelocity();
+        nextVelocity.x = m_rb.velocity.x + player.GetAerialKickVelocity().x * player.transform.localScale.x;
+        nextVelocity.y = player.GetAerialKickVelocity().y;
+
+        m_rb.velocity = nextVelocity;
+    }
+
     public void FinishMelee()
     {
         OnMelee(false);

@@ -13,12 +13,14 @@ public class PlayerMeleeState_Uppercut : PlayerMeleeState
 
     protected override void ChangeAnimation()
     {
-        m_animator.SetTrigger("Test Melee");
+        m_animator.SetTrigger("Uppercut");
     }
 
     protected override void AnimationEndEvent()
     {
         if (!m_playerStateHandler.IsStateCurrentlyActive(this)) return;
+
+        m_animator.SetTrigger("Stop Melee");
 
         m_meleeComponent.FinishMelee();
     }

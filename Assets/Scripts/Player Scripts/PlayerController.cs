@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMeleeInput()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButtonDown(1))
         {
             player.GetCurrentState().Melee();
         }

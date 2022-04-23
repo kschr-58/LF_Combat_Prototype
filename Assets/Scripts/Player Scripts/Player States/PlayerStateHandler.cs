@@ -30,6 +30,7 @@ public class PlayerStateHandler : MonoBehaviour
 
     // Melee States
     PlayerMeleeState_Uppercut uppercutState;
+    PlayerMeleeState_AerialKick aerialKickState;
 
     // Other References
     float playerRunningTreshold;
@@ -50,6 +51,11 @@ public class PlayerStateHandler : MonoBehaviour
     public void ToUppercutState()
     {
         ChangeState(uppercutState);
+    }
+
+    public void ToAerialKickState()
+    {
+        ChangeState(aerialKickState);
     }
 
     public void ToIdleState()
@@ -96,6 +102,7 @@ public class PlayerStateHandler : MonoBehaviour
         this.landingState = new PlayerGroundedState_Landing(player);
         this.dodgingState = new PlayerDodgingState(player);
         this.uppercutState = new PlayerMeleeState_Uppercut(player);
+        this.aerialKickState = new PlayerMeleeState_AerialKick(player);
 
         player.SetState(idleState); //FIXME not elegant(?)
 
@@ -190,6 +197,7 @@ public class PlayerStateHandler : MonoBehaviour
         {
             HandleUpwardState();
             HandleFallingState();
+            HandleLandingState();
         }
     }
 
