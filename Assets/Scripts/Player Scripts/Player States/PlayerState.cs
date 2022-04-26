@@ -2,73 +2,79 @@ using UnityEngine;
 
 public abstract class PlayerState
 {   
-    protected Player player;
-    protected Rigidbody2D m_rB;
-    protected Animator m_animator;
-    protected PlayerJumping m_jumpingComponent;
-    protected PlayerDodging m_dodgingComponent;
-    protected PlayerMelee m_meleeComponent;
-    protected PlayerStateHandler m_playerStateHandler;
+    // Components
+    protected PlayerData playerData;
+    protected PlayerStateManager stateManager;
 
+    // Other Fields
+    public string stateName {get; protected set;}
     protected Vector2 nextVelocity;
-    protected float runSpeed;
-    protected string stateName;
+    protected float startTime;
+    protected string animationBool;
+    protected bool isJumping;
+    protected bool isFalling;
+    protected bool isGrounded;
+    protected bool isMovingForward;
 
-    protected PlayerState(Player player)
+    protected PlayerState(PlayerData playerData)
     {
-        this.player = player;
-        this.m_rB = player.GetMyRB();
-        this.m_animator = player.GetMyAnimator();
-        this.m_jumpingComponent = player.GetMyJumpingComponent();
-        this.m_dodgingComponent = player.GetMyDodgingComponent();
-        this.m_meleeComponent = player.GetMyMeleeComponent();
-        this.m_playerStateHandler = player.GetMyStateHandler();
-
-        runSpeed = player.GetRunSpeed();
-
-        player.GetMyAnimationTransmitter().OnAnimationEnd += AnimationEndEvent;
+        this.playerData = playerData;
+        this.stateManager = playerData.StateManager;
     }
 
     #region Virtual Methods
 
-    public virtual void InitializeState()
+    public virtual void Enter()
     {
-        ResetAnimationVariables();
-        ChangeAnimation();
+        playerData.AnimationTransmitter.OnAnimationEnd += AnimationEndEvent;
+        playerData.Animator.SetBool(animationBool, true);
+
+        DoChecks();
+        startTime = Time.time;
     }
 
-    public virtual string GetStateName()
+    public virtual void Exit()
     {
-        return stateName;
+        playerData.AnimationTransmitter.OnAnimationEnd -= AnimationEndEvent;
+        playerData.Animator.SetBool(animationBool, false);
     }
 
-    protected virtual void ResetAnimationVariables()
+    public virtual void LogicUpdate() 
     {
-        m_animator.SetBool("Running", false);
-        m_animator.SetBool("Dodging", false);
-        m_animator.SetBool("Moving Backwards", false);
+        // isGrounded = playerData.FeetCollider.IsTouchingLayers(playerData.TerrainLayerMask);
+        // isJumping = playerData.RB.velocity.y > 0 && !isGrounded;
+        // isFalling = playerData.RB.velocity.y < 0 && !isGrounded;
+    }
+
+    public virtual void PhysicsUpdate()
+    {
+        DoChecks();
+    }
+
+    public void DoChecks()
+    {
+        isGrounded = playerData.FeetCollider.IsTouchingLayers(playerData.TerrainLayerMask);
+        isJumping = playerData.RB.velocity.y > 0 && !isGrounded;
+        isFalling = playerData.RB.velocity.y < 0 && !isGrounded;
     }
 
     #endregion
 
     #region Abstract Methods
 
-    protected abstract void ChangeAnimation();
-    
-    protected abstract void AnimationEndEvent();
-
     public abstract void MoveHorizontally(float h_Axis);
 
     public abstract void Jump();
 
-    public abstract void Dodge();
-
     public abstract void EndJump();
+
+    public abstract void Dodge();
 
     public abstract void Melee();
 
     public abstract bool CanFlip();
 
+    protected abstract void AnimationEndEvent();
 
     #endregion
 }

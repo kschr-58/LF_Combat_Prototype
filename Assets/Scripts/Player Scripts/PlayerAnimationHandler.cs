@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAnimationHandler : MonoBehaviour
 {
-    [SerializeField] Player player;
+    [SerializeField] PlayerData player;
 
     Animator m_animator;
     Rigidbody2D m_rB;

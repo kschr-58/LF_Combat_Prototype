@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class Arms : MonoBehaviour
 {
-    [SerializeField] Player player;
-    [SerializeField] Gun m_gun;
-    [SerializeField] float aimDuration;
+    [SerializeField] private PlayerData _playerData;
 
-    Animator m_animator;
-    Crosshair m_crosshair;
-    Coroutine fireCoroutine;
-
-    int direction;
-    bool isReloading;
-    bool isPerfomingMelee;
-    Dictionary<int, string> possibleDirections = new Dictionary<int, string>()
+    private Coroutine _fireCoroutine;
+    private int _direction;
+    private bool _isReloading;
+    private Dictionary<int, string> _possibleDirections = new Dictionary<int, string>()
     {
         {90, "E"},
         {135, "NE"},
@@ -35,49 +29,44 @@ public class Arms : MonoBehaviour
     public void FireWeapon()
     {
         // Cancel reload if reloading
-        if (isReloading) CancelReload();
+        if (_isReloading) CancelReload();
 
-        if (IsPerformingAction()) return;
+        if (_isReloading) return;
 
-        if (fireCoroutine != null) StopCoroutine(fireCoroutine);
-        fireCoroutine = StartCoroutine(FireCoroutine());
+        if (_fireCoroutine != null) StopCoroutine(_fireCoroutine);
+        _fireCoroutine = StartCoroutine(FireCoroutine());
     }
 
     public void Reload() //TODO put into player state instead
     {
         // Cancel reload if already reloading
-        if (isReloading) CancelReload();
+        if (_isReloading) CancelReload();
 
-        if (IsPerformingAction()) return;
+        if (_isReloading) return;
 
-        if (m_gun.GetCurrentAmmo() >= m_gun.GetMaxAmmo()) return;
+        if (_playerData.Gun.GetCurrentAmmo() >= _playerData.Gun.GetMaxAmmo()) return;
         
-        isReloading = true;
-        m_animator.SetBool("Reloading", true);
+        _isReloading = true;
+        _playerData.Animator.SetBool("Reloading", true);
     }
 
     // Called from animator
     public void InsertAmmo(int amount)
     {
-        m_gun.SetCurrentAmmo(m_gun.GetCurrentAmmo() + amount);
+        _playerData.Gun.SetCurrentAmmo(_playerData.Gun.GetCurrentAmmo() + amount);
 
-        if (m_gun.GetCurrentAmmo() >= m_gun.GetMaxAmmo()) CancelReload();
+        if (_playerData.Gun.GetCurrentAmmo() >= _playerData.Gun.GetMaxAmmo()) CancelReload();
     }
 
     public void CancelReload()
     {
-        m_animator.SetBool("Reloading", false);
+        _playerData.Animator.SetBool("Reloading", false);
     }
 
     // Called from animator
     public void FinishReload()
     {
-        isReloading = false;
-    }
-
-    public void FinishMelee()
-    {
-        isPerfomingMelee = false;
+        _isReloading = false;
     }
 
     #endregion
@@ -86,21 +75,18 @@ public class Arms : MonoBehaviour
 
     private void Start()
     {
-        m_animator = player.GetMyAnimator();
-        m_crosshair = Crosshair.GetInstance();
-
-        isReloading = false;
+        _isReloading = false;
     }
 
     private int CalculateClosestDirection()
     {
-        Vector3 vectorTarget = m_crosshair.transform.position - transform.position;
+        Vector3 vectorTarget = _playerData.Crosshair.transform.position - transform.position;
         float angle = Mathf.Atan2(vectorTarget.y, vectorTarget.x) * Mathf.Rad2Deg + 90;
 
         float currentNearest = 180;
-        int nearestDirection = direction;
+        int nearestDirection = _direction;
 
-        foreach (KeyValuePair<int, string> possibleDirection in possibleDirections)
+        foreach (KeyValuePair<int, string> possibleDirection in _possibleDirections)
         {
             int rotation = possibleDirection.Key;
 
@@ -114,17 +100,12 @@ public class Arms : MonoBehaviour
             }
         }
         // Check if direction has updated
-        if (direction != nearestDirection)
+        if (_direction != nearestDirection)
         {
-            direction = nearestDirection;
+            _direction = nearestDirection;
         }
 
-        return direction;
-    }
-
-    private bool IsPerformingAction()
-    {
-        return isReloading || isPerfomingMelee;
+        return _direction;
     }
 
     #endregion
@@ -135,19 +116,18 @@ public class Arms : MonoBehaviour
     {
         int newDirection = CalculateClosestDirection();
 
-        m_animator.SetBool("Aiming", true);
-        m_animator.SetInteger("Direction", newDirection);
+        _playerData.Animator.SetBool("Aiming", true);
+        _playerData.Animator.SetInteger("Direction", newDirection);
 
         // FIXME find better solution than frame skips to update barrel position
         yield return new WaitForEndOfFrame(); // Required for barrel position to update in animation
 
-        m_gun.Fire();
+        _playerData.Gun.Fire();
 
-        yield return new WaitForSeconds(aimDuration);
-        m_animator.SetBool("Aiming", false);
-        m_animator.SetTrigger("Stop Aiming");
+        yield return new WaitForSeconds(_playerData.AimDuration);
+        _playerData.Animator.SetBool("Aiming", false);
 
-        fireCoroutine = null;
+        _fireCoroutine = null;
     }
 
     #endregion

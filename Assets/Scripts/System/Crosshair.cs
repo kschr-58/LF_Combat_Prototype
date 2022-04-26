@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class Crosshair : MonoBehaviour
 {
-    static Crosshair singleton;
-
-    Vector2 targetPosition;
+    private static Crosshair singleton;
+    private Vector2 _targetPosition;
 
     public static Crosshair GetInstance()
     {
         return singleton;
     }
 
-    private void Start()
+    private void Awake()
     {
         if (singleton != null) Destroy(this);
         else singleton = this;
@@ -24,8 +23,8 @@ public class Crosshair : MonoBehaviour
 
     private void Update()
     {
-        targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        _targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        transform.position = targetPosition;
+        transform.position = _targetPosition;
     }
 }

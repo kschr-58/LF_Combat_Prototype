@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class PlayerFlipper : MonoBehaviour
 {
-    [SerializeField] Player player;
+    [SerializeField] PlayerData _playerData;
 
-    Rigidbody2D m_RB;
     Vector2 nextScale;
     float flipVelocityTreshold;
 
@@ -14,24 +13,23 @@ public class PlayerFlipper : MonoBehaviour
     {
         nextScale = transform.localScale;
         
-        this.flipVelocityTreshold = player.GetFlipVelocityTreshold();
-        this.m_RB = player.GetMyRB();
+        this.flipVelocityTreshold = _playerData.FlipVelocityTreshold;
     }
     
     private void Update()
     {
-        float horizontalVelocity = m_RB.velocity.x;
+        float horizontalVelocity = _playerData.RB.velocity.x;
 
         if (Mathf.Abs(horizontalVelocity) < flipVelocityTreshold) return;
 
         if (Mathf.Sign(horizontalVelocity) == transform.localScale.x) return;
 
-        if (player.GetCurrentState().CanFlip()) Flip();
+        if (_playerData.GetCurrentState().CanFlip()) Flip();
     }
 
     private void Flip()
     {
-        nextScale.x = Mathf.Sign(m_RB.velocity.x);
+        nextScale.x = Mathf.Sign(_playerData.RB.velocity.x);
         nextScale.y = transform.localScale.y;
 
         transform.localScale = nextScale;

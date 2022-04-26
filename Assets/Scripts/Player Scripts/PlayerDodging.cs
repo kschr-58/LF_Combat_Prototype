@@ -6,16 +6,14 @@ using UnityEngine.UI;
 public class PlayerDodging : MonoBehaviour
 {
     // Serialized Fields
-    [SerializeField] Player player;
+    [SerializeField] PlayerData _player;
     [SerializeField] Text dodgeCountText; //TODO remove
 
-    // Component References
-    Rigidbody2D m_rB;
-    Vector2 nextVelocity;
-    Coroutine dodgeRegenCoroutine;
-
     // Other References
-    int currentDodgeCount;
+    Vector2 _nextVelocity;
+    Coroutine _dodgeCoroutine;
+    Coroutine _dodgeRegenCoroutine;
+    int _currentDodgeCount;
 
     // Events
     public delegate void DodgingChange(bool isDodging);
@@ -25,27 +23,32 @@ public class PlayerDodging : MonoBehaviour
 
     #region Public Methods
 
+    public bool CanDodge()
+    {
+        return !isDodging && (_currentDodgeCount > 0);
+    }
+
     public void RunningDodge()
     {
-        if (!CanDodge()) return;
+        if (_dodgeCoroutine != null) StopCoroutine(_dodgeCoroutine);
 
-        StartCoroutine(DodgeCoroutine(player.GetRunningDodgeTime()));
+        _dodgeCoroutine = StartCoroutine(DodgeCoroutine(_player.RunningDodgeTime));
         StartCoroutine(RunningDodgeCoroutine());
     }
 
     public void StandingDodge()
     {
-        if (!CanDodge()) return;
+        if (_dodgeCoroutine != null) StopCoroutine(_dodgeCoroutine);;
 
-        StartCoroutine(DodgeCoroutine(player.GetRunningDodgeTime()));
+        _dodgeCoroutine = StartCoroutine(DodgeCoroutine(_player.StandingDodgeTime));
         StartCoroutine(StandingDodgeCoroutine());
     }
 
     public void AerialDodge()
     {
-        if (!CanDodge()) return;
+        if (_dodgeCoroutine != null) StopCoroutine(_dodgeCoroutine);
 
-        StartCoroutine(DodgeCoroutine(player.GetAerialDodgeTime()));
+        _dodgeCoroutine = StartCoroutine(DodgeCoroutine(_player.AerialDodgeTime));
         StartCoroutine(AerialDodgeCoroutine());
     }
 
@@ -55,30 +58,23 @@ public class PlayerDodging : MonoBehaviour
 
     private void Start()
     {
-        m_rB = player.GetMyRB();
-
-        currentDodgeCount = player.GetMaxDodgeCount();
+        _currentDodgeCount = _player.MaxDodgeCount;
     }
 
     private void Update()
     {
         HandleDodgeRegen();
 
-        dodgeCountText.text = $"Dodge count: {currentDodgeCount}";
+        dodgeCountText.text = $"Dodge count: {_currentDodgeCount}";
     }
 
     private void HandleDodgeRegen()
     {
-        if (dodgeRegenCoroutine != null) return;
+        if (_dodgeRegenCoroutine != null) return;
 
-        if (currentDodgeCount >= player.GetMaxDodgeCount()) return;
+        if (_currentDodgeCount >= _player.MaxDodgeCount) return;
 
-        dodgeRegenCoroutine = StartCoroutine(RegenDodge());
-    }
-
-    private bool CanDodge()
-    {
-        return !isDodging && (currentDodgeCount > 0);
+        _dodgeRegenCoroutine = StartCoroutine(RegenDodge());
     }
     
     #endregion
@@ -87,78 +83,79 @@ public class PlayerDodging : MonoBehaviour
 
     private IEnumerator RegenDodge()
     {
-        yield return new WaitForSeconds(player.GetDodgeRegenTime());
+        yield return new WaitForSeconds(_player.DodgeRegenTime);
 
-        if (currentDodgeCount < player.GetMaxDodgeCount()) currentDodgeCount++;
+        if (_currentDodgeCount < _player.MaxDodgeCount) _currentDodgeCount++;
 
-        dodgeRegenCoroutine = null;
+        _dodgeRegenCoroutine = null;
     }
 
     private IEnumerator DodgeCoroutine(float dodgeTime)
     {
-        // Emit event
-        OnDodge(true);
+        if (OnDodge != null) OnDodge(true);
 
-        this.currentDodgeCount--;
+        this._currentDodgeCount--;
         this.isDodging = true;
 
-        player.GetMyDodgeTrailComponent().ActivateTrail();
+        _player.DodgeTrailComponent.ActivateTrail();
 
         yield return new WaitForSeconds(dodgeTime);
 
-        // Emit event
-        OnDodge(false);
+        if (OnDodge != null) OnDodge(false);
+        else Debug.Log("No event listeners!");
         
         this.isDodging = false;
 
-        player.GetMyDodgeTrailComponent().DeactivateTrail();
+        _player.DodgeTrailComponent.DeactivateTrail();
+
+        _dodgeCoroutine = null;
     }
 
     private IEnumerator RunningDodgeCoroutine()
     {
-        float dodgeSpeed = player.GetRunningDodgeSpeed() * player.transform.localScale.x;
+        float dodgeSpeed = _player.RunningDodgeSpeed * _player.transform.localScale.x;
 
         while (isDodging)
         {
-            nextVelocity.x = dodgeSpeed;
-            nextVelocity.y = 0f;
+            _nextVelocity.x = dodgeSpeed;
+            _nextVelocity.y = 0f;
 
-            m_rB.velocity = nextVelocity;
+            _player.RB.velocity = _nextVelocity;
             yield return null;
         }
     }
 
     private IEnumerator StandingDodgeCoroutine()
     {
-        float dodgeSpeed = player.GetRunningDodgeSpeed() * -0.1f * player.transform.localScale.x;
+        float dodgeSpeed = _player.RunningDodgeSpeed * -0.1f * _player.transform.localScale.x;
 
         while (isDodging)
         {
-            nextVelocity.x = dodgeSpeed;
-            nextVelocity.y = 0f;
+            _nextVelocity.x = dodgeSpeed;
+            _nextVelocity.y = 0f;
 
-            m_rB.velocity = nextVelocity;
+            _player.RB.velocity = _nextVelocity;
             yield return null;
         }
     }
 
     private IEnumerator AerialDodgeCoroutine()
     {
-        float dodgeSpeed = player.GetAerialDodgeSpeed() * Mathf.Sign(m_rB.velocity.x);
-        float defaultGravity = m_rB.gravityScale;
+        float dodgeSpeed = _player.AerialDodgeSpeed * Mathf.Sign(_player.RB.velocity.x);
+        float defaultGravity = _player.RB.gravityScale;
 
-        m_rB.gravityScale = 0f;
+        _player.RB.gravityScale = 0f;
 
         while (isDodging)
         {
-            nextVelocity.x = dodgeSpeed;
-            nextVelocity.y = 0f;
+            _nextVelocity.x = dodgeSpeed;
+            _nextVelocity.y = 0f;
 
-            m_rB.velocity = nextVelocity;
+            _player.RB.velocity = _nextVelocity;
             yield return null;
         }
 
-        m_rB.gravityScale = defaultGravity;
+        _player.RB.gravityScale = defaultGravity;
     }
 
     #endregion

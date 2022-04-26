@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class PlayerJumping : MonoBehaviour
 {
-    [SerializeField] Player player;
+    [SerializeField] PlayerData _player;
 
-    Rigidbody2D m_rB;
     Vector2 nextVelocity;
     float groundedJumpDelay = 0.1f;
 
@@ -18,12 +17,10 @@ public class PlayerJumping : MonoBehaviour
     {
         if (!groundedJumpReady) return;
 
-        player.GetMyAnimator().SetTrigger("Jump");
-
         nextVelocity.x = 0f;
-        nextVelocity.y = player.GetJumpHeight();
+        nextVelocity.y = _player.JumpVelocity;
 
-        m_rB.velocity += nextVelocity;
+        _player.RB.velocity += nextVelocity;
 
         StartCoroutine(DelayGroundedJump());
     }
@@ -32,12 +29,10 @@ public class PlayerJumping : MonoBehaviour
     {
         if (!groundedJumpReady) return;
 
-        player.GetMyAnimator().SetTrigger("Jump");
+        nextVelocity.x = _player.RB.velocity.x;
+        nextVelocity.y = _player.JumpVelocity;
 
-        nextVelocity.x = m_rB.velocity.x;
-        nextVelocity.y = player.GetJumpHeight();
-
-        m_rB.velocity = nextVelocity;
+        _player.RB.velocity = nextVelocity;
 
         StartCoroutine(DelayGroundedJump());
     }
@@ -45,22 +40,17 @@ public class PlayerJumping : MonoBehaviour
     public void ShortHop()
     {
         // Perform jump check
-        if (m_rB.velocity.y < 0) return;
+        if (_player.RB.velocity.y < 0) return;
 
-        nextVelocity.x = m_rB.velocity.x;
-        nextVelocity.y = m_rB.velocity.y * player.GetShortHopModifier();
+        nextVelocity.x = _player.RB.velocity.x;
+        nextVelocity.y = _player.RB.velocity.y * _player.ShortHopModifier;
         
-        m_rB.velocity = nextVelocity;
+        _player.RB.velocity = nextVelocity;
     }
 
     #endregion
 
     #region Private Methods
-
-    private void Start()
-    {
-        this.m_rB = player.GetMyRB();
-    }
 
     private IEnumerator DelayGroundedJump()
     {

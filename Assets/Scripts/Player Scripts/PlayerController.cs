@@ -5,20 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // Serialized fields
-    [SerializeField] Player player;
-
-    // Component references
-    Arms m_arms;
+    [SerializeField] PlayerData _playerData;
 
     // Other references
-    Vector2 axis;
+    private Vector2 _directionalInput;
 
     #region Private Methods
-
-    private void Start()
-    {
-        m_arms = player.GetMyArms();
-    }
 
     private void Update()
     {
@@ -37,26 +29,26 @@ public class PlayerController : MonoBehaviour
 
     private void HandleHorizontalInput()
     {
-        axis.x = Input.GetAxisRaw("Horizontal");
+        _directionalInput.x = Input.GetAxisRaw("Horizontal");
 
-        player.GetCurrentState().MoveHorizontally(axis.x);
+        _playerData.GetCurrentState().MoveHorizontally(_directionalInput.x);
     }
 
     private void HandleVerticalInput()
     {
-        axis.y = Input.GetAxisRaw("Vertical");
+        _directionalInput.y = Input.GetAxisRaw("Vertical");
     }
 
     private void HandleJumpInput()
     {
         if (Input.GetButtonDown("Jump"))
         {
-            player.GetCurrentState().Jump();
+            _playerData.GetCurrentState().Jump();
         }
 
         else if (Input.GetButtonUp("Jump"))
         {
-            player.GetCurrentState().EndJump();
+            _playerData.GetCurrentState().EndJump();
         }
     }
 
@@ -64,7 +56,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Dodge"))
         {
-            player.GetCurrentState().Dodge();
+            _playerData.GetCurrentState().Dodge();
         }
     }
 
@@ -72,7 +64,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            m_arms.FireWeapon();
+            _playerData.ArmsComponent.FireWeapon();
         }
     }
 
@@ -80,7 +72,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            m_arms.Reload();
+            _playerData.ArmsComponent.Reload();
         }
     }
 
@@ -88,7 +80,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
-            player.GetCurrentState().Melee();
+            _playerData.GetCurrentState().Melee();
         }
     }
 
