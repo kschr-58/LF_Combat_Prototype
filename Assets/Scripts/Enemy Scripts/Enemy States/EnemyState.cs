@@ -4,30 +4,59 @@ using UnityEngine;
 
 public abstract class EnemyState
 {
-    protected Enemy enemy;
-    protected Rigidbody2D m_rb;
-    protected Animator m_animator;
+    // Components
+    protected EnemyData enemyData;
+    protected EnemyStateManager stateManager;
 
-    protected EnemyState(Enemy enemy)
+    protected bool isFalling;
+    protected bool isGrounded;
+    
+    // Other Fields
+    public string stateName {get; protected set;}
+    protected string animationBool;
+
+    protected EnemyState(EnemyData enemyData)
     {
-        this.enemy = enemy;
-
-        m_rb = enemy.GetMyRB();
-        m_animator = enemy.GetMyAnimator();
+        this.enemyData = enemyData;
+        this.stateManager = enemyData.StateManager;
     }
 
     #region Virtual Methods
 
-    public virtual void ResetAnimationVariables()
+    public virtual void Enter()
     {
-        m_animator.SetBool("Hurt", false);
+        enemyData.AnimationTransmitter.OnAnimationEnd += AnimationEndEvent;
+        enemyData.Animator.SetBool(animationBool, true);
+
+        DoChecks();
+    }
+
+    public virtual void Exit()
+    {
+        enemyData.AnimationTransmitter.OnAnimationEnd -= AnimationEndEvent;
+        enemyData.Animator.SetBool(animationBool, false);
+    }
+
+    public virtual void LogicUpdate() {}
+
+    public virtual void PhysicsUpdate()
+    {
+        DoChecks();
+    }
+
+    protected virtual void DoChecks()
+    {
+        isGrounded = enemyData.FeetCollider.IsTouchingLayers(enemyData.TerrainLayer);
+        isFalling = enemyData.RB.velocity.y < 0 && !isGrounded;
     }
 
     #endregion
 
     #region Abstract Methods
 
-    public abstract void ChangeAnimation();
+    public abstract void Launch();
+
+    protected abstract void AnimationEndEvent();
 
     #endregion
 }

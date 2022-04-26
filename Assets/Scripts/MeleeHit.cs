@@ -23,8 +23,14 @@ public class MeleeHit : MonoBehaviour
 
         targetsHit.Add(col.gameObject);
 
+        EnemyDamageManager damageManager = col.GetComponent<EnemyDamageManager>();
         Rigidbody2D colliderRB = col.GetComponent<Rigidbody2D>();
 
-        colliderRB.velocity += m_meleeData.GetKnockbackForces();
+        if (!damageManager || !colliderRB) return;
+
+        ScreenEffectHandler.GetInstance().MeleeHit();
+        
+        damageManager.Launch();
+        colliderRB.velocity = m_meleeData.GetKnockbackForces();
     }
 }

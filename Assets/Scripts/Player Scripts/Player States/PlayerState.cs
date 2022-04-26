@@ -51,7 +51,7 @@ public abstract class PlayerState
         DoChecks();
     }
 
-    public void DoChecks()
+    protected virtual void DoChecks()
     {
         isGrounded = playerData.FeetCollider.IsTouchingLayers(playerData.TerrainLayerMask);
         isJumping = playerData.RB.velocity.y > 0 && !isGrounded;

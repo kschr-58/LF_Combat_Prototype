@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class ScreenEffectHandler : MonoBehaviour
 {
-    [SerializeField] Material solidColorMaterial;
-    [SerializeField] float executionEffectDuration;
-    [SerializeField] float executionColorChangeModifier;
-    [SerializeField] float executionTimeScaleModifier;
+    [SerializeField] float _meleeTimeScaleModifier;
+    [SerializeField] float _meleeSlowDuration;
+    [SerializeField] Material _solidColorMaterial;
+    [SerializeField] float _executionEffectDuration;
+    [SerializeField] float _executionColorChangeModifier;
+    [SerializeField] float _executionTimeScaleModifier;
 
 
     static ScreenEffectHandler singleton;
@@ -22,12 +24,18 @@ public class ScreenEffectHandler : MonoBehaviour
         return singleton;
     }
 
+    public void MeleeHit()
+    {
+        StopAllCoroutines();
+        StartCoroutine(SlowEffectCoroutine(_meleeTimeScaleModifier, _meleeSlowDuration));
+    }
+
     public void Execution()
     {
-        OnColorChange(solidColorMaterial, executionEffectDuration, executionColorChangeModifier);
+        OnColorChange(_solidColorMaterial, _executionEffectDuration, _executionColorChangeModifier);
 
         StopAllCoroutines();
-        StartCoroutine(EffectSlow(executionEffectDuration));
+        StartCoroutine(SlowEffectCoroutine(_executionTimeScaleModifier, _executionEffectDuration));
     }
 
     #endregion
@@ -55,9 +63,9 @@ public class ScreenEffectHandler : MonoBehaviour
 
     #region Coroutines
 
-    private IEnumerator EffectSlow(float duration)
+    private IEnumerator SlowEffectCoroutine(float modifier, float duration)
     {
-        Time.timeScale = executionTimeScaleModifier;
+        Time.timeScale = Time.timeScale * modifier;
         yield return new WaitForSeconds(duration * Time.timeScale);
         Time.timeScale = 1;
     }

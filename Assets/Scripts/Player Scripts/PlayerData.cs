@@ -14,7 +14,6 @@ public class PlayerData : MonoBehaviour
     [SerializeField] internal PlayerJumping JumpingComponent;
     [SerializeField] internal PlayerDodging DodgingComponent;
     [SerializeField] internal DodgeTrail DodgeTrailComponent;
-    [SerializeField] internal PlayerMelee MeleeComponent;
     [SerializeField] internal Animator Animator;
     [SerializeField] internal Arms ArmsComponent;
     [SerializeField] internal Gun Gun;
@@ -45,6 +44,7 @@ public class PlayerData : MonoBehaviour
     [Header("Melee Properties")]
     [SerializeField] internal Vector2 UppercutVelocity;
     [SerializeField] internal Vector2 AerialKickVelocity;
+    [SerializeField] internal Vector2 StandingKickVelocity;
 
     #region Getters & Setters
 

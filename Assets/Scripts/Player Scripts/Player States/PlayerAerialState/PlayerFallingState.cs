@@ -32,7 +32,7 @@ public class PlayerFallingState : PlayerAerialState
 
     public override void Melee()
     {
-        return;
+        stateManager.ChangeState(stateManager._aerialKickState);
     }
 
     protected override void AnimationEndEvent()

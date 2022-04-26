@@ -27,7 +27,7 @@ public class PlayerRunningState : PlayerGroundedState
 
     public override void Melee()
     {
-        return;
+        stateManager.ChangeState(stateManager._standingKickState);
     }
 
     protected override void AnimationEndEvent()

@@ -27,7 +27,7 @@ public class PlayerIdleState : PlayerGroundedState
 
     public override void Melee()
     {
-        return;
+        stateManager.ChangeState(stateManager._uppercutState);
     }
 
     protected override void AnimationEndEvent()

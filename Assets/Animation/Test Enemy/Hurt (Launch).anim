@@ -610,7 +610,7 @@ AnimationClip:
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves: []
-  m_SampleRate: 1
+  m_SampleRate: 10
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -875,7 +875,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0
+    m_StopTime: 0.1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -2999,7 +2999,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Character 2/Rig/Right Leg (Upper)
+    path: Character 2/Rig/Left Leg (Upper)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3009,7 +3009,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Character 2/Rig/Right Leg (Upper)
+    path: Character 2/Rig/Left Leg (Upper)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3019,97 +3019,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Character 2/Rig/Right Leg (Upper)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Character 2/Rig
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Character 2/Rig
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Character 2/Rig
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Character 2/Rig/Right Leg (Upper)/Right Leg (Lower)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Character 2/Rig/Right Leg (Upper)/Right Leg (Lower)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Character 2/Rig/Right Leg (Upper)/Right Leg (Lower)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3
+    path: Character 2/Rig/Left Leg (Upper)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3152,8 +3062,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
-      5/Chest/Neckbone/Neckbone 2/Neckbone 3
+    path: Character 2/Rig/Left Leg (Upper)/Left Leg (Lower)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3163,8 +3072,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
-      5/Chest/Neckbone/Neckbone 2/Neckbone 3
+    path: Character 2/Rig/Left Leg (Upper)/Left Leg (Lower)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3174,8 +3082,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
-      5/Chest/Neckbone/Neckbone 2/Neckbone 3
+    path: Character 2/Rig/Left Leg (Upper)/Left Leg (Lower)
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3185,7 +3092,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Character 2/Rig/Left Leg (Upper)
+    path: Character 2/Rig
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3195,7 +3102,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Character 2/Rig/Left Leg (Upper)
+    path: Character 2/Rig
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3205,7 +3112,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Character 2/Rig/Left Leg (Upper)
+    path: Character 2/Rig
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3216,7 +3123,7 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
     path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
-      5/Chest/Right Collarbone/Right Arm (Upper)/Right Arm (Lower)
+      5/Chest/Neckbone/Neckbone 2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3227,7 +3134,7 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
     path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
-      5/Chest/Right Collarbone/Right Arm (Upper)/Right Arm (Lower)
+      5/Chest/Neckbone/Neckbone 2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3238,37 +3145,7 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
     path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
-      5/Chest/Right Collarbone/Right Arm (Upper)/Right Arm (Lower)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Character 2/Rig/Left Leg (Upper)/Left Leg (Lower)/Left Ankle
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Character 2/Rig/Left Leg (Upper)/Left Leg (Lower)/Left Ankle
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Character 2/Rig/Left Leg (Upper)/Left Leg (Lower)/Left Ankle
+      5/Chest/Neckbone/Neckbone 2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3302,72 +3179,6 @@ AnimationClip:
     attribute: m_LocalEulerAngles.x
     path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
       5/Chest/Left Collarbone/Left Arm (Upper)/Left Arm (Lower)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
-      5/Chest/Neckbone
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
-      5/Chest/Neckbone
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
-      5/Chest/Neckbone
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
-      5/Chest/Neckbone/Neckbone 2
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
-      5/Chest/Neckbone/Neckbone 2
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
-      5/Chest/Neckbone/Neckbone 2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3410,6 +3221,72 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
+    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
+      5/Chest/Neckbone/Neckbone 2/Neckbone 3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
+      5/Chest/Neckbone/Neckbone 2/Neckbone 3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
+      5/Chest/Neckbone/Neckbone 2/Neckbone 3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
+      5/Chest/Right Collarbone/Right Arm (Upper)/Right Arm (Lower)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
+      5/Chest/Right Collarbone/Right Arm (Upper)/Right Arm (Lower)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
+      5/Chest/Right Collarbone/Right Arm (Upper)/Right Arm (Lower)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
     path: Character 2/Rig/Hip Spine 1/Hip Spine 2
     classID: 4
     script: {fileID: 0}
@@ -3431,6 +3308,222 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
     path: Character 2/Rig/Hip Spine 1/Hip Spine 2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
+      5/Chest/Left Collarbone/Left Arm (Upper)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
+      5/Chest/Left Collarbone/Left Arm (Upper)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
+      5/Chest/Left Collarbone/Left Arm (Upper)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
+      5/Chest/Neckbone
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
+      5/Chest/Neckbone
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
+      5/Chest/Neckbone
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Character 2/Rig/Right Leg (Upper)/Right Leg (Lower)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Character 2/Rig/Right Leg (Upper)/Right Leg (Lower)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Character 2/Rig/Right Leg (Upper)/Right Leg (Lower)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Character 2/Rig/Left Leg (Upper)/Left Leg (Lower)/Left Ankle
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Character 2/Rig/Left Leg (Upper)/Left Leg (Lower)/Left Ankle
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Character 2/Rig/Left Leg (Upper)/Left Leg (Lower)/Left Ankle
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Character 2/Rig/Right Leg (Upper)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Character 2/Rig/Right Leg (Upper)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Character 2/Rig/Right Leg (Upper)
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Character 2/Rig/Hip Spine 1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Character 2/Rig/Hip Spine 1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Character 2/Rig/Hip Spine 1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3461,101 +3554,15 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
     path: Character 2/Rig/Right Leg (Upper)/Right Leg (Lower)/Right Ankle
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Character 2/Rig/Hip Spine 1
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Character 2/Rig/Hip Spine 1
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Character 2/Rig/Hip Spine 1
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
-      5/Chest/Left Collarbone/Left Arm (Upper)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
-      5/Chest/Left Collarbone/Left Arm (Upper)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Character 2/Rig/Hip Spine 1/Hip Spine 2/Hip Spine 3/Hip Spine 4/Hip Spine
-      5/Chest/Left Collarbone/Left Arm (Upper)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Character 2/Rig/Left Leg (Upper)/Left Leg (Lower)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Character 2/Rig/Left Leg (Upper)/Left Leg (Lower)
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Character 2/Rig/Left Leg (Upper)/Left Leg (Lower)
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.1
+    functionName: EndAnimation
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

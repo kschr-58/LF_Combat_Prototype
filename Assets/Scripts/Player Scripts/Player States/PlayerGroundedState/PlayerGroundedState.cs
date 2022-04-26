@@ -11,7 +11,7 @@ public abstract class PlayerGroundedState : PlayerState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-
+        
         isMoving = Mathf.Abs(playerData.RB.velocity.x) > playerData.RunningTreshold;
 
         if (isJumping)
@@ -33,6 +33,7 @@ public abstract class PlayerGroundedState : PlayerState
     public override void Jump()
     {
         playerData.JumpingComponent.GroundedJump();
+        stateManager.ChangeState(stateManager._jumpingState);
     }
 
     public override void EndJump()

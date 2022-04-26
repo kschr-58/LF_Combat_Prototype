@@ -69,10 +69,7 @@ public class PlayerDodgeState : PlayerState
 
     protected virtual void OnDodgeChange(bool isDodging)
     {
-        if (!isDodging)
-        {
-            EndDodge();
-        }
+        if (!isDodging) EndDodge();
     }
 
     protected virtual void EndDodge()

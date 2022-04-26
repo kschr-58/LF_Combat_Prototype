@@ -9,7 +9,7 @@ public class PlayerJumpingState : PlayerAerialState
         this.stateName = "Jumping";
         this.animationBool = "Jumping";
     }
-
+    
     public override void EndJump()
     {
         playerData.JumpingComponent.ShortHop();
@@ -22,7 +22,7 @@ public class PlayerJumpingState : PlayerAerialState
 
     public override void Melee()
     {
-        return;
+        stateManager.ChangeState(stateManager._aerialKickState);
     }
 
     protected override void AnimationEndEvent()

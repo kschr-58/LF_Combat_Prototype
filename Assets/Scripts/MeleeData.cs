@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class MeleeData: MonoBehaviour
 {
-    [SerializeField] Vector2 knockbackForces;
+    [SerializeField] Vector2 _knockbackForces;
 
     public Vector2 GetKnockbackForces()
     {
-        return knockbackForces;
+        return _knockbackForces;
     }
 }

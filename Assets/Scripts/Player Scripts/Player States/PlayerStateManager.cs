@@ -18,6 +18,9 @@ public class PlayerStateManager : MonoBehaviour
     public PlayerStandingDodgeState _standingDodgeState;
     public PlayerRunningDodgeState _runningDodgeState;
     public PlayerAerialDodgeState _aerialDodgeState;
+    public PlayerUppercutState _uppercutState;
+    public PlayerAirKickState _aerialKickState;
+    public PlayerStandingKickState _standingKickState;
     public PlayerState CurrentState {get; private set;}
 
     #endregion
@@ -72,6 +75,9 @@ public class PlayerStateManager : MonoBehaviour
         _standingDodgeState = new PlayerStandingDodgeState(_playerData);
         _runningDodgeState = new PlayerRunningDodgeState(_playerData);
         _aerialDodgeState = new PlayerAerialDodgeState(_playerData);
+        _uppercutState = new PlayerUppercutState(_playerData);
+        _aerialKickState = new PlayerAirKickState(_playerData);
+        _standingKickState = new PlayerStandingKickState(_playerData);
     }
 
     #endregion
