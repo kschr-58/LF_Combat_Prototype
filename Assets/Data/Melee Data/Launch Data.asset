@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2170a323e175eef4896e881b1edd0718, type: 3}
   m_Name: Launch Data
   m_EditorClassIdentifier: 
-  _knockbackForces: {x: 1, y: 11}
+  KnockBackForce: {x: 1, y: 11}
+  KnockBackType: 0

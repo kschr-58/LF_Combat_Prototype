@@ -42,7 +42,7 @@
      <Compile Include="Assets\Scripts\Player Scripts\PlayerDodging.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyState.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerDodgeState\PlayerDodgeState.cs" />
-     <Compile Include="Assets\Scripts\MeleeHit.cs" />
+     <Compile Include="Assets\Scripts\MeleeAttack.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerMeleeState\PlayerMeleeState.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerAerialState\PlayerAerialState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\EnemyData.cs" />
@@ -82,11 +82,15 @@
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerStateManager.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\PlayerFlipper.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyGroundedState\EnemyIdleState.cs" />
-     <Compile Include="Assets\Scripts\Player Scripts\PlayerMelee.cs" />
      <Compile Include="Assets\Scripts\AnimationTransmitter.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyGroundedState\EnemyGroundedState.cs" />
      <Compile Include="Assets\Scripts\Character\PositionClone.cs" />
-     <Compile Include="Assets\Scripts\Player Scripts\Player Attacking\PlayerMeleeHit.cs" />
+     <Compile Include="Assets\Scripts\Player Scripts\Player Attacking\PlayerMeleeAttack.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyHurtForwardLaunchState.cs" />
+     <Compile Include="Assets\Scripts\Enums\AttackTypeEnum.cs" />
+     <Compile Include="Assets\Scripts\Character\DamageManager.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyHurtDragState.cs" />
+     <Compile Include="Assets\Scripts\System\DebugCanvas.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

@@ -5,11 +5,4 @@ using UnityEngine;
 public abstract class EnemyGroundedState : EnemyState
 {
     public EnemyGroundedState(EnemyData enemyData) : base(enemyData) {}
-
-    public override void Enter()
-    {
-        base.Enter();
-
-        enemyData.RB.gravityScale = enemyData.DefaultGravity;
-    }
 }

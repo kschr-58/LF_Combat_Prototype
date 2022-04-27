@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMeleeHit : MeleeHit
+public class PlayerMeleeAttack : MeleeAttack
 {
     PlayerData _playerData;
 
@@ -27,12 +27,12 @@ public class PlayerMeleeHit : MeleeHit
 
         screenEffectHandler.MeleeHit();
 
-        Vector2 knockbackForce = meleeData.GetKnockbackForces();
+        Vector2 knockbackForce = meleeData.KnockBackForce;
 
         // Make horizontal knockback relative to player direction
         knockbackForce.x *= _playerData.transform.localScale.x;
         
-        damageManager.Launch();
+        ChangeTargetState(damageManager);
         colliderRB.velocity = knockbackForce;
     }
 }

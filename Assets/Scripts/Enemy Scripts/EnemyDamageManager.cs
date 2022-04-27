@@ -2,22 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyDamageManager : MonoBehaviour
+public class EnemyDamageManager : DamageManager
 {
     [SerializeField] EnemyData _enemyData;
 
-    public void Launch()
+    public override void Launch()
     {
         _enemyData.GetCurrentState().Launch();
     }
 
-    public void ForwardLaunch()
+    public override void ForwardLaunch()
     {
-
+        _enemyData.GetCurrentState().ForwardLaunch();
     }
 
-    public void StraightForwardLaunch()
+    public override void StraightForwardLaunch()
     {
-
+        _enemyData.GetCurrentState().StraightForwardLaunch();
     }
 }

@@ -12,6 +12,8 @@ public class EnemyStateManager : MonoBehaviour
     // States
     public EnemyIdleState _idleState;
     public EnemyHurtLaunchState _launchState;
+    public EnemyHurtForwardLaunchState _forwardLaunchState;
+    public EnemyHurtDragState _dragState;
 
     public EnemyState CurrentState {get; private set;}
 
@@ -61,6 +63,8 @@ public class EnemyStateManager : MonoBehaviour
     {
         _idleState = new EnemyIdleState(_enemyData);
         _launchState = new EnemyHurtLaunchState(_enemyData);
+        _forwardLaunchState = new EnemyHurtForwardLaunchState(_enemyData);
+        _dragState = new EnemyHurtDragState(_enemyData);
     }
 
     #endregion

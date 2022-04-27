@@ -59,6 +59,17 @@ public abstract class EnemyState
         stateManager.ChangeState(stateManager._launchState);
     }
 
+    public virtual void ForwardLaunch()
+    {
+        stateManager.ChangeState(stateManager._forwardLaunchState);
+    }
+
+    public virtual void StraightForwardLaunch()
+    {
+        if (isGrounded) stateManager.ChangeState(stateManager._dragState);
+        else stateManager.ChangeState(stateManager._forwardLaunchState);
+    }
+
     #endregion
 
     #region Abstract Methods
