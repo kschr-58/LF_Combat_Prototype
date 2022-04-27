@@ -12,6 +12,11 @@ public class EnemyHurtDragState : EnemyHurtState
     {
         base.LogicUpdate();
 
-        if (Mathf.Abs(enemyData.RB.velocity.x) < 1) stateManager.ChangeState(stateManager._idleState);
+        if (Mathf.Abs(enemyData.RB.velocity.x) < 0.5f) stateManager.ChangeState(stateManager._idleState);
+    }
+
+    public override bool CanFlip()
+    {
+        return true;
     }
 }

@@ -18,7 +18,7 @@ public abstract class EnemyState: CharacterState
     protected EnemyState(EnemyData enemyData)
     {
         this.enemyData = enemyData;
-        this.stateManager = enemyData.StateManager;
+        this.stateManager = enemyData.GetComponent<EnemyStateManager>();
     }
 
     #region Override Implementations
@@ -46,6 +46,11 @@ public abstract class EnemyState: CharacterState
     public void Melee()
     {
         return;
+    }
+
+    public virtual string GetStateName()
+    {
+        return this.stateName;
     }
 
     public virtual bool CanFlip()

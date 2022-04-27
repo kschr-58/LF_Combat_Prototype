@@ -10,8 +10,10 @@ public abstract class DamageManager : MonoBehaviour
 
     public abstract void StraightForwardLaunch();
 
-    protected virtual void InstantiateVFX(Vector2 location, GameObject VFXPrefab)
+    protected virtual IEnumerator InstantiateVFX(Vector2 location, GameObject VFXPrefab)
     {
+        yield return new WaitForEndOfFrame(); //FIXME sloppy solution to wait for character to turn around
+
         Vector3 parentScale = transform.localScale;
         GameObject newEffect = Instantiate(VFXPrefab, location, Quaternion.identity, ParticlesCollection.GetInstance().transform);
 

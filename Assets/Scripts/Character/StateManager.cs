@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class StateManager : MonoBehaviour
 {
-    CharacterState CurrentState;
+    internal CharacterState CurrentState;
 
     #region Unity Callback Methods
 

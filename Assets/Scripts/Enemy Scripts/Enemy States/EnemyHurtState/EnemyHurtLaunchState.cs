@@ -23,4 +23,9 @@ public class EnemyHurtLaunchState : EnemyHurtState
 
         if (isGrounded && !isAnimationLocked) stateManager.ChangeState(stateManager._idleState);
     }
+
+    public override bool CanFlip()
+    {
+        return true;
+    }
 }

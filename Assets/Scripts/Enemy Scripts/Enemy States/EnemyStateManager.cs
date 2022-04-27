@@ -14,8 +14,9 @@ public class EnemyStateManager : StateManager
     public EnemyHurtLaunchState _launchState;
     public EnemyHurtForwardLaunchState _forwardLaunchState;
     public EnemyHurtDragState _dragState;
-
-    public EnemyState CurrentState {get; private set;}
+    public EnemyHurtWallsplatState _wallsplatState;
+    public EnemyHurtWallslumpState _wallslumpState;
+    public EnemyHurtTumbleState _tumbleState;
 
     #endregion
 
@@ -47,7 +48,7 @@ public class EnemyStateManager : StateManager
         CurrentState = newState;
         CurrentState.Enter();
 
-        _stateText.text = $"State: {CurrentState.stateName}";
+        _stateText.text = $"State: {CurrentState.GetStateName()}";
     }
 
     #endregion
@@ -57,5 +58,8 @@ public class EnemyStateManager : StateManager
         _launchState = new EnemyHurtLaunchState(_enemyData);
         _forwardLaunchState = new EnemyHurtForwardLaunchState(_enemyData);
         _dragState = new EnemyHurtDragState(_enemyData);
+        _wallsplatState = new EnemyHurtWallsplatState(_enemyData);
+        _wallslumpState = new EnemyHurtWallslumpState(_enemyData);
+        _tumbleState = new EnemyHurtTumbleState(_enemyData);
     }
 }

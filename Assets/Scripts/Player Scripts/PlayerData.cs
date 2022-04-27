@@ -8,7 +8,7 @@ Child components access these stored values and components with getters and sett
 */
 public class PlayerData : CharacterData
 {
-    [SerializeField] internal PlayerStateManager StateManager;
+    [Header("Player Components")]
     [SerializeField] internal PlayerJumping JumpingComponent;
     [SerializeField] internal PlayerDodging DodgingComponent;
     [SerializeField] internal DodgeTrail DodgeTrailComponent;
@@ -16,11 +16,10 @@ public class PlayerData : CharacterData
     [SerializeField] internal Gun Gun;
     [SerializeField] internal Crosshair Crosshair;
 
-    [Header("Movement Properties")]
+    [Header("Player Movement Properties")]
     [SerializeField] internal float RunSpeed;
     [SerializeField] internal float JumpVelocity;
     [SerializeField] internal float ShortHopModifier;
-    [SerializeField] internal float FlipVelocityTreshold;
     [SerializeField] internal float RunningTreshold;
 
     [Header("Dodging Properties")]
@@ -40,12 +39,4 @@ public class PlayerData : CharacterData
     [SerializeField] internal Vector2 AerialKickVelocity;
     [SerializeField] internal Vector2 StandingKickVelocity;
 
-    #region Getters & Setters
-
-    public CharacterState GetCurrentState()
-    {
-        return StateManager.CurrentState;
-    }
-
-    #endregion
 }

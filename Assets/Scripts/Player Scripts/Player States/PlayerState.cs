@@ -19,7 +19,7 @@ public abstract class PlayerState: CharacterState
     protected PlayerState(PlayerData playerData)
     {
         this.playerData = playerData;
-        this.stateManager = playerData.StateManager;
+        this.stateManager = playerData.GetComponent<PlayerStateManager>();
     }
 
     #region Virtual Methods
@@ -46,13 +46,33 @@ public abstract class PlayerState: CharacterState
         DoChecks();
     }
 
+    public virtual void Launch()
+    {
+        return;
+    }
+
+    public virtual void ForwardLaunch()
+    {
+        return;
+    }
+
+    public virtual void StraightForwardLaunch()
+    {
+        return;
+    }
+
+    public virtual string GetStateName()
+    {
+        return this.stateName;
+    }
+
     protected virtual void DoChecks()
     {
         isGrounded = playerData.FeetCollider.IsTouchingLayers(playerData.TerrainLayerMask);
         isJumping = playerData.RB.velocity.y > 0 && !isGrounded;
         isFalling = playerData.RB.velocity.y < 0 && !isGrounded;
     }
-
+    
     #endregion
 
     #region Abstract Methods

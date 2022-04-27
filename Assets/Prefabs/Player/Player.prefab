@@ -5253,10 +5253,10 @@ GameObject:
   - component: {fileID: 7901823774011076763}
   - component: {fileID: 6362792734099616886}
   - component: {fileID: 7464294580195123738}
-  - component: {fileID: 6362792734099616884}
   - component: {fileID: 6362792733983299086}
   - component: {fileID: 6362792734459175382}
   - component: {fileID: 6362792734190310460}
+  - component: {fileID: 7808469781473677286}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -5317,23 +5317,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RB: {fileID: 4419646484807918251}
-  FeetCollider: {fileID: 6362792733198310370}
-  JumpingComponent: {fileID: 6362792733983299086}
-  DodgingComponent: {fileID: 6362792734459175382}
-  DodgeTrailComponent: {fileID: 8117948835941998483}
-  Animator: {fileID: 8950246917858831922}
-  ArmsComponent: {fileID: 6362792734920669284}
-  Gun: {fileID: 6362792733988093102}
-  Crosshair: {fileID: 0}
   StateManager: {fileID: 7464294580195123738}
-  AnimationTransmitter: {fileID: 6362792734560798894}
+  Animator: {fileID: 8950246917858831922}
+  FeetCollider: {fileID: 6362792733198310370}
   TerrainLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  EffectLibrary: {fileID: 11400000, guid: f89e131a9eb377d41a16570e0fb9df23, type: 2}
+  AnimationTransmitter: {fileID: 6362792734560798894}
+  FlipVelocityTreshold: 5
+  JumpingComponent: {fileID: 6362792733983299086}
+  DodgingComponent: {fileID: 6362792734459175382}
+  DodgeTrailComponent: {fileID: 8117948835941998483}
+  ArmsComponent: {fileID: 6362792734920669284}
+  Gun: {fileID: 6362792733988093102}
+  Crosshair: {fileID: 0}
   RunSpeed: 10
   JumpVelocity: 20
   ShortHopModifier: 0.5
-  FlipVelocityTreshold: 3
   RunningTreshold: 7
   MaxDodgeCount: 3
   DodgeRegenTime: 0.7
@@ -5373,19 +5374,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerData: {fileID: 7901823774011076763}
   _stateText: {fileID: 4824621805433956740}
---- !u!114 &6362792734099616884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7901823774011076757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61617eac4c543474aa1c99e877583dce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerData: {fileID: 7901823774011076763}
 --- !u!114 &6362792733983299086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5427,6 +5415,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingColor: {r: 0.5019608, g: 0, b: 0, a: 1}
   targetColor: {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &7808469781473677286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7901823774011076757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61617eac4c543474aa1c99e877583dce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterData: {fileID: 7901823774011076763}
 --- !u!1001 &141207247543822171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5518,10 +5519,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4828374222916332678, guid: ee758f55f42b4444aa4e08c194c2a697, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1837883017
+      objectReference: {fileID: 0}
     - target: {fileID: 4828374222916332730, guid: ee758f55f42b4444aa4e08c194c2a697, type: 3}
       propertyPath: m_Name
       value: Debug Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5333431447382219797, guid: ee758f55f42b4444aa4e08c194c2a697, type: 3}
+      propertyPath: scaleTarget
+      value: 
+      objectReference: {fileID: 7901823774011076756}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee758f55f42b4444aa4e08c194c2a697, type: 3}
 --- !u!224 &4824621805192596446 stripped

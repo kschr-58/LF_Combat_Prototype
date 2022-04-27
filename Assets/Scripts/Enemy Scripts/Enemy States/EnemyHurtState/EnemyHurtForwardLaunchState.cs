@@ -23,6 +23,15 @@ public class EnemyHurtForwardLaunchState : EnemyHurtState
     {
         if (!isGrounded && isAnimationLocked) isAnimationLocked = false;
 
-        if (isGrounded && !isAnimationLocked) stateManager.ChangeState(stateManager._idleState);
+        if (enemyData.SidesCollider.IsTouchingLayers(enemyData.TerrainLayerMask)) stateManager.ChangeState(stateManager._wallsplatState);
+
+        if (isGrounded && !isAnimationLocked && Mathf.Abs(enemyData.RB.velocity.x) > 8) stateManager.ChangeState(stateManager._tumbleState);
+
+        else if (isGrounded && !isAnimationLocked) stateManager.ChangeState(stateManager._idleState);
+    }
+
+    public override bool CanFlip()
+    {
+        return true;
     }
 }

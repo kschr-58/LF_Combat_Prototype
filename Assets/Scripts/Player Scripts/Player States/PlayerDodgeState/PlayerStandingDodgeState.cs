@@ -14,6 +14,8 @@ public class PlayerStandingDodgeState : PlayerDodgeState
     {
         base.Enter();
 
+        playerData.Animator.SetBool("Moving Forward", false);
+
         playerData.DodgingComponent.StandingDodge();
     }
 }

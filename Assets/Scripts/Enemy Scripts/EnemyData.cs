@@ -4,21 +4,13 @@ using UnityEngine;
 
 public class EnemyData : CharacterData
 {
-    [Header("Components")]
-    [SerializeField] internal EnemyStateManager StateManager;
+    [Header("Enemy Components")]
+    [SerializeField] internal BoxCollider2D SidesCollider;
 
     [Header("Damage properties")]
     [SerializeField] internal float DefaultGravity;
     [SerializeField] internal float LaunchGravity;
-
-    #region Getters & Setters
-
-    public EnemyState GetCurrentState()
-    {
-        return StateManager.CurrentState;
-    }
-
-    #endregion
+    [SerializeField] internal float WallSplatGravity;
 
     private void Update() //TODO remove
     {

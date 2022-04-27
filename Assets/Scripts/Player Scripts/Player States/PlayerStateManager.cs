@@ -21,7 +21,6 @@ public class PlayerStateManager : StateManager
     public PlayerUppercutState _uppercutState;
     public PlayerAirKickState _aerialKickState;
     public PlayerStandingKickState _standingKickState;
-    public PlayerState CurrentState {get; private set;}
 
     #endregion
 
@@ -53,7 +52,7 @@ public class PlayerStateManager : StateManager
         CurrentState = newState;
         CurrentState.Enter();
 
-        _stateText.text = $"State: {CurrentState.stateName}";
+        _stateText.text = $"State: {CurrentState.GetStateName()}";
     }
 
     #endregion
