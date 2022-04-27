@@ -21,7 +21,7 @@ public abstract class EnemyState
         this.stateManager = enemyData.StateManager;
     }
 
-    #region Virtual Methods
+    #region Base Logic Methods
 
     public virtual void Enter()
     {
@@ -52,10 +52,16 @@ public abstract class EnemyState
 
     #endregion
 
+    #region Virtual Methods
+
+    public virtual void Launch()
+    {
+        stateManager.ChangeState(stateManager._launchState);
+    }
+
+    #endregion
+
     #region Abstract Methods
-
-    public abstract void Launch();
-
     protected abstract void AnimationEndEvent();
 
     #endregion

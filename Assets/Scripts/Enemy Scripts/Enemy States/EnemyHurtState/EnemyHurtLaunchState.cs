@@ -15,15 +15,19 @@ public class EnemyHurtLaunchState : EnemyHurtState
         base.Enter();
 
         _isAnimationLocked = true;
+
+        enemyData.RB.gravityScale = enemyData.LaunchGravity;
     }
 
     public override void LogicUpdate()
     {
+        if (!isGrounded && _isAnimationLocked) _isAnimationLocked = false;
+
         if (isGrounded && !_isAnimationLocked) stateManager.ChangeState(stateManager._idleState);
     }
 
     protected override void AnimationEndEvent()
     {
-        _isAnimationLocked = false;
+        return;
     }
 }

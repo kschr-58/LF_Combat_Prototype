@@ -24,4 +24,12 @@ public class EnemyData : MonoBehaviour
     }
 
     #endregion
+
+    private void Update() //TODO remove
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            transform.position = new Vector3(0, 0, -1);
+        }
+    }
 }

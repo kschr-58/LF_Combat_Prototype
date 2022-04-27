@@ -381,6 +381,7 @@
 "Assets/Scripts/MeleeData.cs"
 "Assets/Scripts/MeleeHit.cs"
 "Assets/Scripts/Player Scripts/Player Arms/Arms.cs"
+"Assets/Scripts/Player Scripts/Player Attacking/PlayerMeleeHit.cs"
 "Assets/Scripts/Player Scripts/Player States/PlayerAerialState/PlayerAerialState.cs"
 "Assets/Scripts/Player Scripts/Player States/PlayerAerialState/PlayerFallingState.cs"
 "Assets/Scripts/Player Scripts/Player States/PlayerAerialState/PlayerJumpingState.cs"

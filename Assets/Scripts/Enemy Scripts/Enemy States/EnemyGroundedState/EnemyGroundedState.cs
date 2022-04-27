@@ -6,8 +6,10 @@ public abstract class EnemyGroundedState : EnemyState
 {
     public EnemyGroundedState(EnemyData enemyData) : base(enemyData) {}
 
-    public override void Launch()
+    public override void Enter()
     {
-        stateManager.ChangeState(stateManager._launchState);
+        base.Enter();
+
+        enemyData.RB.gravityScale = enemyData.DefaultGravity;
     }
 }

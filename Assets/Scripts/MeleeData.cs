@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeData: MonoBehaviour
+[CreateAssetMenu(fileName = "Melee Data", menuName = "Data/Melee Data", order = 1)]
+public class MeleeData: ScriptableObject
 {
     [SerializeField] Vector2 _knockbackForces;
 

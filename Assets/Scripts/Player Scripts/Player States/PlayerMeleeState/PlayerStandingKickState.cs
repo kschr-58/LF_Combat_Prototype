@@ -8,6 +8,8 @@ public class PlayerStandingKickState : PlayerMeleeState
     {
         this.stateName = "Standing kick";
         this.animationBool = "Standing Kick";
+        this.decreasingVelocity = true;
+        this.velocityDecreaseModifier = 0.8f;
     }
 
     protected override void ExertMeleeVelocity()

@@ -2,14 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeHit : MonoBehaviour
+public abstract class MeleeHit : MonoBehaviour
 {
-    List<GameObject> targetsHit = new List<GameObject>();
-    MeleeData m_meleeData;
+    [SerializeField] protected MeleeData meleeData;
 
+    protected List<GameObject> targetsHit = new List<GameObject>();
+    protected ScreenEffectHandler screenEffectHandler;
+
+    #region Unity Callback Methods
     private void Start()
     {
-        m_meleeData = GetComponent<MeleeData>();
+        screenEffectHandler = ScreenEffectHandler.GetInstance();
+
+        FetchRequiredComponents();
     }
 
     private void OnEnable()
@@ -17,20 +22,13 @@ public class MeleeHit : MonoBehaviour
         targetsHit.Clear();
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (targetsHit.Contains(col.gameObject)) return;
+    #endregion
 
-        targetsHit.Add(col.gameObject);
+    #region Abstract Methods
 
-        EnemyDamageManager damageManager = col.GetComponent<EnemyDamageManager>();
-        Rigidbody2D colliderRB = col.GetComponent<Rigidbody2D>();
+    protected abstract void FetchRequiredComponents();
 
-        if (!damageManager || !colliderRB) return;
+    protected abstract void OnTriggerEnter2D(Collider2D col);
 
-        ScreenEffectHandler.GetInstance().MeleeHit();
-        
-        damageManager.Launch();
-        colliderRB.velocity = m_meleeData.GetKnockbackForces();
-    }
+    #endregion
 }
