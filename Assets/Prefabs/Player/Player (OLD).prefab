@@ -4922,8 +4922,6 @@ GameObject:
   m_Component:
   - component: {fileID: 750643412}
   - component: {fileID: 750643413}
-  - component: {fileID: 750643414}
-  - component: {fileID: 750643415}
   m_Layer: 12
   m_Name: Uppercut Hitbox
   m_TagString: Untagged
@@ -4972,31 +4970,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &750643414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 750643411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05e49668d093578478d8a644fa1f9e19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &750643415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 750643411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2170a323e175eef4896e881b1edd0718, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockbackForces: {x: 1.5, y: 16}
 --- !u!1 &1230531106
 GameObject:
   m_ObjectHideFlags: 0
@@ -5007,8 +4980,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1230531107}
   - component: {fileID: 1230531110}
-  - component: {fileID: 1230531109}
-  - component: {fileID: 1230531108}
   m_Layer: 12
   m_Name: Forward Launch Hitbox
   m_TagString: Untagged
@@ -5057,31 +5028,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1230531109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1230531106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05e49668d093578478d8a644fa1f9e19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1230531108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1230531106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2170a323e175eef4896e881b1edd0718, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockbackForces: {x: 25, y: 15}
 --- !u!1 &1489900393
 GameObject:
   m_ObjectHideFlags: 0
@@ -5128,7 +5074,6 @@ GameObject:
   - component: {fileID: 983534747}
   - component: {fileID: 1030549217}
   - component: {fileID: 1091443001}
-  - component: {fileID: 2288756940191553094}
   - component: {fileID: 825732307}
   m_Layer: 7
   m_Name: Player (OLD)
@@ -5188,20 +5133,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa881f23ee835541b09e23e594770b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _runSpeed: 0
-  _jumpHeight: 0
-  _shortHopModifier: 0
-  _flipVelocityTreshold: 0
-  _runningTreshold: 0
-  _maxDodgeCount: 0
-  _dodgeRegenTime: 0
-  _runningDodgeTime: 0
-  _runningDodgeSpeed: 0
-  _standingDodgeTime: 0
-  _aerialDodgeTime: 0
-  _aerialDodgeSpeed: 0
-  _uppercutVelocity: {x: 0, y: 0}
-  _aerialKickVelocity: {x: 0, y: 0}
+  RB: {fileID: 0}
+  Animator: {fileID: 0}
+  FeetCollider: {fileID: 0}
+  AnimationTransmitter: {fileID: 0}
+  TerrainLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  EffectLibrary: {fileID: 0}
+  StateManager: {fileID: 0}
+  JumpingComponent: {fileID: 0}
+  DodgingComponent: {fileID: 0}
+  DodgeTrailComponent: {fileID: 0}
+  ArmsComponent: {fileID: 0}
+  Gun: {fileID: 0}
+  Crosshair: {fileID: 0}
+  TerrainLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  RunSpeed: 0
+  JumpVelocity: 0
+  ShortHopModifier: 0
+  FlipVelocityTreshold: 0
+  RunningTreshold: 0
+  MaxDodgeCount: 0
+  DodgeRegenTime: 0
+  RunningDodgeTime: 0
+  RunningDodgeSpeed: 0
+  StandingDodgeTime: 0
+  AerialDodgeTime: 0
+  AerialDodgeSpeed: 0
+  AimDuration: 0
+  UppercutVelocity: {x: 0, y: 0}
+  AerialKickVelocity: {x: 0, y: 0}
+  StandingKickVelocity: {x: 0, y: 0}
 --- !u!114 &983534745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5214,7 +5179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9340b57f003f6164ab5d223156bb9328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 3883726431632787572}
+  _playerData: {fileID: 0}
 --- !u!114 &983534747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5227,7 +5192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61617eac4c543474aa1c99e877583dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 3883726431632787572}
+  _playerData: {fileID: 0}
 --- !u!114 &1030549217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5255,19 +5220,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 3883726431632787572}
   dodgeCountText: {fileID: 0}
---- !u!114 &2288756940191553094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3883726431632787578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f718268189847b349981be1e451d3c80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 3883726431632787572}
 --- !u!114 &825732307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5857,7 +5809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 014a68ff8ef60304880655e857815988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 3883726431632787572}
+  _playerData: {fileID: 0}
 --- !u!212 &3002488150027770320 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2039919028800642754, guid: c453bb83aa893ac4e9e9980afdb4997f, type: 3}

@@ -6,21 +6,15 @@ using UnityEngine;
 PlayerData script is responsible for storing player related values and components
 Child components access these stored values and components with getters and setters
 */
-public class PlayerData : MonoBehaviour
+public class PlayerData : CharacterData
 {
-    [Header("Components")]
-    [SerializeField] internal Rigidbody2D RB;
-    [SerializeField] internal BoxCollider2D FeetCollider;
+    [SerializeField] internal PlayerStateManager StateManager;
     [SerializeField] internal PlayerJumping JumpingComponent;
     [SerializeField] internal PlayerDodging DodgingComponent;
     [SerializeField] internal DodgeTrail DodgeTrailComponent;
-    [SerializeField] internal Animator Animator;
     [SerializeField] internal Arms ArmsComponent;
     [SerializeField] internal Gun Gun;
     [SerializeField] internal Crosshair Crosshair;
-    [SerializeField] internal PlayerStateManager StateManager;
-    [SerializeField] internal AnimationTransmitter AnimationTransmitter;
-    [SerializeField] internal LayerMask TerrainLayerMask;
 
     [Header("Movement Properties")]
     [SerializeField] internal float RunSpeed;
@@ -48,7 +42,7 @@ public class PlayerData : MonoBehaviour
 
     #region Getters & Setters
 
-    public PlayerState GetCurrentState()
+    public CharacterState GetCurrentState()
     {
         return StateManager.CurrentState;
     }

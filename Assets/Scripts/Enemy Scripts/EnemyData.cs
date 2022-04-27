@@ -2,15 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyData : MonoBehaviour
+public class EnemyData : CharacterData
 {
-    [Header("Members")]
-    [SerializeField] internal Rigidbody2D RB;
-    [SerializeField] internal Animator Animator;
+    [Header("Components")]
     [SerializeField] internal EnemyStateManager StateManager;
-    [SerializeField] internal BoxCollider2D FeetCollider;
-    [SerializeField] internal LayerMask TerrainLayer;
-    [SerializeField] internal AnimationTransmitter AnimationTransmitter;
 
     [Header("Damage properties")]
     [SerializeField] internal float DefaultGravity;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class PlayerState
+public abstract class PlayerState: CharacterState
 {   
     // Components
     protected PlayerData playerData;
@@ -39,12 +39,7 @@ public abstract class PlayerState
         playerData.Animator.SetBool(animationBool, false);
     }
 
-    public virtual void LogicUpdate() 
-    {
-        // isGrounded = playerData.FeetCollider.IsTouchingLayers(playerData.TerrainLayerMask);
-        // isJumping = playerData.RB.velocity.y > 0 && !isGrounded;
-        // isFalling = playerData.RB.velocity.y < 0 && !isGrounded;
-    }
+    public virtual void LogicUpdate() {}
 
     public virtual void PhysicsUpdate()
     {

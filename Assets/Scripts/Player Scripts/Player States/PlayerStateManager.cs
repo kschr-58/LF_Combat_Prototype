@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerStateManager : MonoBehaviour
+public class PlayerStateManager : StateManager
 {
     #region Fields
     [SerializeField] PlayerData _playerData;
@@ -27,23 +27,18 @@ public class PlayerStateManager : MonoBehaviour
 
     #region Unity Callback Methods
 
-    private void Awake()
-    {
-        InitializeStates();
-    }
-
     private void Start()
     {
         CurrentState = _idleState;
         CurrentState.Enter();
     }
 
-    private void Update()
+    protected override void Update()
     {
         CurrentState.LogicUpdate();
     }
 
-    private void FixedUpdate()
+    protected override void FixedUpdate()
     {
         CurrentState.PhysicsUpdate();
     }
@@ -63,9 +58,7 @@ public class PlayerStateManager : MonoBehaviour
 
     #endregion
 
-    #region Private Methods
-
-    private void InitializeStates()
+    protected override void InitializeStates()
     {
         _idleState = new PlayerIdleState(_playerData);
         _runningState = new PlayerRunningState(_playerData);
@@ -79,6 +72,4 @@ public class PlayerStateManager : MonoBehaviour
         _aerialKickState = new PlayerAirKickState(_playerData);
         _standingKickState = new PlayerStandingKickState(_playerData);
     }
-
-    #endregion
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyStateManager : MonoBehaviour
+public class EnemyStateManager : StateManager
 {
     #region Fields
     [SerializeField] EnemyData _enemyData;
@@ -21,23 +21,18 @@ public class EnemyStateManager : MonoBehaviour
 
     #region Unity Callback Methods
 
-    private void Awake()
-    {
-        InitializeStates();
-    }
-
     private void Start()
     {
         CurrentState = _idleState;
         CurrentState.Enter();
     }
 
-    private void Update()
+    protected override void Update()
     {
         CurrentState.LogicUpdate();
     }
 
-    private void FixedUpdate()
+    protected override void FixedUpdate()
     {
         CurrentState.PhysicsUpdate();
     }
@@ -56,16 +51,11 @@ public class EnemyStateManager : MonoBehaviour
     }
 
     #endregion
-
-    #region Private Methods
-
-    private void InitializeStates()
+    protected override void InitializeStates()
     {
         _idleState = new EnemyIdleState(_enemyData);
         _launchState = new EnemyHurtLaunchState(_enemyData);
         _forwardLaunchState = new EnemyHurtForwardLaunchState(_enemyData);
         _dragState = new EnemyHurtDragState(_enemyData);
     }
-
-    #endregion
 }

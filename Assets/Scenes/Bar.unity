@@ -492,10 +492,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.01605288
-    y: 0.016778523
-    width: 0.96694994
-    height: 0.96644294
+    x: 0
+    y: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -4398,12 +4398,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RB: {fileID: 1291096396}
   Animator: {fileID: 1291096394}
-  StateManager: {fileID: 1291096398}
   FeetCollider: {fileID: 1254774929}
-  TerrainLayer:
+  TerrainLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  EffectLibrary: {fileID: 11400000, guid: f89e131a9eb377d41a16570e0fb9df23, type: 2}
   AnimationTransmitter: {fileID: 1291096400}
+  StateManager: {fileID: 1291096398}
   DefaultGravity: 5
   LaunchGravity: 2
 --- !u!114 &1291096398
@@ -4672,7 +4673,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646461761}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13684,7 +13685,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2025957028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51925,6 +51926,14 @@ PrefabInstance:
       propertyPath: Crosshair
       value: 
       objectReference: {fileID: 1918920658}
+    - target: {fileID: 7901823774011076763, guid: 21174484565b3144b82f470a97e94685, type: 3}
+      propertyPath: EffectLibrary
+      value: 
+      objectReference: {fileID: 11400000, guid: f89e131a9eb377d41a16570e0fb9df23, type: 2}
+    - target: {fileID: 7901823774011076763, guid: 21174484565b3144b82f470a97e94685, type: 3}
+      propertyPath: TerrainLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21174484565b3144b82f470a97e94685, type: 3}
 --- !u!1001 &1570744493128551121
@@ -51964,7 +51973,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 1d2558d3d96f1974f9482b9979ed8e80, type: 2}
     - target: {fileID: 1570744493093800518, guid: 99a62f57c298c1f468687b215d4c8850, type: 3}
       propertyPath: _meleeTimeScaleModifier
-      value: 0.3
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1570744493093800518, guid: 99a62f57c298c1f468687b215d4c8850, type: 3}
       propertyPath: executionEffectDuration

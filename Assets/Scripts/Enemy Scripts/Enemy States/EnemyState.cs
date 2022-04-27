@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EnemyState
+public abstract class EnemyState: CharacterState
 {
     // Components
     protected EnemyData enemyData;
@@ -20,6 +20,40 @@ public abstract class EnemyState
         this.enemyData = enemyData;
         this.stateManager = enemyData.StateManager;
     }
+
+    #region Override Implementations
+
+    public void MoveHorizontally(float direction)
+    {
+        return;
+    }
+
+    public void Jump()
+    {
+        return;
+    }
+
+    public void EndJump()
+    {
+        return;
+    }
+
+    public void Dodge()
+    {
+        return;
+    }
+
+    public void Melee()
+    {
+        return;
+    }
+
+    public virtual bool CanFlip()
+    {
+        return false;
+    }
+
+    #endregion
 
     #region Base Logic Methods
 
@@ -46,7 +80,7 @@ public abstract class EnemyState
 
     protected virtual void DoChecks()
     {
-        isGrounded = enemyData.FeetCollider.IsTouchingLayers(enemyData.TerrainLayer);
+        isGrounded = enemyData.FeetCollider.IsTouchingLayers(enemyData.TerrainLayerMask);
         isFalling = enemyData.RB.velocity.y < 0 && !isGrounded;
     }
 
@@ -73,6 +107,7 @@ public abstract class EnemyState
     #endregion
 
     #region Abstract Methods
+
     protected abstract void AnimationEndEvent();
 
     #endregion
