@@ -25,11 +25,6 @@ public class PlayerFallingState : PlayerAerialState
         return;
     }
 
-    public override void Jump()
-    {
-        return;
-    }
-
     public override void Melee()
     {
         stateManager.ChangeState(stateManager._aerialKickState);

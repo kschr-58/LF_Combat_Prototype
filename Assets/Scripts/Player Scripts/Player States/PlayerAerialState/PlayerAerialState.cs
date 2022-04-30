@@ -24,6 +24,11 @@ public abstract class PlayerAerialState : PlayerState
         }
     }
 
+    public override void Jump()
+    {
+        return;
+    }
+
     public override void Dodge()
     {
         if (playerData.DodgingComponent.CanDodge()) stateManager.ChangeState(stateManager._aerialDodgeState);

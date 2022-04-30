@@ -25,8 +25,6 @@ public class PlayerMeleeAttack : MeleeAttack
         // Failsafe in case components are not present
         if (!damageManager || !colliderRB) return;
 
-        screenEffectHandler.MeleeHit();
-
         Vector2 knockbackForce = meleeData.KnockBackForce;
 
         // Make horizontal knockback relative to player direction

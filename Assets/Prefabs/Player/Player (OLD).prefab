@@ -5074,7 +5074,6 @@ GameObject:
   - component: {fileID: 983534747}
   - component: {fileID: 1030549217}
   - component: {fileID: 1091443001}
-  - component: {fileID: 825732307}
   m_Layer: 7
   m_Name: Player (OLD)
   m_TagString: Untagged
@@ -5134,27 +5133,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RB: {fileID: 0}
+  StateManager: {fileID: 0}
   Animator: {fileID: 0}
   FeetCollider: {fileID: 0}
-  AnimationTransmitter: {fileID: 0}
-  TerrainLayer:
+  TerrainLayerMask:
     serializedVersion: 2
     m_Bits: 0
   EffectLibrary: {fileID: 0}
-  StateManager: {fileID: 0}
+  AnimationTransmitter: {fileID: 0}
+  CharacterFlipper: {fileID: 0}
+  FlipVelocityTreshold: 0
   JumpingComponent: {fileID: 0}
   DodgingComponent: {fileID: 0}
   DodgeTrailComponent: {fileID: 0}
   ArmsComponent: {fileID: 0}
   Gun: {fileID: 0}
   Crosshair: {fileID: 0}
-  TerrainLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   RunSpeed: 0
   JumpVelocity: 0
   ShortHopModifier: 0
-  FlipVelocityTreshold: 0
   RunningTreshold: 0
   MaxDodgeCount: 0
   DodgeRegenTime: 0
@@ -5192,7 +5189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61617eac4c543474aa1c99e877583dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerData: {fileID: 0}
+  _characterData: {fileID: 0}
 --- !u!114 &1030549217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5220,20 +5217,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 3883726431632787572}
   dodgeCountText: {fileID: 0}
---- !u!114 &825732307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3883726431632787578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9eccc879866d14459e80d7a3c4b2afa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingColor: {r: 0.5019608, g: 0, b: 0, a: 1}
-  targetColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1001 &1274451406345299385
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -27,8 +27,6 @@ public class PlayerJumping : MonoBehaviour
 
     public void AerialJump()
     {
-        if (!groundedJumpReady) return;
-
         nextVelocity.x = _player.RB.velocity.x;
         nextVelocity.y = _player.JumpVelocity;
 

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5975764621323269440}
   - component: {fileID: 5975764621323269443}
-  - component: {fileID: 5975764621323269442}
   m_Layer: 0
   m_Name: Ceiling Lamp
   m_TagString: Untagged
@@ -86,20 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5975764621323269442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5975764621323269441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9eccc879866d14459e80d7a3c4b2afa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingColor: {r: 0.5019608, g: 0, b: 0, a: 0}
-  targetColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5975764622363130770
 GameObject:
   m_ObjectHideFlags: 0

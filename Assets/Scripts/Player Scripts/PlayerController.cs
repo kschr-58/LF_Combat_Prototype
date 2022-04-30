@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleFireInput()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButtonDown("Fire1"))
         {
             _playerData.ArmsComponent.FireWeapon();
         }
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMeleeInput()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetButtonDown("Fire2"))
         {
             _playerData.GetCurrentState().Melee();
         }

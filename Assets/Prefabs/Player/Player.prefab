@@ -68,7 +68,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 44
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -5255,7 +5255,6 @@ GameObject:
   - component: {fileID: 7464294580195123738}
   - component: {fileID: 6362792733983299086}
   - component: {fileID: 6362792734459175382}
-  - component: {fileID: 6362792734190310460}
   - component: {fileID: 7808469781473677286}
   m_Layer: 7
   m_Name: Player
@@ -5325,7 +5324,8 @@ MonoBehaviour:
     m_Bits: 64
   EffectLibrary: {fileID: 11400000, guid: f89e131a9eb377d41a16570e0fb9df23, type: 2}
   AnimationTransmitter: {fileID: 6362792734560798894}
-  FlipVelocityTreshold: 5
+  CharacterFlipper: {fileID: 0}
+  FlipVelocityTreshold: 1
   JumpingComponent: {fileID: 6362792733983299086}
   DodgingComponent: {fileID: 6362792734459175382}
   DodgeTrailComponent: {fileID: 8117948835941998483}
@@ -5401,20 +5401,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 7901823774011076763}
   dodgeCountText: {fileID: 750069229}
---- !u!114 &6362792734190310460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7901823774011076757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9eccc879866d14459e80d7a3c4b2afa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingColor: {r: 0.5019608, g: 0, b: 0, a: 1}
-  targetColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &7808469781473677286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5435,6 +5421,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7901823774011076756}
     m_Modifications:
+    - target: {fileID: 4828374222620446431, guid: ee758f55f42b4444aa4e08c194c2a697, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4828374222916332677, guid: ee758f55f42b4444aa4e08c194c2a697, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5526,6 +5516,10 @@ PrefabInstance:
     - target: {fileID: 4828374222916332730, guid: ee758f55f42b4444aa4e08c194c2a697, type: 3}
       propertyPath: m_Name
       value: Debug Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828374222916332730, guid: ee758f55f42b4444aa4e08c194c2a697, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5333431447382219797, guid: ee758f55f42b4444aa4e08c194c2a697, type: 3}
       propertyPath: scaleTarget

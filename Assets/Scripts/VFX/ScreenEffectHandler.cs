@@ -1,21 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
+
 
 public class ScreenEffectHandler : MonoBehaviour
 {
-    [SerializeField] float _meleeTimeScaleModifier;
+    [SerializeField] float _meleeTimeScale;
     [SerializeField] float _meleeSlowDuration;
-    [SerializeField] Material _solidColorMaterial;
+    [SerializeField] float _executionTimeScale;
     [SerializeField] float _executionEffectDuration;
-    [SerializeField] float _executionColorChangeModifier;
-    [SerializeField] float _executionTimeScaleModifier;
 
+    private Light2D[] _sceneLights;
+    private GameObject[] _objectsToHide;
+    private float _globalLightValue;
 
-    static ScreenEffectHandler singleton;
-
-    public delegate void ColorEffect(Material material, float duration, float colorChangeModifier);
-    public event ColorEffect OnColorChange;
+    private static ScreenEffectHandler singleton;
 
     #region Public Methods
 
@@ -27,20 +27,19 @@ public class ScreenEffectHandler : MonoBehaviour
     public void MeleeHit()
     {
         StopAllCoroutines();
-        StartCoroutine(SlowEffectCoroutine(_meleeTimeScaleModifier, _meleeSlowDuration));
+        StartCoroutine(SlowEffectCoroutine(_meleeTimeScale, _meleeSlowDuration));
     }
 
     public void Execution()
     {
-        OnColorChange(_solidColorMaterial, _executionEffectDuration, _executionColorChangeModifier);
-
         StopAllCoroutines();
-        StartCoroutine(SlowEffectCoroutine(_executionTimeScaleModifier, _executionEffectDuration));
+
+        StartCoroutine(ExecutionCoroutine());
     }
 
     #endregion
 
-    #region Private Methods
+    #region Unity Callback Methods
 
     private void Awake()
     {
@@ -49,10 +48,24 @@ public class ScreenEffectHandler : MonoBehaviour
         else singleton = this;
     }
 
+    private void Start()
+    {
+        _sceneLights = FindObjectsOfType<Light2D>();
+        _objectsToHide = GameObject.FindGameObjectsWithTag("Effect_Invisible");
+
+        foreach(Light2D light in _sceneLights)
+        {
+            if (light.lightType == Light2D.LightType.Global)
+            {
+                _globalLightValue = light.intensity;
+
+                break;
+            }
+        }
+    }
+
     private void Update()
     {
-        if (OnColorChange == null) return;
-
         if (Input.GetKeyDown(KeyCode.M))
         {
             Execution();
@@ -63,11 +76,54 @@ public class ScreenEffectHandler : MonoBehaviour
 
     #region Coroutines
 
-    private IEnumerator SlowEffectCoroutine(float modifier, float duration)
+    private IEnumerator SlowEffectCoroutine(float newTimeScale, float duration)
     {
-        Time.timeScale = Time.timeScale * modifier;
+        Time.timeScale = newTimeScale;
         yield return new WaitForSeconds(duration * Time.timeScale);
         Time.timeScale = 1;
+    }
+
+    private IEnumerator ExecutionCoroutine()
+    {
+        StartCoroutine(SlowEffectCoroutine(_executionTimeScale, _executionEffectDuration));
+
+        foreach (Light2D light in _sceneLights)
+        {
+            if (light.lightType == Light2D.LightType.Global)
+            {
+                light.intensity = 0f;
+                continue;
+            }
+            else
+            {
+                light.enabled = false;
+            }
+        }
+
+        foreach (GameObject objectToHide in _objectsToHide)
+        {
+            objectToHide.SetActive(false);
+        }
+
+        yield return new WaitForSeconds(_executionEffectDuration * Time.timeScale);
+
+        foreach (Light2D light in _sceneLights)
+        {
+            if (light.lightType == Light2D.LightType.Global)
+            {
+                light.intensity = _globalLightValue;
+                continue;
+            }
+            else
+            {
+                light.enabled = true;
+            }
+        }
+
+        foreach (GameObject objectToHide in _objectsToHide)
+        {
+            objectToHide.SetActive(true);
+        }
     }
 
     #endregion
