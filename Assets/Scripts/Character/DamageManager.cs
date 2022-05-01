@@ -8,7 +8,7 @@ public abstract class DamageManager : MonoBehaviour
 
     private void Start()
     {
-        screenEffectHandler = ScreenEffectHandler.GetInstance();
+        screenEffectHandler = ScreenEffectHandler.Singleton;
     }
 
     public abstract void Launch();

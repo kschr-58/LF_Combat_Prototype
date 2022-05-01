@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0a106b1aa4db64fae7ba9a06acb8c0, type: 3}
   m_Name: Test Effect Library
   m_EditorClassIdentifier: 
+  MeleeSparksEffect: {fileID: 9154480477629717180, guid: 095a9ee19389f444693db3dc9d7540e4, type: 3}
   HitEffect: {fileID: 4063237892343130234, guid: 571fb72c13f8e5a47b39bc0fa4b6bba0, type: 3}
   DownHitEffect: {fileID: 7766384027093301680, guid: bd5c5c58c34f6bc4dbfd711e40db6efd, type: 3}
   BigHitEffect: {fileID: 6854663525921556119, guid: adb4042aa9b5e874380284dca5d1b66a, type: 3}

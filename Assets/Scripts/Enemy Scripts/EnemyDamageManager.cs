@@ -9,21 +9,37 @@ public class EnemyDamageManager : DamageManager
     public override void Launch()
     {
         _enemyData.GetCurrentState().Launch();
-        screenEffectHandler.InstantiateVFX(_enemyData.EffectLibrary.HitEffect, _enemyData.transform.position, Quaternion.identity, _enemyData.transform.localScale);
+
+        // VFX
+        InstantiateVFX(_enemyData.EffectLibrary.HitEffect);
+        InstantiateVFX(_enemyData.EffectLibrary.MeleeSparksEffect);
+
         MainCamera.Singleton.CameraShake(3, 0.2f);
     }
 
     public override void ForwardLaunch()
     {
         _enemyData.GetCurrentState().ForwardLaunch();
-        screenEffectHandler.InstantiateVFX(_enemyData.EffectLibrary.BigHitEffect, _enemyData.transform.position, Quaternion.identity, _enemyData.transform.localScale);
+
+        // VFX
+        InstantiateVFX(_enemyData.EffectLibrary.BigHitEffect);
+        InstantiateVFX(_enemyData.EffectLibrary.MeleeSparksEffect);
+
         MainCamera.Singleton.CameraShake(2, 0.25f);
     }
 
     public override void StraightForwardLaunch()
     {
         _enemyData.GetCurrentState().StraightForwardLaunch();
-        screenEffectHandler.InstantiateVFX(_enemyData.EffectLibrary.BigHitEffect, _enemyData.transform.position, Quaternion.identity, _enemyData.transform.localScale);
+
+        // VFX
+        InstantiateVFX(_enemyData.EffectLibrary.BigHitEffect);
+        InstantiateVFX(_enemyData.EffectLibrary.MeleeSparksEffect);
         MainCamera.Singleton.CameraShake(2, 0.25f);
+    }
+
+    private void InstantiateVFX(GameObject prefab)
+    {
+        screenEffectHandler.InstantiateVFX(prefab, _enemyData.transform.position, Quaternion.identity, _enemyData.transform.localScale);
     }
 }

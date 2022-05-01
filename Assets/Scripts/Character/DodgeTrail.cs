@@ -58,7 +58,7 @@ public class DodgeTrail : MonoBehaviour
 
     private IEnumerator CloneCoroutine(GameObject clone)
     {
-        Transform newParent = ParticlesCollection.GetInstance().transform;
+        Transform newParent = ParticlesCollection.Singleton.transform;
 
         clone.transform.SetParent(newParent);
         

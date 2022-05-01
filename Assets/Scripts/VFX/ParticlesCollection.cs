@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class ParticlesCollection : MonoBehaviour
 {
-    static ParticlesCollection singleton;
+    public static ParticlesCollection Singleton { get; private set; }
 
-    public static ParticlesCollection GetInstance()
-    {
-        return singleton;
-    }
 
     private void Awake()
     {
-        if (singleton != null) Destroy(this);
-        else singleton = this;
+        if (Singleton != null) Destroy(this);
+        else Singleton = this;
     }
 }

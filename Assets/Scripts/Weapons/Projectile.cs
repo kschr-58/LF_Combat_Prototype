@@ -26,7 +26,7 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        GameObject newParticles = Instantiate(particlesPrefab, transform.position, transform.rotation, ParticlesCollection.GetInstance().transform);
+        GameObject newParticles = Instantiate(particlesPrefab, transform.position, transform.rotation, ParticlesCollection.Singleton.transform);
         Destroy(gameObject);
     }
 

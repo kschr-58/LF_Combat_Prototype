@@ -11,19 +11,19 @@ public class ScreenEffectHandler : MonoBehaviour
     [SerializeField] float _executionTimeScale;
     [SerializeField] float _executionEffectDuration;
 
+    public static ScreenEffectHandler Singleton { get; private set; }
+
     private Light2D[] _sceneLights;
     private GameObject[] _objectsToHide;
     private float _globalLightValue;
-
-    private static ScreenEffectHandler singleton;
 
     #region Unity Callback Methods
 
     private void Awake()
     {
-        if (singleton != null) Destroy(this);
+        if (Singleton != null) Destroy(this);
 
-        else singleton = this;
+        else Singleton = this;
     }
 
     private void Start()
@@ -54,11 +54,6 @@ public class ScreenEffectHandler : MonoBehaviour
 
     #region Public Methods
 
-    public static ScreenEffectHandler GetInstance()
-    {
-        return singleton;
-    }
-
     public void MeleeHit()
     {
         StartCoroutine(SlowEffectCoroutine(_meleeTimeScale, _meleeSlowDuration));
@@ -71,12 +66,12 @@ public class ScreenEffectHandler : MonoBehaviour
 
     public void InstantiateVFX(GameObject VFXPrefab, Vector2 position, Quaternion rotation)
     {
-        GameObject newEffect = Instantiate(VFXPrefab, position, rotation, transform);
+        GameObject newEffect = Instantiate(VFXPrefab, position, rotation, ParticlesCollection.Singleton.transform);
     }
 
     public void InstantiateVFX(GameObject VFXPrefab, Vector2 position, Quaternion rotation, Vector3 scale)
     {
-        GameObject newEffect = Instantiate(VFXPrefab, position, rotation, transform);
+        GameObject newEffect = Instantiate(VFXPrefab, position, rotation, ParticlesCollection.Singleton.transform);
 
         newEffect.transform.localScale = scale;
     }

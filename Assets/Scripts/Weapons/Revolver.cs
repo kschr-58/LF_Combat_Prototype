@@ -19,7 +19,7 @@ public class Revolver : Gun
         float angle = Mathf.Atan2(vectorTarget.y, vectorTarget.x) * Mathf.Rad2Deg;
         Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-        Instantiate(projectilePrefab, barrelPosition.transform.position, targetRotation, particlesCollection.transform);
+        Instantiate(projectilePrefab, barrelPosition.transform.position, targetRotation, ParticlesCollection.Singleton.transform);
 
         m_weaponUI.Fire();
 

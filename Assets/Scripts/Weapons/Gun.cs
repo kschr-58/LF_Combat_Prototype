@@ -13,7 +13,6 @@ public abstract class Gun : MonoBehaviour
 
     protected WeaponUI m_weaponUI;
     protected int currentAmmo;
-    protected ParticlesCollection particlesCollection;
     protected Crosshair crosshair;
 
     protected bool readyToFire;
@@ -22,7 +21,6 @@ public abstract class Gun : MonoBehaviour
 
     private void Start()
     {
-        this.particlesCollection = ParticlesCollection.GetInstance();
         this.crosshair = Crosshair.GetInstance();
 
         currentAmmo = maxAmmo;

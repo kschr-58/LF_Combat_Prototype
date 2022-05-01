@@ -124,6 +124,8 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _PixelateX: 5
+    - _PixelateY: 5
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Shininess: 0

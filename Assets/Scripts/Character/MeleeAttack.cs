@@ -12,7 +12,7 @@ public abstract class MeleeAttack : MonoBehaviour
     #region Unity Callback Methods
     private void Start()
     {
-        screenEffectHandler = ScreenEffectHandler.GetInstance();
+        screenEffectHandler = ScreenEffectHandler.Singleton;
 
         FetchRequiredComponents();
     }

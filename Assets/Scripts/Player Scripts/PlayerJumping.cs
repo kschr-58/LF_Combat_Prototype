@@ -23,7 +23,7 @@ public class PlayerJumping : MonoBehaviour
         _playerData.RB.velocity += nextVelocity;
 
         // Instantiate VFX
-        ScreenEffectHandler.GetInstance().InstantiateVFX(_playerData.EffectLibrary.ForwardJumpEffect, _playerData.transform.position, Quaternion.identity, _playerData.transform.localScale);
+        ScreenEffectHandler.Singleton.InstantiateVFX(_playerData.EffectLibrary.ForwardJumpEffect, _playerData.transform.position, Quaternion.identity, _playerData.transform.localScale);
 
         StartCoroutine(DelayGroundedJump());
     }
