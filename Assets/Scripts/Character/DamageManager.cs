@@ -4,19 +4,16 @@ using UnityEngine;
 
 public abstract class DamageManager : MonoBehaviour
 {
+    protected ScreenEffectHandler screenEffectHandler;
+
+    private void Start()
+    {
+        screenEffectHandler = ScreenEffectHandler.GetInstance();
+    }
+
     public abstract void Launch();
 
     public abstract void ForwardLaunch();
 
     public abstract void StraightForwardLaunch();
-
-    protected virtual IEnumerator InstantiateVFX(Vector2 location, GameObject VFXPrefab)
-    {
-        yield return new WaitForEndOfFrame(); //FIXME sloppy solution to wait for character to turn around
-
-        Vector3 parentScale = transform.localScale;
-        GameObject newEffect = Instantiate(VFXPrefab, location, Quaternion.identity, ParticlesCollection.GetInstance().transform);
-
-        newEffect.transform.localScale = parentScale;
-    }
 }

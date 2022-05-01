@@ -9,18 +9,21 @@ public class EnemyDamageManager : DamageManager
     public override void Launch()
     {
         _enemyData.GetCurrentState().Launch();
-        StartCoroutine(InstantiateVFX(_enemyData.transform.position, _enemyData.EffectLibrary.HitEffect));
+        screenEffectHandler.InstantiateVFX(_enemyData.EffectLibrary.HitEffect, _enemyData.transform.position, Quaternion.identity, _enemyData.transform.localScale);
+        MainCamera.Singleton.CameraShake(3, 0.2f);
     }
 
     public override void ForwardLaunch()
     {
         _enemyData.GetCurrentState().ForwardLaunch();
-        StartCoroutine(InstantiateVFX(_enemyData.transform.position, _enemyData.EffectLibrary.BigHitEffect));
+        screenEffectHandler.InstantiateVFX(_enemyData.EffectLibrary.BigHitEffect, _enemyData.transform.position, Quaternion.identity, _enemyData.transform.localScale);
+        MainCamera.Singleton.CameraShake(2, 0.25f);
     }
 
     public override void StraightForwardLaunch()
     {
         _enemyData.GetCurrentState().StraightForwardLaunch();
-        StartCoroutine(InstantiateVFX(_enemyData.transform.position, _enemyData.EffectLibrary.BigHitEffect));
+        screenEffectHandler.InstantiateVFX(_enemyData.EffectLibrary.BigHitEffect, _enemyData.transform.position, Quaternion.identity, _enemyData.transform.localScale);
+        MainCamera.Singleton.CameraShake(2, 0.25f);
     }
 }

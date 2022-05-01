@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerJumping : MonoBehaviour
 {
-    [SerializeField] PlayerData _player;
+    [SerializeField] PlayerData _playerData;
 
     Vector2 nextVelocity;
     float groundedJumpDelay = 0.1f;
@@ -18,19 +18,22 @@ public class PlayerJumping : MonoBehaviour
         if (!groundedJumpReady) return;
 
         nextVelocity.x = 0f;
-        nextVelocity.y = _player.JumpVelocity;
+        nextVelocity.y = _playerData.JumpVelocity;
 
-        _player.RB.velocity += nextVelocity;
+        _playerData.RB.velocity += nextVelocity;
+
+        // Instantiate VFX
+        ScreenEffectHandler.GetInstance().InstantiateVFX(_playerData.EffectLibrary.ForwardJumpEffect, _playerData.transform.position, Quaternion.identity, _playerData.transform.localScale);
 
         StartCoroutine(DelayGroundedJump());
     }
 
     public void AerialJump()
     {
-        nextVelocity.x = _player.RB.velocity.x;
-        nextVelocity.y = _player.JumpVelocity;
+        nextVelocity.x = _playerData.RB.velocity.x;
+        nextVelocity.y = _playerData.JumpVelocity;
 
-        _player.RB.velocity = nextVelocity;
+        _playerData.RB.velocity = nextVelocity;
 
         StartCoroutine(DelayGroundedJump());
     }
@@ -38,12 +41,12 @@ public class PlayerJumping : MonoBehaviour
     public void ShortHop()
     {
         // Perform jump check
-        if (_player.RB.velocity.y < 0) return;
+        if (_playerData.RB.velocity.y < 0) return;
 
-        nextVelocity.x = _player.RB.velocity.x;
-        nextVelocity.y = _player.RB.velocity.y * _player.ShortHopModifier;
+        nextVelocity.x = _playerData.RB.velocity.x;
+        nextVelocity.y = _playerData.RB.velocity.y * _playerData.ShortHopModifier;
         
-        _player.RB.velocity = nextVelocity;
+        _playerData.RB.velocity = nextVelocity;
     }
 
     #endregion

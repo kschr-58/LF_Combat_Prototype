@@ -15,3 +15,4 @@ MonoBehaviour:
   HitEffect: {fileID: 4063237892343130234, guid: 571fb72c13f8e5a47b39bc0fa4b6bba0, type: 3}
   DownHitEffect: {fileID: 7766384027093301680, guid: bd5c5c58c34f6bc4dbfd711e40db6efd, type: 3}
   BigHitEffect: {fileID: 6854663525921556119, guid: adb4042aa9b5e874380284dca5d1b66a, type: 3}
+  ForwardJumpEffect: {fileID: 6737916716161686914, guid: cfb585592cbde4d439d60f2e8a041f94, type: 3}

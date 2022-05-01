@@ -17,28 +17,6 @@ public class ScreenEffectHandler : MonoBehaviour
 
     private static ScreenEffectHandler singleton;
 
-    #region Public Methods
-
-    public static ScreenEffectHandler GetInstance()
-    {
-        return singleton;
-    }
-
-    public void MeleeHit()
-    {
-        StopAllCoroutines();
-        StartCoroutine(SlowEffectCoroutine(_meleeTimeScale, _meleeSlowDuration));
-    }
-
-    public void Execution()
-    {
-        StopAllCoroutines();
-
-        StartCoroutine(ExecutionCoroutine());
-    }
-
-    #endregion
-
     #region Unity Callback Methods
 
     private void Awake()
@@ -53,7 +31,7 @@ public class ScreenEffectHandler : MonoBehaviour
         _sceneLights = FindObjectsOfType<Light2D>();
         _objectsToHide = GameObject.FindGameObjectsWithTag("Effect_Invisible");
 
-        foreach(Light2D light in _sceneLights)
+        foreach (Light2D light in _sceneLights)
         {
             if (light.lightType == Light2D.LightType.Global)
             {
@@ -70,6 +48,37 @@ public class ScreenEffectHandler : MonoBehaviour
         {
             Execution();
         }
+    }
+
+    #endregion
+
+    #region Public Methods
+
+    public static ScreenEffectHandler GetInstance()
+    {
+        return singleton;
+    }
+
+    public void MeleeHit()
+    {
+        StartCoroutine(SlowEffectCoroutine(_meleeTimeScale, _meleeSlowDuration));
+    }
+
+    public void Execution()
+    {
+        StartCoroutine(ExecutionCoroutine());
+    }
+
+    public void InstantiateVFX(GameObject VFXPrefab, Vector2 position, Quaternion rotation)
+    {
+        GameObject newEffect = Instantiate(VFXPrefab, position, rotation, transform);
+    }
+
+    public void InstantiateVFX(GameObject VFXPrefab, Vector2 position, Quaternion rotation, Vector3 scale)
+    {
+        GameObject newEffect = Instantiate(VFXPrefab, position, rotation, transform);
+
+        newEffect.transform.localScale = scale;
     }
 
     #endregion

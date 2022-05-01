@@ -6,4 +6,5 @@ public class EffectLibrary : ScriptableObject
     [SerializeField] public GameObject HitEffect;
     [SerializeField] public GameObject DownHitEffect;
     [SerializeField] public GameObject BigHitEffect;
+    [SerializeField] public GameObject ForwardJumpEffect;
 }

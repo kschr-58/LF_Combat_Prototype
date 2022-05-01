@@ -59,7 +59,7 @@
     <Compile Include="Assets\Scripts\Character\SpriteClone.cs" />
     <Compile Include="Assets\Scripts\System\Crosshair.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyHurtTumbleState.cs" />
-    <Compile Include="Assets\Scripts\VFX\VFXAutoDestroy.cs" />
+    <Compile Include="Assets\Scripts\VFX\VFX.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerState.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\PlayerDodging.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyState.cs" />
@@ -116,6 +116,7 @@
     <Compile Include="Assets\Scripts\Character\AnimationTransmitter.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyGroundedState\EnemyGroundedState.cs" />
     <Compile Include="Assets\Scripts\Character\PositionClone.cs" />
+    <Compile Include="Assets\Scripts\System\MainCamera.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -375,6 +376,9 @@
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Rocks">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="clipper_library">
+      <HintPath>Library\PackageCache\com.unity.cinemachine@2.8.4\Runtime\ThirdParty\clipper_library.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.0f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -907,6 +911,14 @@
     <ProjectReference Include="Unity.2D.SpriteShape.Runtime.csproj">
       <Project>{9C69A418-7CD9-9E6F-B1C7-947C70A2BBE2}</Project>
       <Name>Unity.2D.SpriteShape.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
+      <Project>{14C3EB2A-4DCC-088D-D99E-36DC6B983A7B}</Project>
+      <Name>com.unity.cinemachine.editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Cinemachine.csproj">
+      <Project>{8B27CF49-9731-F820-B773-47C018BE975A}</Project>
+      <Name>Cinemachine</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

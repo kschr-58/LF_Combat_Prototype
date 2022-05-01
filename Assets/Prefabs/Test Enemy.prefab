@@ -247,7 +247,8 @@ MonoBehaviour:
     m_Bits: 64
   EffectLibrary: {fileID: 11400000, guid: f89e131a9eb377d41a16570e0fb9df23, type: 2}
   AnimationTransmitter: {fileID: 1291096400}
-  FlipVelocityTreshold: 5
+  CharacterFlipper: {fileID: 1291096402}
+  FlipVelocityTreshold: 1
   SidesCollider: {fileID: 4752093789425801465}
   DefaultGravity: 5
   LaunchGravity: 2
@@ -489,6 +490,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3751611176340492651}
     m_Modifications:
+    - target: {fileID: 4828374222620446431, guid: ee758f55f42b4444aa4e08c194c2a697, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4828374222916332677, guid: ee758f55f42b4444aa4e08c194c2a697, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

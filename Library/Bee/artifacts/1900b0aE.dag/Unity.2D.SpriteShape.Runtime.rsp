@@ -329,6 +329,7 @@
 -r:"C:/Users/K4Z/Documents/Unity Projects/LF_Prototype/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.CodeGen/Unity.Burst.Cecil.Pdb.dll"
 -r:"C:/Users/K4Z/Documents/Unity Projects/LF_Prototype/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.CodeGen/Unity.Burst.Cecil.Rocks.dll"
 -r:"C:/Users/K4Z/Documents/Unity Projects/LF_Prototype/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.Unsafe.dll"
+-r:"C:/Users/K4Z/Documents/Unity Projects/LF_Prototype/Library/PackageCache/com.unity.cinemachine@2.8.4/Runtime/ThirdParty/clipper_library.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.2D.Common.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Burst.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Mathematics.ref.dll"

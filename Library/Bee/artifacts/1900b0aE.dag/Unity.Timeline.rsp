@@ -329,6 +329,7 @@
 -r:"C:/Users/K4Z/Documents/Unity Projects/LF_Prototype/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.CodeGen/Unity.Burst.Cecil.Pdb.dll"
 -r:"C:/Users/K4Z/Documents/Unity Projects/LF_Prototype/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.CodeGen/Unity.Burst.Cecil.Rocks.dll"
 -r:"C:/Users/K4Z/Documents/Unity Projects/LF_Prototype/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.Unsafe.dll"
+-r:"C:/Users/K4Z/Documents/Unity Projects/LF_Prototype/Library/PackageCache/com.unity.cinemachine@2.8.4/Runtime/ThirdParty/clipper_library.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Library/PackageCache/com.unity.timeline@1.6.4/Runtime/Activation/ActivationMixerPlayable.cs"

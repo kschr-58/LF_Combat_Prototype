@@ -15,6 +15,8 @@ public class EnemyHurtWallsplatState : EnemyHurtState
         base.Enter();
 
         enemyData.RB.gravityScale = enemyData.WallSplatGravity;
+
+        MainCamera.Singleton.CameraShake(5, 0.2f);
     }
 
     public override void LogicUpdate()
