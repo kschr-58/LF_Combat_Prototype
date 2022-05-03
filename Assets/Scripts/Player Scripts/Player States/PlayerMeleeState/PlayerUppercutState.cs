@@ -10,6 +10,14 @@ public class PlayerUppercutState : PlayerMeleeState
         this.animationBool = "Uppercut";
     }
 
+    public override void Enter()
+    {
+        base.Enter();
+
+        // Instantiate VFX
+        ScreenEffectHandler.Singleton.InstantiateVFX(playerData.EffectLibrary.ForwardJumpEffect, playerData.transform.position, Quaternion.identity, playerData.transform.localScale);
+    }
+
     protected override void ExertMeleeVelocity()
     {
         nextVelocity.x = playerData.UppercutVelocity.x * playerData.transform.localScale.x;

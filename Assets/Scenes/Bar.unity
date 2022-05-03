@@ -55340,6 +55340,10 @@ PrefabInstance:
       propertyPath: UppercutVelocity.y
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 7901823774011076763, guid: 21174484565b3144b82f470a97e94685, type: 3}
+      propertyPath: StandingKickVelocity.x
+      value: 32
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21174484565b3144b82f470a97e94685, type: 3}
 --- !u!1001 &1570744493128551121

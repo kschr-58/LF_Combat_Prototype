@@ -16,14 +16,11 @@ public class PlayerStandingKickState : PlayerMeleeState
     {
         base.Enter();
 
-        playerData.SmokeTrail.EnableTrail();
-    }
-
-    public override void Exit()
-    {
-        base.Exit();
-
-        playerData.SmokeTrail.DisableTrail();
+        // Instantiate VFX
+        Vector3 effectScale = playerData.transform.localScale;
+        effectScale.x *= -1;
+        
+        ScreenEffectHandler.Singleton.InstantiateVFX(playerData.EffectLibrary.ForwardJumpEffect, playerData.transform.position, Quaternion.identity, effectScale);
     }
 
     protected override void ExertMeleeVelocity()

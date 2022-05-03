@@ -28,6 +28,6 @@ public class EnemyHurtTumbleState : EnemyHurtState
     {
         base.LogicUpdate();
 
-        if (Mathf.Abs(enemyData.RB.velocity.x) < 12) stateManager.ChangeState(stateManager._dragState); //FIXME magic number
+        if (Mathf.Abs(enemyData.RB.velocity.x) < 10) stateManager.ChangeState(stateManager._dragState); //FIXME magic number
     }
 }
