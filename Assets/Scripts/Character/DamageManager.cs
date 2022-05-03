@@ -16,4 +16,6 @@ public abstract class DamageManager : MonoBehaviour
     public abstract void ForwardLaunch();
 
     public abstract void StraightForwardLaunch();
+
+    public abstract void Shot();
 }

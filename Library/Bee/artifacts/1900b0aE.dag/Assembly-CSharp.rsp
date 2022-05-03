@@ -384,6 +384,7 @@
 "Assets/Scripts/Enemy Scripts/Enemy States/EnemyHurtState/EnemyHurtDragState.cs"
 "Assets/Scripts/Enemy Scripts/Enemy States/EnemyHurtState/EnemyHurtForwardLaunchState.cs"
 "Assets/Scripts/Enemy Scripts/Enemy States/EnemyHurtState/EnemyHurtLaunchState.cs"
+"Assets/Scripts/Enemy Scripts/Enemy States/EnemyHurtState/EnemyHurtShotState.cs"
 "Assets/Scripts/Enemy Scripts/Enemy States/EnemyHurtState/EnemyHurtState.cs"
 "Assets/Scripts/Enemy Scripts/Enemy States/EnemyHurtState/EnemyHurtTumbleState.cs"
 "Assets/Scripts/Enemy Scripts/Enemy States/EnemyHurtState/EnemyHurtWallslumpState.cs"

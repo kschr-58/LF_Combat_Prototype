@@ -71,6 +71,11 @@ public abstract class PlayerState: CharacterState
         return;
     }
 
+    public virtual void Shot()
+    {
+        return;
+    }
+
     public virtual string GetStateName()
     {
         return this.stateName;

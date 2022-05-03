@@ -38,6 +38,15 @@ public class EnemyDamageManager : DamageManager
         MainCamera.Singleton.CameraShake(2, 0.25f);
     }
 
+    public override void Shot()
+    {
+        _enemyData.GetCurrentState().Shot();
+        
+        InstantiateVFX(_enemyData.EffectLibrary.MeleeSparksEffect);
+        
+        MainCamera.Singleton.CameraShake(1, 0.1f);
+    }
+
     private void InstantiateVFX(GameObject prefab)
     {
         screenEffectHandler.InstantiateVFX(prefab, _enemyData.transform.position, Quaternion.identity, _enemyData.transform.localScale);

@@ -19,11 +19,18 @@ public class PlayerAirKickState : PlayerMeleeState
         }
     }
 
+    public override void EndJump()
+    {
+        playerData.JumpingComponent.ShortHop();
+    }
+
     protected override void ExertMeleeVelocity()
     {
         // nextVelocity.x = playerData.AerialKickVelocity.x * playerData.transform.localScale.x;
         // nextVelocity.y = playerData.AerialKickVelocity.y;
 
         // playerData.RB.velocity = nextVelocity;
+
+        return;
     }
 }

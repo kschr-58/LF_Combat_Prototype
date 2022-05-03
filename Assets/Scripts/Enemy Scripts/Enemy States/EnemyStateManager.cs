@@ -17,6 +17,7 @@ public class EnemyStateManager : StateManager
     public EnemyHurtWallsplatState _wallsplatState;
     public EnemyHurtWallslumpState _wallslumpState;
     public EnemyHurtTumbleState _tumbleState;
+    public EnemyHurtShotState _shotState;
     public EnemyDragRecoverState _dragRecoverState;
 
     #endregion
@@ -56,12 +57,15 @@ public class EnemyStateManager : StateManager
     protected override void InitializeStates()
     {
         _idleState = new EnemyIdleState(_enemyData);
+        
         _launchState = new EnemyHurtLaunchState(_enemyData);
         _forwardLaunchState = new EnemyHurtForwardLaunchState(_enemyData);
         _dragState = new EnemyHurtDragState(_enemyData);
         _wallsplatState = new EnemyHurtWallsplatState(_enemyData);
         _wallslumpState = new EnemyHurtWallslumpState(_enemyData);
         _tumbleState = new EnemyHurtTumbleState(_enemyData);
+        _shotState = new EnemyHurtShotState(_enemyData);
+
         _dragRecoverState = new EnemyDragRecoverState(_enemyData);
     }
 }

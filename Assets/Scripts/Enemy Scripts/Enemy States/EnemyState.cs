@@ -114,6 +114,11 @@ public abstract class EnemyState: CharacterState
         else stateManager.ChangeState(stateManager._forwardLaunchState);
     }
 
+    public virtual void Shot()
+    {
+        stateManager.ChangeState(stateManager._shotState);
+    }
+
     #endregion
 
     #region Abstract Methods

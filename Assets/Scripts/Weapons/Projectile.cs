@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] GameObject particlesPrefab;
-    [SerializeField] float travelSpeed;
-    [SerializeField] float lifeTime;
+    [SerializeField] GameObject _particlesPrefab;
+    [SerializeField] float _travelSpeed;
+    [SerializeField] float _lifeTime;
+    [SerializeField] Vector2 _knockBackVelocity;
 
     Rigidbody2D m_rB;
 
@@ -19,15 +20,35 @@ public class Projectile : MonoBehaviour
     {
         m_rB = GetComponent<Rigidbody2D>();
 
-        m_rB.velocity = transform.right * travelSpeed;
+        m_rB.velocity = transform.right * _travelSpeed;
         
         StartCoroutine(LifeTimeCoroutine());
     }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        GameObject newParticles = Instantiate(particlesPrefab, transform.position, transform.rotation, ParticlesCollection.Singleton.transform);
+        HitTarget(col.collider);
+
+        GameObject newParticles = Instantiate(_particlesPrefab, transform.position, transform.rotation, ParticlesCollection.Singleton.transform);
         Destroy(gameObject);
+    }
+
+    private void HitTarget(Collider2D collider)
+    {
+        // Check for target
+        DamageManager damageManager = collider.GetComponent<DamageManager>();
+        Rigidbody2D colliderRB = collider.GetComponent<Rigidbody2D>();
+
+        // Failsafe in case components are not present
+        if (!damageManager || !colliderRB) return;
+
+        // Make horizontal knockback relative to bullet direction
+        Vector2 knockbackForce = _knockBackVelocity;
+        knockbackForce.x *= Mathf.Sign(colliderRB.velocity.x);
+
+        colliderRB.velocity = knockbackForce;
+
+        damageManager.Shot();
     }
 
     #endregion
@@ -36,7 +57,7 @@ public class Projectile : MonoBehaviour
 
     private IEnumerator LifeTimeCoroutine()
     {
-        yield return new WaitForSeconds(lifeTime);
+        yield return new WaitForSeconds(_lifeTime);
 
         Destroy(gameObject);
     }

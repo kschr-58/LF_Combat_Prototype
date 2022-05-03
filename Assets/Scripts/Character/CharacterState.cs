@@ -14,6 +14,7 @@ public interface CharacterState
     public void Launch();
     public void ForwardLaunch();
     public void StraightForwardLaunch();
+    public void Shot();
     public string GetStateName();
     public bool CanFlip();
 }

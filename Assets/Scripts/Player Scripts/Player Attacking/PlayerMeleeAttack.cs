@@ -19,7 +19,7 @@ public class PlayerMeleeAttack : MeleeAttack
         targetsHit.Add(col.gameObject);
 
         // Gather target components
-        EnemyDamageManager damageManager = col.GetComponent<EnemyDamageManager>();
+        DamageManager damageManager = col.GetComponent<DamageManager>();
         Rigidbody2D colliderRB = col.GetComponent<Rigidbody2D>();
 
         // Failsafe in case components are not present

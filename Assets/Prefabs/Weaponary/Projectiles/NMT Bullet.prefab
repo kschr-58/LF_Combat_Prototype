@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1947715341
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3a1a24530e4652b45b806e3c01882ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -129,7 +129,7 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1947715341
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Time: 0.5
   m_Parameters:
@@ -247,9 +247,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b731e4069228741bb999da4e673309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlesPrefab: {fileID: 7098421560213723579, guid: 8a516f0d023841a4d97605a6546e6e3c, type: 3}
-  travelSpeed: 150
-  lifeTime: 1
+  _particlesPrefab: {fileID: 7098421560213723579, guid: 8a516f0d023841a4d97605a6546e6e3c, type: 3}
+  _travelSpeed: 150
+  _lifeTime: 1
+  _knockBackVelocity: {x: 3, y: 8}
 --- !u!1 &6031561451916460788
 GameObject:
   m_ObjectHideFlags: 0

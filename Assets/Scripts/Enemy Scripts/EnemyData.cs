@@ -10,6 +10,7 @@ public class EnemyData : CharacterData
 
     [Header("Damage properties")]
     [SerializeField] internal float DefaultGravity;
+    [SerializeField] internal float ShotGravity;
     [SerializeField] internal float LaunchGravity;
     [SerializeField] internal float WallSplatGravity;
 
