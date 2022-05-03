@@ -100,7 +100,7 @@
      <Compile Include="Assets\Scripts\VFX\VFXAutoDestroy.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyRecoverState\EnemyRecoverState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyRecoverState\EnemyDragRecoverState.cs" />
-     <Compile Include="Assets\SmokeTrail.cs" />
+     <Compile Include="Assets\Scripts\VFX\SmokeTrail.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerMeleeState\PlayerSwipeState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyHurtShotState.cs" />
     <Reference Include="UnityEngine">

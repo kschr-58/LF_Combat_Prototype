@@ -430,12 +430,12 @@
 "Assets/Scripts/System/UI/WeaponUI.cs"
 "Assets/Scripts/VFX/ParticlesCollection.cs"
 "Assets/Scripts/VFX/ScreenEffectHandler.cs"
+"Assets/Scripts/VFX/SmokeTrail.cs"
 "Assets/Scripts/VFX/VFX.cs"
 "Assets/Scripts/VFX/VFXAutoDestroy.cs"
 "Assets/Scripts/Weapons/Gun.cs"
 "Assets/Scripts/Weapons/Projectile.cs"
 "Assets/Scripts/Weapons/Revolver.cs"
-"Assets/SmokeTrail.cs"
 -langversion:9.0
 
 /deterministic

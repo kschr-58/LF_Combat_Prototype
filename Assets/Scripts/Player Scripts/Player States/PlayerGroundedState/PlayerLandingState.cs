@@ -10,6 +10,14 @@ public class PlayerLandingState : PlayerGroundedState
         this.animationBool = "Landing";
     }
 
+    public override void Enter()
+    {
+        base.Enter();
+
+        // Instantiate VFX
+        ScreenEffectHandler.Singleton.InstantiateVFX(playerData.EffectLibrary.LandingEffect, playerData.transform.position, Quaternion.identity, playerData.transform.localScale);
+    }
+
     public override void LogicUpdate()
     {
         base.LogicUpdate();
