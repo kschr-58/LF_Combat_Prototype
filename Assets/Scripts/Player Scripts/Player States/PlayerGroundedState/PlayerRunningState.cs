@@ -10,6 +10,20 @@ public class PlayerRunningState : PlayerGroundedState
         this.animationBool = "Running";
     }
 
+    public override void Enter()
+    {
+        base.Enter();
+
+        playerData.SmokeTrail.EnableTrail();
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+
+        playerData.SmokeTrail.DisableTrail();
+    }
+
     public override void LogicUpdate()
     {
         base.LogicUpdate();

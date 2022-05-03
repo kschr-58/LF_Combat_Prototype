@@ -10,6 +10,7 @@ public abstract class PlayerState: CharacterState
     public string stateName {get; protected set;}
     protected Vector2 nextVelocity;
     protected float startTime;
+    protected float verticalInput;
     protected string animationBool;
     protected bool isJumping;
     protected bool isFalling;
@@ -21,6 +22,15 @@ public abstract class PlayerState: CharacterState
         this.playerData = playerData;
         this.stateManager = playerData.GetComponent<PlayerStateManager>();
     }
+
+    #region Override Implementations
+
+    public void MoveVertically(float direction)
+    {
+        verticalInput = direction;
+    }
+
+    #endregion
 
     #region Virtual Methods
 

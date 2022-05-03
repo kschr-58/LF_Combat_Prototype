@@ -21,6 +21,7 @@ public class PlayerStateManager : StateManager
     public PlayerUppercutState _uppercutState;
     public PlayerAirKickState _aerialKickState;
     public PlayerStandingKickState _standingKickState;
+    public PlayerSwipeState _swipeState;
 
     #endregion
 
@@ -70,5 +71,6 @@ public class PlayerStateManager : StateManager
         _uppercutState = new PlayerUppercutState(_playerData);
         _aerialKickState = new PlayerAirKickState(_playerData);
         _standingKickState = new PlayerStandingKickState(_playerData);
+        _swipeState = new PlayerSwipeState(_playerData);
     }
 }

@@ -388,6 +388,8 @@
 "Assets/Scripts/Enemy Scripts/Enemy States/EnemyHurtState/EnemyHurtTumbleState.cs"
 "Assets/Scripts/Enemy Scripts/Enemy States/EnemyHurtState/EnemyHurtWallslumpState.cs"
 "Assets/Scripts/Enemy Scripts/Enemy States/EnemyHurtState/EnemyHurtWallsplatState.cs"
+"Assets/Scripts/Enemy Scripts/Enemy States/EnemyRecoverState/EnemyDragRecoverState.cs"
+"Assets/Scripts/Enemy Scripts/Enemy States/EnemyRecoverState/EnemyRecoverState.cs"
 "Assets/Scripts/Enemy Scripts/Enemy States/EnemyState.cs"
 "Assets/Scripts/Enemy Scripts/Enemy States/EnemyStateManager.cs"
 "Assets/Scripts/Enemy Scripts/EnemyDamageManager.cs"
@@ -409,6 +411,7 @@
 "Assets/Scripts/Player Scripts/Player States/PlayerMeleeState/PlayerAirKickState.cs"
 "Assets/Scripts/Player Scripts/Player States/PlayerMeleeState/PlayerMeleeState.cs"
 "Assets/Scripts/Player Scripts/Player States/PlayerMeleeState/PlayerStandingKickState.cs"
+"Assets/Scripts/Player Scripts/Player States/PlayerMeleeState/PlayerSwipeState.cs"
 "Assets/Scripts/Player Scripts/Player States/PlayerMeleeState/PlayerUppercutState.cs"
 "Assets/Scripts/Player Scripts/Player States/PlayerState.cs"
 "Assets/Scripts/Player Scripts/Player States/PlayerStateManager.cs"
@@ -427,10 +430,11 @@
 "Assets/Scripts/VFX/ParticlesCollection.cs"
 "Assets/Scripts/VFX/ScreenEffectHandler.cs"
 "Assets/Scripts/VFX/VFX.cs"
+"Assets/Scripts/VFX/VFXAutoDestroy.cs"
 "Assets/Scripts/Weapons/Gun.cs"
 "Assets/Scripts/Weapons/Projectile.cs"
 "Assets/Scripts/Weapons/Revolver.cs"
-"Assets/VFXAutoDestroy.cs"
+"Assets/SmokeTrail.cs"
 -langversion:9.0
 
 /deterministic

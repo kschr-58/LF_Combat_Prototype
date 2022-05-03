@@ -27,7 +27,8 @@ public class PlayerIdleState : PlayerGroundedState
 
     public override void Melee()
     {
-        stateManager.ChangeState(stateManager._uppercutState);
+        if (verticalInput == 1) stateManager.ChangeState(stateManager._uppercutState);
+        else stateManager.ChangeState(stateManager._swipeState);
     }
 
     protected override void AnimationEndEvent()

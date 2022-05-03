@@ -12,6 +12,20 @@ public class PlayerStandingKickState : PlayerMeleeState
         this.velocityDecreaseModifier = 0.8f;
     }
 
+    public override void Enter()
+    {
+        base.Enter();
+
+        playerData.SmokeTrail.EnableTrail();
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+
+        playerData.SmokeTrail.DisableTrail();
+    }
+
     protected override void ExertMeleeVelocity()
     {
         nextVelocity.x = playerData.StandingKickVelocity.x * playerData.transform.localScale.x;

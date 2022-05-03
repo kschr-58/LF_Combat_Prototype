@@ -6,6 +6,7 @@ public interface CharacterState
     public void PhysicsUpdate();
 
     public void MoveHorizontally(float direction);
+    public void MoveVertically(float direction);
     public void Jump();
     public void EndJump();
     public void Dodge();
@@ -13,7 +14,6 @@ public interface CharacterState
     public void Launch();
     public void ForwardLaunch();
     public void StraightForwardLaunch();
-    
     public string GetStateName();
     public bool CanFlip();
 }

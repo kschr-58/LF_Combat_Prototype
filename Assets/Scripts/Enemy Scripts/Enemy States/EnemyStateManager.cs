@@ -17,6 +17,7 @@ public class EnemyStateManager : StateManager
     public EnemyHurtWallsplatState _wallsplatState;
     public EnemyHurtWallslumpState _wallslumpState;
     public EnemyHurtTumbleState _tumbleState;
+    public EnemyDragRecoverState _dragRecoverState;
 
     #endregion
 
@@ -61,5 +62,6 @@ public class EnemyStateManager : StateManager
         _wallsplatState = new EnemyHurtWallsplatState(_enemyData);
         _wallslumpState = new EnemyHurtWallslumpState(_enemyData);
         _tumbleState = new EnemyHurtTumbleState(_enemyData);
+        _dragRecoverState = new EnemyDragRecoverState(_enemyData);
     }
 }

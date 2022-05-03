@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private void HandleInput()
     {
         HandleHorizontalInput();
+        HandleVerticalInput();
         HandleJumpInput();
         HandleDodgeInput();
         HandleFireInput();
@@ -37,6 +38,8 @@ public class PlayerController : MonoBehaviour
     private void HandleVerticalInput()
     {
         _directionalInput.y = Input.GetAxisRaw("Vertical");
+        
+        _playerData.GetCurrentState().MoveVertically(_directionalInput.y);
     }
 
     private void HandleJumpInput()

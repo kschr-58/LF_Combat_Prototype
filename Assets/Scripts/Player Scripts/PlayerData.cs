@@ -15,6 +15,7 @@ public class PlayerData : CharacterData
     [SerializeField] internal Arms ArmsComponent;
     [SerializeField] internal Gun Gun;
     [SerializeField] internal Crosshair Crosshair;
+    [SerializeField] internal SmokeTrail SmokeTrail;
 
     [Header("Player Movement Properties")]
     [SerializeField] internal float RunSpeed;
@@ -38,5 +39,6 @@ public class PlayerData : CharacterData
     [SerializeField] internal Vector2 UppercutVelocity;
     [SerializeField] internal Vector2 AerialKickVelocity;
     [SerializeField] internal Vector2 StandingKickVelocity;
+    [SerializeField] internal Vector2 SwipeVelocity;
 
 }

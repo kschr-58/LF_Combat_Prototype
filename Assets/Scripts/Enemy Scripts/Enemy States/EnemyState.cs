@@ -28,6 +28,11 @@ public abstract class EnemyState: CharacterState
         return;
     }
 
+    public void MoveVertically(float direction)
+    {
+        return;
+    }
+
     public void Jump()
     {
         return;

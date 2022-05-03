@@ -6,6 +6,7 @@ public class EnemyData : CharacterData
 {
     [Header("Enemy Components")]
     [SerializeField] internal BoxCollider2D SidesCollider;
+    [SerializeField] internal SmokeTrail SmokeTrail;
 
     [Header("Damage properties")]
     [SerializeField] internal float DefaultGravity;
