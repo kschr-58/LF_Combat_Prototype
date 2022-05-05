@@ -28,7 +28,10 @@ public abstract class PlayerAerialState : PlayerState
 
     public override void Melee()
     {
-        if (verticalInput == -1) stateManager.ChangeState(stateManager._spikeState);
+        if (verticalInput == -1)
+        {
+            stateManager.ChangeState(stateManager._spikeState);
+        }
 
         else stateManager.ChangeState(stateManager._aerialKickState);
     }

@@ -53,7 +53,7 @@ public class PlayerDodgeState : PlayerState
         return;
     }
 
-    public override void MoveHorizontally(float h_Axis)
+    protected override void MoveHorizontally(float h_Axis)
     {
         return;
     }

@@ -17,6 +17,8 @@ public class PlayerMeleeSpikeState : PlayerMeleeState
         nextVelocity.x = playerData.SpikeVelocity.x * playerData.transform.localScale.x;
         nextVelocity.y = playerData.SpikeVelocity.y;
 
+        // if (!isMovingForward) nextVelocity.x *= 0.5f;
+
         playerData.RB.velocity = nextVelocity;
     }
 }
