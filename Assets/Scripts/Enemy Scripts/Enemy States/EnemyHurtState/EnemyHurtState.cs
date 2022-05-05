@@ -1,6 +1,6 @@
 public abstract class EnemyHurtState : EnemyState
 {
-    protected bool isAnimationLocked;
+    protected bool isStateLocked;
 
     protected EnemyHurtState(EnemyData enemyData) : base(enemyData) {}
 

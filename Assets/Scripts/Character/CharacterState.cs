@@ -5,8 +5,8 @@ public interface CharacterState
     public void LogicUpdate();
     public void PhysicsUpdate();
 
-    public void MoveHorizontally(float direction);
-    public void MoveVertically(float direction);
+    public void RegisterHorizontalInput(float direction);
+    public void RegisterVerticalInput(float direction);
     public void Jump();
     public void EndJump();
     public void Dodge();
@@ -14,6 +14,7 @@ public interface CharacterState
     public void Launch();
     public void ForwardLaunch();
     public void StraightForwardLaunch();
+    public void Spike();
     public void Shot();
     public string GetStateName();
     public bool CanFlip();

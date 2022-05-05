@@ -6,14 +6,6 @@ public abstract class PlayerAerialState : PlayerState
 {
     protected PlayerAerialState(PlayerData playerData) : base(playerData) {}
 
-    public override void MoveHorizontally(float h_Axis)
-    {
-        nextVelocity.x = playerData.RunSpeed * h_Axis;
-        nextVelocity.y = playerData.RB.velocity.y;
-
-        playerData.RB.velocity = nextVelocity;
-    }
-
     public override void LogicUpdate()
     {
         base.LogicUpdate();
@@ -32,6 +24,13 @@ public abstract class PlayerAerialState : PlayerState
     public override void Dodge()
     {
         if (playerData.DodgingComponent.CanDodge()) stateManager.ChangeState(stateManager._aerialDodgeState);
+    }
+
+    public override void Melee()
+    {
+        if (verticalInput == -1) stateManager.ChangeState(stateManager._spikeState);
+
+        else stateManager.ChangeState(stateManager._aerialKickState);
     }
 
     public override bool CanFlip()

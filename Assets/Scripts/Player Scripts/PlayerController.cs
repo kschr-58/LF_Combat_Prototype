@@ -32,14 +32,14 @@ public class PlayerController : MonoBehaviour
     {
         _directionalInput.x = Input.GetAxisRaw("Horizontal");
 
-        _playerData.GetCurrentState().MoveHorizontally(_directionalInput.x);
+        _playerData.GetCurrentState().RegisterHorizontalInput(_directionalInput.x);
     }
 
     private void HandleVerticalInput()
     {
         _directionalInput.y = Input.GetAxisRaw("Vertical");
         
-        _playerData.GetCurrentState().MoveVertically(_directionalInput.y);
+        _playerData.GetCurrentState().RegisterVerticalInput(_directionalInput.y);
     }
 
     private void HandleJumpInput()

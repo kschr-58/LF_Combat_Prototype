@@ -38,6 +38,16 @@ public class EnemyDamageManager : DamageManager
         MainCamera.Singleton.CameraShake(2, 0.25f);
     }
 
+    public override void Spike()
+    {
+        _enemyData.GetCurrentState().Spike();
+
+        // VFX
+        InstantiateVFX(_enemyData.EffectLibrary.DownHitEffect);
+        InstantiateVFX(_enemyData.EffectLibrary.MeleeSparksEffect);
+        MainCamera.Singleton.CameraShake(3, 0.2f);
+    }
+
     public override void Shot()
     {
         _enemyData.GetCurrentState().Shot();

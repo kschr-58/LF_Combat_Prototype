@@ -23,12 +23,12 @@ public abstract class EnemyState: CharacterState
 
     #region Override Implementations
 
-    public void MoveHorizontally(float direction)
+    public void RegisterHorizontalInput(float direction)
     {
         return;
     }
 
-    public void MoveVertically(float direction)
+    public void RegisterVerticalInput(float direction)
     {
         return;
     }
@@ -112,6 +112,11 @@ public abstract class EnemyState: CharacterState
     {
         if (isGrounded) stateManager.ChangeState(stateManager._dragState);
         else stateManager.ChangeState(stateManager._forwardLaunchState);
+    }
+
+    public virtual void Spike()
+    {
+        stateManager.ChangeState(stateManager._dragState); // TODO to bounce state
     }
 
     public virtual void Shot()

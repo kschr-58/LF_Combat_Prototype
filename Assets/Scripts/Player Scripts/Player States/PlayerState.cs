@@ -10,6 +10,7 @@ public abstract class PlayerState: CharacterState
     public string stateName {get; protected set;}
     protected Vector2 nextVelocity;
     protected float startTime;
+    protected float horizontalInput;
     protected float verticalInput;
     protected string animationBool;
     protected bool isJumping;
@@ -25,7 +26,12 @@ public abstract class PlayerState: CharacterState
 
     #region Override Implementations
 
-    public void MoveVertically(float direction)
+    public void RegisterHorizontalInput(float direction)
+    {
+        horizontalInput = direction;
+    }
+
+    public void RegisterVerticalInput(float direction)
     {
         verticalInput = direction;
     }
@@ -49,7 +55,10 @@ public abstract class PlayerState: CharacterState
         playerData.Animator.SetBool(animationBool, false);
     }
 
-    public virtual void LogicUpdate() {}
+    public virtual void LogicUpdate() 
+    {
+        MoveHorizontally(horizontalInput);
+    }
 
     public virtual void PhysicsUpdate()
     {
@@ -71,6 +80,11 @@ public abstract class PlayerState: CharacterState
         return;
     }
 
+    public virtual void Spike()
+    {
+        return;
+    }
+
     public virtual void Shot()
     {
         return;
@@ -79,6 +93,14 @@ public abstract class PlayerState: CharacterState
     public virtual string GetStateName()
     {
         return this.stateName;
+    }
+
+    protected virtual void MoveHorizontally(float h_Axis)
+    {
+        nextVelocity.x = playerData.RunSpeed * h_Axis;
+        nextVelocity.y = playerData.RB.velocity.y;
+
+        playerData.RB.velocity = nextVelocity;
     }
 
     protected virtual void DoChecks()
@@ -92,8 +114,6 @@ public abstract class PlayerState: CharacterState
 
     #region Abstract Methods
 
-    public abstract void MoveHorizontally(float h_Axis);
-
     public abstract void Jump();
 
     public abstract void EndJump();
@@ -103,7 +123,6 @@ public abstract class PlayerState: CharacterState
     public abstract void Melee();
 
     public abstract bool CanFlip();
-
     protected abstract void AnimationEndEvent();
 
     #endregion

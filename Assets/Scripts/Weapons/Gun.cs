@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public abstract class Gun : MonoBehaviour
 {
     [SerializeField] protected GameObject m_uiPrefab;
     [SerializeField] protected Transform barrelPosition;
     [SerializeField] protected GameObject projectilePrefab;
+    [SerializeField] protected AudioClip fireSFX;
     [SerializeField] protected float damage;
     [SerializeField] protected float fireInterval;
     [SerializeField] protected int maxAmmo;
@@ -14,6 +16,7 @@ public abstract class Gun : MonoBehaviour
     protected WeaponUI m_weaponUI;
     protected int currentAmmo;
     protected Crosshair crosshair;
+    protected AudioSource audioSource;
 
     protected bool readyToFire;
 
@@ -21,6 +24,9 @@ public abstract class Gun : MonoBehaviour
 
     private void Start()
     {
+        this.audioSource = GetComponent<AudioSource>();
+        this.audioSource.clip = fireSFX;
+        
         this.crosshair = Crosshair.GetInstance();
 
         currentAmmo = maxAmmo;

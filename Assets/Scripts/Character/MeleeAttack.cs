@@ -31,6 +31,7 @@ public abstract class MeleeAttack : MonoBehaviour
         if (meleeData.KnockBackType == AttackTypes.Launch) damageManager.Launch();
         if (meleeData.KnockBackType == AttackTypes.Forward_Launch) damageManager.ForwardLaunch();
         if (meleeData.KnockBackType == AttackTypes.Forward_Straight_Launch) damageManager.StraightForwardLaunch();
+        if (meleeData.KnockBackType == AttackTypes.Spike) damageManager.Spike();
     }
 
     #endregion

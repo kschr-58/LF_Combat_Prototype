@@ -23,6 +23,8 @@ public class Revolver : Gun
 
         m_weaponUI.Fire();
 
+        audioSource.Play();
+        
         StartCoroutine(FireInterval());
     }
 

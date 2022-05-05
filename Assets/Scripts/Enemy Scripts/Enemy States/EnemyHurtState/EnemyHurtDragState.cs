@@ -12,6 +12,7 @@ public class EnemyHurtDragState : EnemyHurtState
     {
         base.Enter();
 
+        // VFX
         enemyData.SmokeTrail.EnableTrail();
     }
 
@@ -26,7 +27,7 @@ public class EnemyHurtDragState : EnemyHurtState
     {
         base.LogicUpdate();
 
-        if (Mathf.Abs(enemyData.RB.velocity.x) <= 0.1f) stateManager.ChangeState(stateManager._dragRecoverState);
+        if (Mathf.Abs(enemyData.RB.velocity.x) <= 0.1f) stateManager.ChangeState(stateManager._recoverDragState);
     }
 
     public override bool CanFlip()

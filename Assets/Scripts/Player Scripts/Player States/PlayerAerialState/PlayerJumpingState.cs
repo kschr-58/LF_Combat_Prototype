@@ -15,11 +15,6 @@ public class PlayerJumpingState : PlayerAerialState
         playerData.JumpingComponent.ShortHop();
     }
 
-    public override void Melee()
-    {
-        stateManager.ChangeState(stateManager._aerialKickState);
-    }
-
     protected override void AnimationEndEvent()
     {
         return;

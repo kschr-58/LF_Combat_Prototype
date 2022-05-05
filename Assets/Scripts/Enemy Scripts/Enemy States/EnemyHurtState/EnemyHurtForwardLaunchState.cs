@@ -14,24 +14,37 @@ public class EnemyHurtForwardLaunchState : EnemyHurtState
     {
         base.Enter();
 
-        isAnimationLocked = true;
+        isStateLocked = true;
 
         enemyData.RB.gravityScale = enemyData.LaunchGravity;
     }
 
     public override void LogicUpdate()
     {
-        if (!isGrounded && isAnimationLocked) isAnimationLocked = false;
+        base.LogicUpdate();
 
+        HandleStateLock();
+
+        // To wallsplat transition
         if (enemyData.SidesCollider.IsTouchingLayers(enemyData.TerrainLayerMask)) stateManager.ChangeState(stateManager._wallsplatState);
 
-        if (isGrounded && !isAnimationLocked && Mathf.Abs(enemyData.RB.velocity.x) > 8) stateManager.ChangeState(stateManager._tumbleState);
+        // Following transitions can only occur while not state locked
+        if (isStateLocked) return;
 
-        else if (isGrounded && !isAnimationLocked) stateManager.ChangeState(stateManager._idleState);
+        // To tumble transition
+        if (isGrounded && Mathf.Abs(enemyData.RB.velocity.x) > 8) stateManager.ChangeState(stateManager._tumbleState); //FIXME magic number
+
+        // To drag transition
+        else if (isGrounded) stateManager.ChangeState(stateManager._dragState);
     }
 
     public override bool CanFlip()
     {
         return true;
+    }
+
+    private void HandleStateLock()
+    {
+        if (!isGrounded && isStateLocked) isStateLocked = false;
     }
 }
