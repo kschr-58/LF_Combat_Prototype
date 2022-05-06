@@ -1,3 +1,4 @@
+
 public abstract class EnemyHurtState : EnemyState
 {
     protected bool isStateLocked;

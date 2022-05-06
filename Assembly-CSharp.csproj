@@ -61,10 +61,11 @@
      <Compile Include="Assets\Scripts\Player Scripts\Player Attacking\PlayerMeleeAttack.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerAerialState\PlayerJumpingState.cs" />
-     <Compile Include="Assets\Scripts\System\UI\DebugCanvas.cs" />
      <Compile Include="Assets\Scripts\VFX\VFXAutoDestroy.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player Arms\Arms.cs" />
      <Compile Include="Assets\Scripts\Character\CharacterState.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\TargetDetection.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\TargetChasing.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyHurtDragState.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\PlayerJumping.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\EnemyDamageManager.cs" />
@@ -76,6 +77,7 @@
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerMeleeState\PlayerAirKickState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyHurtLaunchState.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerAerialState\PlayerFallingState.cs" />
+     <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerMeleeState\PlayerMeleeSpikeState.cs" />
      <Compile Include="Assets\Scripts\Scriptable Objects\EffectLibrary.cs" />
      <Compile Include="Assets\Scripts\System\UI\WeaponUI.cs" />
      <Compile Include="Assets\Scripts\Weapons\Revolver.cs" />
@@ -104,7 +106,7 @@
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyGroundedState\EnemyGroundedState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyRecoverState\EnemyRecoverState.cs" />
      <Compile Include="Assets\Scripts\Character\PositionClone.cs" />
-     <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerMeleeState\PlayerMeleeSpikeState.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyGroundedState\EnemyRunningState.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

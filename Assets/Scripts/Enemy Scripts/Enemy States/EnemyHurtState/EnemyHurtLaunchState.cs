@@ -27,11 +27,6 @@ public class EnemyHurtLaunchState : EnemyHurtState
         if (isGrounded && !isStateLocked) stateManager.ChangeState(stateManager._recoverLightState);
     }
 
-    public override bool CanFlip()
-    {
-        return true;
-    }
-
     private void HandleStateLock()
     {
         if (!isGrounded && isStateLocked) isStateLocked = false;

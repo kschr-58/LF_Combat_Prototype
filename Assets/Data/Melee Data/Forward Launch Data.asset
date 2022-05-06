@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2170a323e175eef4896e881b1edd0718, type: 3}
   m_Name: Forward Launch Data
   m_EditorClassIdentifier: 
-  KnockBackForce: {x: 18, y: 3}
+  KnockBackForce: {x: 20, y: 3}
   KnockBackType: 1

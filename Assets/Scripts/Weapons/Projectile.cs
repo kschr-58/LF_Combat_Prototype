@@ -9,7 +9,8 @@ public class Projectile : MonoBehaviour
     [SerializeField] float _lifeTime;
     [SerializeField] Vector2 _knockBackVelocity;
 
-    Rigidbody2D m_rB;
+    private Rigidbody2D _rb;
+    private float _initialDirection;
 
     #region Public Methods
 
@@ -18,9 +19,11 @@ public class Projectile : MonoBehaviour
     #region Private Methods
     private void Start()
     {
-        m_rB = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
 
-        m_rB.velocity = transform.right * _travelSpeed;
+        _rb.velocity = transform.right * _travelSpeed;
+
+        _initialDirection = Mathf.Sign(_rb.velocity.x);
         
         StartCoroutine(LifeTimeCoroutine());
     }
@@ -44,7 +47,7 @@ public class Projectile : MonoBehaviour
 
         // Make horizontal knockback relative to bullet direction
         Vector2 knockbackForce = _knockBackVelocity;
-        knockbackForce.x *= Mathf.Sign(colliderRB.velocity.x);
+        knockbackForce.x *= _initialDirection;
 
         colliderRB.velocity = knockbackForce;
 

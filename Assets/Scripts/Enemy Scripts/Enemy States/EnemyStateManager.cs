@@ -11,6 +11,7 @@ public class EnemyStateManager : StateManager
 
     // States
     public EnemyIdleState _idleState;
+    public EnemyRunningState _runningState;
     public EnemyHurtLaunchState _launchState;
     public EnemyHurtForwardLaunchState _forwardLaunchState;
     public EnemyHurtDragState _dragState;
@@ -58,6 +59,7 @@ public class EnemyStateManager : StateManager
     protected override void InitializeStates()
     {
         _idleState = new EnemyIdleState(_enemyData);
+        _runningState = new EnemyRunningState(_enemyData);
         
         _launchState = new EnemyHurtLaunchState(_enemyData);
         _forwardLaunchState = new EnemyHurtForwardLaunchState(_enemyData);

@@ -10,8 +10,10 @@ public class EnemyIdleState : EnemyGroundedState
         this.stateName = "Idle";
     }
 
-    protected override void AnimationEndEvent()
+    public override void LogicUpdate()
     {
-        return;
+        base.LogicUpdate();
+
+        if (isMoving) stateManager.ChangeState(stateManager._runningState);
     }
 }

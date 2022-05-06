@@ -97,7 +97,7 @@ public abstract class PlayerState: CharacterState
 
     protected virtual void MoveHorizontally(float h_Axis)
     {
-        nextVelocity.x = playerData.RunSpeed * h_Axis;
+        nextVelocity.x = playerData.MovementSpeed * h_Axis;
         nextVelocity.y = playerData.RB.velocity.y;
 
         playerData.RB.velocity = nextVelocity;

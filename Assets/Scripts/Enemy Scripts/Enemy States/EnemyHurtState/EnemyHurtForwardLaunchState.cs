@@ -26,7 +26,7 @@ public class EnemyHurtForwardLaunchState : EnemyHurtState
         HandleStateLock();
 
         // To wallsplat transition
-        if (enemyData.SidesCollider.IsTouchingLayers(enemyData.TerrainLayerMask) && Mathf.Abs(enemyData.RB.velocity.x) > 13) stateManager.ChangeState(stateManager._wallsplatState);
+        if (enemyData.SidesCollider.IsTouchingLayers(enemyData.TerrainLayerMask)) stateManager.ChangeState(stateManager._wallsplatState);
 
         // Following transitions can only occur while not state locked
         if (isStateLocked) return;
@@ -36,11 +36,6 @@ public class EnemyHurtForwardLaunchState : EnemyHurtState
 
         // To drag transition
         else if (isGrounded) stateManager.ChangeState(stateManager._dragState);
-    }
-
-    public override bool CanFlip()
-    {
-        return true;
     }
 
     private void HandleStateLock()

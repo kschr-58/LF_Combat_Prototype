@@ -29,8 +29,14 @@ public class PlayerMeleeAttack : MeleeAttack
 
         // Make horizontal knockback relative to player direction
         knockbackForce.x *= _playerData.transform.localScale.x;
-        
-        ChangeTargetState(damageManager);
+
+        //Apply knockback
         colliderRB.velocity = knockbackForce;
+        
+        // Change target state
+        ChangeTargetState(damageManager);
+
+        //Make target face player
+        damageManager.FaceAggresor(_playerData.transform);
     }
 }

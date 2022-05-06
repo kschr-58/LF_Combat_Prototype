@@ -12,7 +12,7 @@ public abstract class PlayerGroundedState : PlayerState
     {
         base.LogicUpdate();
         
-        isMoving = Mathf.Abs(playerData.RB.velocity.x) > playerData.RunningTreshold;
+        isMoving = Mathf.Abs(playerData.RB.velocity.x) >= playerData.RunningTreshold;
 
         if (isJumping)
         {

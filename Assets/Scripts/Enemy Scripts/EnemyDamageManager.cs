@@ -4,61 +4,59 @@ using UnityEngine;
 
 public class EnemyDamageManager : DamageManager
 {
-    [SerializeField] EnemyData _enemyData;
-
     public override void Launch()
     {
-        _enemyData.GetCurrentState().Launch();
+        characterData.GetCurrentState().Launch();
 
         // VFX
-        InstantiateVFX(_enemyData.EffectLibrary.HitEffect);
-        InstantiateVFX(_enemyData.EffectLibrary.MeleeSparksEffect);
+        InstantiateVFX(characterData.EffectLibrary.HitEffect);
+        InstantiateVFX(characterData.EffectLibrary.MeleeSparksEffect);
 
         MainCamera.Singleton.CameraShake(3, 0.2f);
     }
 
     public override void ForwardLaunch()
     {
-        _enemyData.GetCurrentState().ForwardLaunch();
+        characterData.GetCurrentState().ForwardLaunch();
 
         // VFX
-        InstantiateVFX(_enemyData.EffectLibrary.BigHitEffect);
-        InstantiateVFX(_enemyData.EffectLibrary.MeleeSparksEffect);
+        InstantiateVFX(characterData.EffectLibrary.BigHitEffect);
+        InstantiateVFX(characterData.EffectLibrary.MeleeSparksEffect);
 
         MainCamera.Singleton.CameraShake(2, 0.25f);
     }
 
     public override void StraightForwardLaunch()
     {
-        _enemyData.GetCurrentState().StraightForwardLaunch();
+        characterData.GetCurrentState().StraightForwardLaunch();
 
         // VFX
-        InstantiateVFX(_enemyData.EffectLibrary.BigHitEffect);
-        InstantiateVFX(_enemyData.EffectLibrary.MeleeSparksEffect);
+        InstantiateVFX(characterData.EffectLibrary.BigHitEffect);
+        InstantiateVFX(characterData.EffectLibrary.MeleeSparksEffect);
         MainCamera.Singleton.CameraShake(2, 0.25f);
     }
 
     public override void Spike()
     {
-        _enemyData.GetCurrentState().Spike();
+        characterData.GetCurrentState().Spike();
 
         // VFX
-        InstantiateVFX(_enemyData.EffectLibrary.DownHitEffect);
-        InstantiateVFX(_enemyData.EffectLibrary.MeleeSparksEffect);
+        InstantiateVFX(characterData.EffectLibrary.DownHitEffect);
+        InstantiateVFX(characterData.EffectLibrary.MeleeSparksEffect);
         MainCamera.Singleton.CameraShake(3, 0.2f);
     }
 
     public override void Shot()
     {
-        _enemyData.GetCurrentState().Shot();
+        characterData.GetCurrentState().Shot();
         
-        InstantiateVFX(_enemyData.EffectLibrary.MeleeSparksEffect);
+        InstantiateVFX(characterData.EffectLibrary.MeleeSparksEffect);
         
         MainCamera.Singleton.CameraShake(1, 0.1f);
     }
 
     private void InstantiateVFX(GameObject prefab)
     {
-        screenEffectHandler.InstantiateVFX(prefab, _enemyData.transform.position, Quaternion.identity, _enemyData.transform.localScale);
+        screenEffectHandler.InstantiateVFX(prefab, characterData.transform.position, Quaternion.identity, characterData.transform.localScale);
     }
 }

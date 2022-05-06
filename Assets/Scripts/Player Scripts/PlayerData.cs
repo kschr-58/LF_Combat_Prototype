@@ -18,10 +18,7 @@ public class PlayerData : CharacterData
     [SerializeField] internal SmokeTrail SmokeTrail;
 
     [Header("Player Movement Properties")]
-    [SerializeField] internal float RunSpeed;
-    [SerializeField] internal float JumpVelocity;
     [SerializeField] internal float ShortHopModifier;
-    [SerializeField] internal float RunningTreshold;
 
     [Header("Dodging Properties")]
     [SerializeField] internal int MaxDodgeCount;

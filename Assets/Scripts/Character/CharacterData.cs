@@ -15,6 +15,9 @@ public abstract class CharacterData : MonoBehaviour
     [SerializeField] internal CharacterFlipper CharacterFlipper;
 
     [Header("General Movement Properties")]
+    [SerializeField] internal float MovementSpeed;
+    [SerializeField] internal float JumpVelocity;
+    [SerializeField] internal float RunningTreshold;
     [SerializeField] internal float FlipVelocityTreshold;
 
     #region Getters & Setters

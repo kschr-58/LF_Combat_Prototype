@@ -8,6 +8,8 @@ public class CharacterFlipper : MonoBehaviour
 
     Vector2 nextScale;
 
+    #region Unity Callback Methods
+
     private void Start()
     {
         nextScale = transform.localScale;
@@ -24,11 +26,17 @@ public class CharacterFlipper : MonoBehaviour
         if (_characterData.GetCurrentState().CanFlip()) Flip();
     }
 
-    private void Flip()
+    #endregion
+
+    #region Private Methods
+
+    public void Flip()
     {
         nextScale.x = Mathf.Sign(_characterData.RB.velocity.x);
         nextScale.y = transform.localScale.y;
 
         transform.localScale = nextScale;
     }
+    
+    #endregion
 }
