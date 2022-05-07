@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 189519091
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 404c0ac5eb8f36a43bceb89fd38d674c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -95,6 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5975764622363130797}
   - component: {fileID: 5975764622363130796}
+  - component: {fileID: 861032949}
   m_Layer: 0
   m_Name: Light Source
   m_TagString: Untagged
@@ -137,7 +138,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 0
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 0000000071fbbb82ad381e2981f1b6c22faaf6c5bda38b0ef338e88bf3d44b0b77217492
+  m_ApplyToSortingLayers: 0000000071fbbb82ad381e290167709881f1b6c22faaf6c5bda38b0ef338e88bf3d44b0b77217492
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -195,3 +196,19 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &861032949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5975764622363130770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1376835d3a367a4bb006d42d6e1e7a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTillFlicker: 12
+  flickerIntensity: 0.1
+  flickerCount: 3
+  flickerInterval: 0.025
