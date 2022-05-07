@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 15c90b91e6c32ec4b9dc595ee7820e6e, type: 2}
+  - {fileID: 2100000, guid: 27264b20f9a69a04684ab6e94c4d3a96, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -136,7 +136,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 15c90b91e6c32ec4b9dc595ee7820e6e, type: 2}
+  - {fileID: 2100000, guid: 27264b20f9a69a04684ab6e94c4d3a96, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -220,7 +220,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 15c90b91e6c32ec4b9dc595ee7820e6e, type: 2}
+  - {fileID: 2100000, guid: 27264b20f9a69a04684ab6e94c4d3a96, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 7396918649673846815}
   - component: {fileID: 7379958540202233484}
   - component: {fileID: 3478023146027129431}
+  - component: {fileID: 1573264328}
   m_Layer: 8
   m_Name: Body Rig
   m_TagString: Untagged
@@ -306,7 +307,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 15c90b91e6c32ec4b9dc595ee7820e6e, type: 2}
+  - {fileID: 2100000, guid: 27264b20f9a69a04684ab6e94c4d3a96, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -358,6 +359,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1573264328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3480131930900737064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fdb718439654ec4698e11abf7f8d584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dissolveMaterial: {fileID: 2100000, guid: 15c90b91e6c32ec4b9dc595ee7820e6e, type: 2}
 --- !u!1 &5516721344620363868
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,7 +447,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 685365944276808832}
-  - component: {fileID: 51986632}
   m_Layer: 8
   m_Name: Dummy
   m_TagString: Untagged
@@ -457,16 +470,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &51986632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9031163017583154463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fdb718439654ec4698e11abf7f8d584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _material: {fileID: 2100000, guid: 15c90b91e6c32ec4b9dc595ee7820e6e, type: 2}

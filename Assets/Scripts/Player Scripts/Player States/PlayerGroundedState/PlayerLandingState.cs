@@ -38,6 +38,11 @@ public class PlayerLandingState : PlayerGroundedState
         return;
     }
 
+    public override bool CanFlip()
+    {
+        return false;
+    }
+
     protected override void AnimationEndEvent()
     {
         stateManager.ChangeState(stateManager._idleState);

@@ -31,6 +31,11 @@ public class PlayerIdleState : PlayerGroundedState
         else stateManager.ChangeState(stateManager._swipeState);
     }
 
+    public override bool CanFlip()
+    {
+        return false;
+    }
+
     protected override void AnimationEndEvent()
     {
         return;

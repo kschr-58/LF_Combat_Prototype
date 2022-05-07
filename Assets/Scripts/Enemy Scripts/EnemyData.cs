@@ -25,6 +25,9 @@ public class EnemyData : CharacterData
     [SerializeField] internal float LaunchGravity;
     [SerializeField] internal float WallSplatGravity;
 
+    [Header("Melee velocity")]
+    [SerializeField] internal Vector2 DashAttackVelocity;
+
     private void Update() //TODO remove
     {
         if (Input.GetKeyDown(KeyCode.P))

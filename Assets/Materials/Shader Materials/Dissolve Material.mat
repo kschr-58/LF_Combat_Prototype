@@ -42,9 +42,9 @@ Material:
     - _Fade: 1
     - _NoiseScale: 18
     - _NoiseValue: 15
-    - _OutlineSize: 0.07
+    - _OutlineSize: 0.1
     - _Scale: 18
     - _Visibility: 1
     m_Colors:
-    - _Color: {r: 0, g: 5.992157, b: 0.28235295, a: 1}
+    - _Color: {r: 0, g: 2.9960785, b: 0.14117648, a: 1}
   m_BuildTextureStacks: []

@@ -15,5 +15,7 @@ public class EnemyRunningState : EnemyGroundedState
         base.LogicUpdate();
 
         if (!isMoving) stateManager.ChangeState(stateManager._idleState);
+
+        if (Input.GetKeyDown(KeyCode.T)) stateManager.ChangeState(stateManager._dashAttackWindupState);
     }
 }

@@ -12,6 +12,7 @@ public abstract class EnemyState: CharacterState
     protected bool isGrounded;
     
     // Other Fields
+    protected Vector2 nextVelocity;
     public string stateName {get; protected set;}
     protected string animationBool;
 
