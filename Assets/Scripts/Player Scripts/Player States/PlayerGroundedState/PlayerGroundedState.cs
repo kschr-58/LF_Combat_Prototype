@@ -4,15 +4,11 @@ using UnityEngine;
 
 public abstract class PlayerGroundedState : PlayerState
 {
-    protected bool isMoving;
-
     public PlayerGroundedState(PlayerData playerData) : base(playerData) {}
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        
-        isMoving = Mathf.Abs(playerData.RB.velocity.x) >= playerData.RunningTreshold;
 
         if (isJumping)
         {

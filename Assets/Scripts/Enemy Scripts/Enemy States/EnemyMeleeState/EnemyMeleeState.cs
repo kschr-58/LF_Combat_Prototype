@@ -23,6 +23,12 @@ public abstract class EnemyMeleeState : EnemyState
         if (decreasingVelocity) DecreaseVelocity();
     }
 
+    public override void Melee()
+    {
+        return;
+    }
+
+
     public abstract void ExertMeleeVelocity();
 
     protected virtual void DecreaseVelocity()

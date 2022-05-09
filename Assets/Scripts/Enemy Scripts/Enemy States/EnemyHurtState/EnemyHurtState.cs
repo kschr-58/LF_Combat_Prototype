@@ -12,6 +12,11 @@ public abstract class EnemyHurtState : EnemyState
         enemyData.RB.gravityScale = enemyData.DefaultGravity;
     }
 
+    public override void Melee()
+    {
+        return;
+    }
+
     protected override void AnimationEndEvent()
     {
         return;

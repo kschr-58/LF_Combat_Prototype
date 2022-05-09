@@ -18,4 +18,11 @@ public class PlayerStandingDodgeState : PlayerDodgeState
 
         playerData.DodgingComponent.StandingDodge();
     }
+
+    public override void Melee()
+    {
+        stateManager.ChangeState(stateManager._swipeState);
+
+        playerData.DodgingComponent.CancelDodge();
+    }
 }

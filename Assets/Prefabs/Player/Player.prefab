@@ -72,6 +72,86 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meleeData: {fileID: 11400000, guid: 70d0d736ee1793a4fafbf7f058875fbc, type: 2}
+--- !u!1 &725353566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 725353569}
+  - component: {fileID: 725353568}
+  - component: {fileID: 725353567}
+  m_Layer: 5
+  m_Name: Velocity Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &725353569
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725353566}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4824621805192596446}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 1.0625}
+  m_SizeDelta: {x: 400, y: 52.5837}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!222 &725353568
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725353566}
+  m_CullTransparentMesh: 1
+--- !u!114 &725353567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725353566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 1, b: 0.026485443, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 30
+    m_FontStyle: 2
+    m_BestFit: 1
+    m_MinSize: 0
+    m_MaxSize: 100
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Velocity:'
 --- !u!1 &750069227
 GameObject:
   m_ObjectHideFlags: 0
@@ -5672,7 +5752,7 @@ MonoBehaviour:
   CharacterFlipper: {fileID: 7808469781473677286}
   MovementSpeed: 10
   JumpVelocity: 20
-  RunningTreshold: 7
+  RunningTreshold: 5
   FlipVelocityTreshold: 1
   JumpingComponent: {fileID: 6362792733983299086}
   DodgingComponent: {fileID: 6362792734459175382}
@@ -5684,17 +5764,18 @@ MonoBehaviour:
   ShortHopModifier: 0.5
   MaxDodgeCount: 3
   DodgeRegenTime: 0.7
-  RunningDodgeTime: 0.18
-  RunningDodgeSpeed: 20
-  StandingDodgeTime: 0.23
-  AerialDodgeTime: 0.15
-  AerialDodgeSpeed: 23
+  RunningDodgeTime: 0.15
+  RunningDodgeSpeed: 22
+  StandingDodgeTime: 0.2
+  AerialDodgeTime: 0.13
+  AerialDodgeSpeed: 25
   AimDuration: 0.3
   UppercutVelocity: {x: 3.5, y: 14}
   AerialKickVelocity: {x: 0, y: 2}
   StandingKickVelocity: {x: 40, y: 0}
   SwipeVelocity: {x: 0.5, y: 0}
   SpikeVelocity: {x: 25, y: 8}
+  _velocityText: {fileID: 725353567}
 --- !u!114 &6362792734099616886
 MonoBehaviour:
   m_ObjectHideFlags: 0

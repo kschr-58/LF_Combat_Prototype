@@ -52,6 +52,20 @@ public class PlayerDodging : MonoBehaviour
         StartCoroutine(AerialDodgeCoroutine());
     }
 
+    public void CancelDodge()
+    {
+        if (_dodgeCoroutine != null)
+        {
+            StopCoroutine(_dodgeCoroutine);
+            
+            this.isDodging = false;
+
+            _player.DodgeTrailComponent.DeactivateTrail();
+
+            _dodgeCoroutine = null;
+        }
+    }
+
     #endregion
 
     #region Private Methods
@@ -102,7 +116,6 @@ public class PlayerDodging : MonoBehaviour
         yield return new WaitForSeconds(dodgeTime);
 
         if (OnDodge != null) OnDodge(false);
-        else Debug.Log("No event listeners!");
         
         this.isDodging = false;
 

@@ -16,4 +16,10 @@ public class EnemyIdleState : EnemyGroundedState
 
         if (isMoving) stateManager.ChangeState(stateManager._runningState);
     }
+
+    public override void Melee()
+    {
+        // TODO
+        return;
+    }
 }

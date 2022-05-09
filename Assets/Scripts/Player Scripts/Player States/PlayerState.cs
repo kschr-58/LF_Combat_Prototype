@@ -13,6 +13,7 @@ public abstract class PlayerState: CharacterState
     protected float horizontalInput;
     protected float verticalInput;
     protected string animationBool;
+    protected bool isMoving;
     protected bool isJumping;
     protected bool isFalling;
     protected bool isGrounded;
@@ -44,6 +45,9 @@ public abstract class PlayerState: CharacterState
     {
         playerData.AnimationTransmitter.OnAnimationEnd += AnimationEndEvent;
         playerData.Animator.SetBool(animationBool, true);
+
+        horizontalInput = 0;
+        verticalInput = 0;
 
         DoChecks();
         startTime = Time.time;
@@ -105,6 +109,7 @@ public abstract class PlayerState: CharacterState
 
     protected virtual void DoChecks()
     {
+        isMoving = Mathf.Abs(playerData.RB.velocity.x) > playerData.RunningTreshold;
         isGrounded = playerData.FeetCollider.IsTouchingLayers(playerData.TerrainLayerMask);
         isJumping = playerData.RB.velocity.y > 0 && !isGrounded;
         isFalling = playerData.RB.velocity.y < 0 && !isGrounded;
@@ -123,6 +128,7 @@ public abstract class PlayerState: CharacterState
     public abstract void Melee();
 
     public abstract bool CanFlip();
+
     protected abstract void AnimationEndEvent();
 
     #endregion

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /*
 PlayerData script is responsible for storing player related values and components
@@ -38,5 +39,12 @@ public class PlayerData : CharacterData
     [SerializeField] internal Vector2 StandingKickVelocity;
     [SerializeField] internal Vector2 SwipeVelocity;
     [SerializeField] internal Vector2 SpikeVelocity;
+
+    [SerializeField] private Text _velocityText;
+
+    private void Update()
+    {
+        _velocityText.text = $"Velocity: {RB.velocity.x.ToString()}";
+    }
 
 }

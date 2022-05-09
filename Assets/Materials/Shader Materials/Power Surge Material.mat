@@ -38,9 +38,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Flicker: 0
+    - _Flicker: 0.062
     - _NoiseValue: 34.5
-    - _OutlineSize: 0.15
+    - _OutlineSize: 0.05
     m_Colors:
-    - _Color: {r: 1, g: 0, b: 0.006025791, a: 0}
+    - _Color: {r: 0, g: 0.5172741, b: 0.74509805, a: 0}
   m_BuildTextureStacks: []

@@ -44,12 +44,7 @@ public abstract class EnemyState: CharacterState
         return;
     }
 
-    public void Dodge()
-    {
-        return;
-    }
-
-    public void Melee()
+    public virtual void Dodge()
     {
         return;
     }
@@ -128,6 +123,8 @@ public abstract class EnemyState: CharacterState
     #endregion
 
     #region Abstract Methods
+
+    public abstract void Melee();
 
     protected abstract void AnimationEndEvent();
 
