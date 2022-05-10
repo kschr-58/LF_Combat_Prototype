@@ -26,11 +26,11 @@ public class PlayerAirKickState : PlayerMeleeState
 
     protected override void ExertMeleeVelocity()
     {
-        // nextVelocity.x = playerData.AerialKickVelocity.x * playerData.transform.localScale.x;
-        // nextVelocity.y = playerData.AerialKickVelocity.y;
+        Vector2 currentVelocity = playerData.RB.velocity;
 
-        // playerData.RB.velocity = nextVelocity;
+        nextVelocity.x = currentVelocity.x;
+        nextVelocity.y = currentVelocity.y > 0 ? currentVelocity.y : playerData.AerialKickVelocity.y;
 
-        return;
+        playerData.RB.velocity = nextVelocity;
     }
 }
