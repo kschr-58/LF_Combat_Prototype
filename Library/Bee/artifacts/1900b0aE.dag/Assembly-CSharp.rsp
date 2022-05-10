@@ -397,6 +397,8 @@
 "Assets/Scripts/Enemy Scripts/Enemy States/EnemyMeleeState/EnemyDashAttackState.cs"
 "Assets/Scripts/Enemy Scripts/Enemy States/EnemyMeleeState/EnemyDashAttackWindupState.cs"
 "Assets/Scripts/Enemy Scripts/Enemy States/EnemyMeleeState/EnemyMeleeState.cs"
+"Assets/Scripts/Enemy Scripts/Enemy States/EnemyMeleeState/EnemyQuickAttackFollowup1State.cs"
+"Assets/Scripts/Enemy Scripts/Enemy States/EnemyMeleeState/EnemyQuickAttackFollowup1WindupState.cs"
 "Assets/Scripts/Enemy Scripts/Enemy States/EnemyMeleeState/EnemyQuickAttackState.cs"
 "Assets/Scripts/Enemy Scripts/Enemy States/EnemyMeleeState/EnemyQuickAttackWindupState.cs"
 "Assets/Scripts/Enemy Scripts/Enemy States/EnemyRecoverState/EnemyRecoverDragState.cs"

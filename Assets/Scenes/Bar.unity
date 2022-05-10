@@ -661,22 +661,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 758354800}
     m_Modifications:
-    - target: {fileID: 747069786, guid: 5b9478a666e65d7479c513bb26bca942, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 747069786, guid: 5b9478a666e65d7479c513bb26bca942, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 747069787, guid: 5b9478a666e65d7479c513bb26bca942, type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 329970077011009458, guid: 5b9478a666e65d7479c513bb26bca942, type: 3}
-      propertyPath: MeleeAttackDelay
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3495968095181365140, guid: 5b9478a666e65d7479c513bb26bca942, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4167,7 +4151,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.5415779, y: 1}
+    m_SensorSize: {x: 1.5534935, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

@@ -23,8 +23,10 @@ public class EnemyStateManager : StateManager
     public EnemyRecoverDragState _recoverDragState;
     public EnemyDashAttackWindupState _dashAttackWindupState;
     public EnemyQuickAttackWindupState _quickAttackWindupState;
+    public EnemyQuickAttackFollowup1WindupState _quickAttackFollowup1WindupState;
     public EnemyDashAttackState _dashAttackState;
     public EnemyQuickAttackState _quickAttackState;
+    public EnemyQuickAttackFollowup1State _quickAttackFollowup1State;
 
     #endregion
 
@@ -78,8 +80,10 @@ public class EnemyStateManager : StateManager
 
         _dashAttackWindupState = new EnemyDashAttackWindupState(_enemyData);
         _quickAttackWindupState = new EnemyQuickAttackWindupState(_enemyData);
+        _quickAttackFollowup1WindupState = new EnemyQuickAttackFollowup1WindupState(_enemyData);
 
         _dashAttackState = new EnemyDashAttackState(_enemyData);
         _quickAttackState = new EnemyQuickAttackState(_enemyData);
+        _quickAttackFollowup1State = new EnemyQuickAttackFollowup1State(_enemyData);
     }
 }

@@ -6,15 +6,20 @@ public class EnemyMeleeLogic : MonoBehaviour
 {
     [SerializeField] EnemyData _enemyData;
 
-    private bool _canMelee;
-
-    private Coroutine _meleeDelayCoroutine;
+    private float _meleeDelayTimer;
 
     #region Unity Callback methods
 
     private void Start()
     {
-        _canMelee = true;
+        _meleeDelayTimer = 0;
+    }
+
+    private void Update()
+    {
+        if (_meleeDelayTimer <= 0) return;
+
+        _meleeDelayTimer -= Time.deltaTime;
     }
 
     #endregion
@@ -23,7 +28,7 @@ public class EnemyMeleeLogic : MonoBehaviour
 
     public void CheckMeleeProximity(Transform targetTransform)
     {
-        if (!_canMelee) return;
+        if (_meleeDelayTimer > 0) return;
 
         float meleeProximity = _enemyData.GetCurrentState().GetMeleeProximity();
 
@@ -31,25 +36,15 @@ public class EnemyMeleeLogic : MonoBehaviour
 
         if (distanceToTarget <= meleeProximity)
         {
-            _canMelee = false;
-
-            _meleeDelayCoroutine = StartCoroutine(MeleeDelayCoroutine());
-
             _enemyData.GetCurrentState().Melee();
 
             return;
         }
     }
 
-    #endregion
-
-    #region Coroutines
-
-    private IEnumerator MeleeDelayCoroutine()
+    public void AddMeleeDelay(float delayTime)
     {
-        yield return new WaitForSeconds(_enemyData.MeleeAttackDelay);
-        _canMelee = true;
-        _meleeDelayCoroutine = null;
+        _meleeDelayTimer += delayTime;
     }
 
     #endregion

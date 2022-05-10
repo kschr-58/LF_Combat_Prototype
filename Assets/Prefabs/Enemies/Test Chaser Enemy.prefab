@@ -770,9 +770,11 @@ MonoBehaviour:
   WallSplatGravity: 0.5
   DashAttackVelocity: {x: 35, y: 0}
   QuickAttackVelocity: {x: 10, y: 0}
-  MeleeAttackDelay: 2
+  QuickAttackFollowup1Velocity: {x: 10, y: 0}
+  MeleeAttackDelay: 1.5
   RunningMeleeProximity: 6
   StandingMeleeProximity: 4
+  followupChance: 55
 --- !u!114 &329970077011009457
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class EnemyQuickAttackState : EnemyMeleeState
     {
         this.stateName = "Melee (Quick Attack)";
         this.animationBool = "Melee (Quick Attack)";
+        this.meleeDelayTime = 0.5f;
 
         decreasingVelocity = true;
     }
@@ -22,6 +23,15 @@ public class EnemyQuickAttackState : EnemyMeleeState
 
     protected override void AnimationEndEvent()
     {
+        // Perform followup check
+        float randomNum = Random.Range(0, 101);
+
+        if (randomNum <= enemyData.followupChance)
+        {
+            stateManager.ChangeState(stateManager._quickAttackFollowup1WindupState);
+            return;
+        }
+
         stateManager.ChangeState(stateManager._idleState);
     }
 }

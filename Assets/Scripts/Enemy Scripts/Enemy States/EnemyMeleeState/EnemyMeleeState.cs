@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class EnemyMeleeState : EnemyState
 {
     protected float velocityDecreaseModifier = 0.9f;
+    protected float meleeDelayTime;
     protected bool decreasingVelocity;
 
     public EnemyMeleeState(EnemyData enemyData) : base(enemyData) {}
@@ -14,6 +15,13 @@ public abstract class EnemyMeleeState : EnemyState
         base.Enter();
 
         ExertMeleeVelocity();
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+
+        enemyData.EnemyMeleeLogicComponent.AddMeleeDelay(meleeDelayTime);
     }
 
     public override void PhysicsUpdate()

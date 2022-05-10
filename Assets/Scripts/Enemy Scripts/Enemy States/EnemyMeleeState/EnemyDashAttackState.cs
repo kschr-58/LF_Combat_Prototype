@@ -8,6 +8,7 @@ public class EnemyDashAttackState : EnemyMeleeState
     {
         this.stateName = "Melee (Dash Attack)";
         this.animationBool = "Melee (Dash Attack)";
+        this.meleeDelayTime = 0.5f;
 
         decreasingVelocity = true;
     }

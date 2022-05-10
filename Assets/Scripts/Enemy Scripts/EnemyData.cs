@@ -29,11 +29,13 @@ public class EnemyData : CharacterData
     [Header("Melee velocity")]
     [SerializeField] internal Vector2 DashAttackVelocity;
     [SerializeField] internal Vector2 QuickAttackVelocity;
+    [SerializeField] internal Vector2 QuickAttackFollowup1Velocity;
 
     [Header("Melee logic")]
     [SerializeField] internal float MeleeAttackDelay;
     [SerializeField] internal float RunningMeleeProximity;
     [SerializeField] internal float StandingMeleeProximity;
+    [SerializeField] [Range(0, 100)] internal float followupChance;
 
     private void Update() //TODO remove
     {
