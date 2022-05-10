@@ -18,4 +18,5 @@ public interface CharacterState
     public void Shot();
     public string GetStateName();
     public bool CanFlip();
+    public float GetMeleeProximity();
 }

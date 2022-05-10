@@ -14,12 +14,13 @@ public class EnemyIdleState : EnemyGroundedState
     {
         base.LogicUpdate();
 
+        enemyData.TargetChasingComponent.FlipTowardsTarget();
+        
         if (isMoving) stateManager.ChangeState(stateManager._runningState);
     }
 
     public override void Melee()
     {
-        // TODO
-        return;
+        stateManager.ChangeState(stateManager._quickAttackWindupState);
     }
 }

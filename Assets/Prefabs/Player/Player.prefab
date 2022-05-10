@@ -5681,6 +5681,7 @@ GameObject:
   - component: {fileID: 6362792733983299086}
   - component: {fileID: 6362792734459175382}
   - component: {fileID: 7808469781473677286}
+  - component: {fileID: 4323118230081251016}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -5843,6 +5844,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterData: {fileID: 7901823774011076763}
+--- !u!114 &4323118230081251016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7901823774011076757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f438a9f66b679fc4fa07a3d9e7a08599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData: {fileID: 7901823774011076763}
 --- !u!1001 &141207247543822171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6496,7 +6510,7 @@ PrefabInstance:
     - target: {fileID: 2039919028800642754, guid: c453bb83aa893ac4e9e9980afdb4997f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+      objectReference: {fileID: 2100000, guid: bc0cd154ac4aa4c4eaa8a2ca3627c442, type: 2}
     - target: {fileID: 2908133297720770328, guid: c453bb83aa893ac4e9e9980afdb4997f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6556,7 +6570,7 @@ PrefabInstance:
     - target: {fileID: 5166695657338570004, guid: c453bb83aa893ac4e9e9980afdb4997f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+      objectReference: {fileID: 2100000, guid: bc0cd154ac4aa4c4eaa8a2ca3627c442, type: 2}
     - target: {fileID: 6668715628625731207, guid: c453bb83aa893ac4e9e9980afdb4997f, type: 3}
       propertyPath: m_Name
       value: Rig

@@ -8,7 +8,7 @@ public class SmokeTrail : MonoBehaviour
 
     private ParticleSystem _particleSystem;
 
-    private void Start()
+    private void Awake()
     {
         _particleSystem = GetComponent<ParticleSystem>();
     }

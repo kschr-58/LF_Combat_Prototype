@@ -44,21 +44,6 @@ public abstract class EnemyState: CharacterState
         return;
     }
 
-    public virtual void Dodge()
-    {
-        return;
-    }
-
-    public virtual string GetStateName()
-    {
-        return this.stateName;
-    }
-
-    public virtual bool CanFlip()
-    {
-        return false;
-    }
-
     #endregion
 
     #region Base Logic Methods
@@ -93,6 +78,26 @@ public abstract class EnemyState: CharacterState
     #endregion
 
     #region Virtual Methods
+
+    public virtual void Dodge()
+    {
+        return;
+    }
+
+    public virtual string GetStateName()
+    {
+        return this.stateName;
+    }
+
+    public virtual bool CanFlip()
+    {
+        return false;
+    }
+
+    public virtual float GetMeleeProximity()
+    {
+        return enemyData.StandingMeleeProximity;
+    }
 
     public virtual void Launch()
     {

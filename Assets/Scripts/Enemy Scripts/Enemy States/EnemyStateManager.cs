@@ -22,7 +22,9 @@ public class EnemyStateManager : StateManager
     public EnemyRecoverLightState _recoverLightState;
     public EnemyRecoverDragState _recoverDragState;
     public EnemyDashAttackWindupState _dashAttackWindupState;
+    public EnemyQuickAttackWindupState _quickAttackWindupState;
     public EnemyDashAttackState _dashAttackState;
+    public EnemyQuickAttackState _quickAttackState;
 
     #endregion
 
@@ -75,6 +77,9 @@ public class EnemyStateManager : StateManager
         _recoverDragState = new EnemyRecoverDragState(_enemyData);
 
         _dashAttackWindupState = new EnemyDashAttackWindupState(_enemyData);
+        _quickAttackWindupState = new EnemyQuickAttackWindupState(_enemyData);
+
         _dashAttackState = new EnemyDashAttackState(_enemyData);
+        _quickAttackState = new EnemyQuickAttackState(_enemyData);
     }
 }

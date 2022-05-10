@@ -7,6 +7,7 @@ public class EnemyData : CharacterData
     [Header("Enemy Components")]
     [SerializeField] internal TargetDetection TargetDetectionComponent;
     [SerializeField] internal TargetChasing TargetChasingComponent;
+    [SerializeField] internal EnemyMeleeLogic EnemyMeleeLogicComponent;
     [SerializeField] internal BoxCollider2D SidesCollider;
     [SerializeField] internal SmokeTrail SmokeTrail;
 
@@ -27,6 +28,12 @@ public class EnemyData : CharacterData
 
     [Header("Melee velocity")]
     [SerializeField] internal Vector2 DashAttackVelocity;
+    [SerializeField] internal Vector2 QuickAttackVelocity;
+
+    [Header("Melee logic")]
+    [SerializeField] internal float MeleeAttackDelay;
+    [SerializeField] internal float RunningMeleeProximity;
+    [SerializeField] internal float StandingMeleeProximity;
 
     private void Update() //TODO remove
     {

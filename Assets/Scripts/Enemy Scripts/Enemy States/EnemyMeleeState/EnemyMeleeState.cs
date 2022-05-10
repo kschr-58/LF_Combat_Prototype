@@ -28,7 +28,6 @@ public abstract class EnemyMeleeState : EnemyState
         return;
     }
 
-
     public abstract void ExertMeleeVelocity();
 
     protected virtual void DecreaseVelocity()

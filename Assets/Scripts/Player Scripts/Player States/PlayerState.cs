@@ -37,6 +37,11 @@ public abstract class PlayerState: CharacterState
         verticalInput = direction;
     }
 
+    public float GetMeleeProximity()
+    {
+        return 0;
+    }
+
     #endregion
 
     #region Virtual Methods

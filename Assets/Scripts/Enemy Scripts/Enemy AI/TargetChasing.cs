@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class TargetChasing : MonoBehaviour
 {
-    [SerializeField] EnemyData enemyData;
+    [SerializeField] EnemyData _enemyData;
     [SerializeField] Text TargetTextElement;
 
-    GameObject currentTarget;
-    Vector2 nextVelocity;
+    GameObject _currentTarget;
+    Vector2 _nextVelocity;
 
     #region Unity Callback Methods
 
     private void Start()
     {
-        enemyData.TargetDetectionComponent.NewTargetEvent += SetNewTarget;
+        _enemyData.TargetDetectionComponent.NewTargetEvent += SetNewTarget;
     }
 
     #endregion
@@ -24,19 +24,38 @@ public class TargetChasing : MonoBehaviour
 
     public void LoseTarget()
     {
-        currentTarget = null;
+        _currentTarget = null;
 
         // Subscribe to new target event
-        enemyData.TargetDetectionComponent.NewTargetEvent += SetNewTarget;
+        _enemyData.TargetDetectionComponent.NewTargetEvent += SetNewTarget;
     }
 
     public void ChaseTarget()
     {
-        if (!currentTarget) return;
+        if (!_currentTarget) return;
 
         MoveTowardsTarget();
         HandleObstacles();
-        // FlipTowardsTarget();
+        _enemyData.EnemyMeleeLogicComponent.CheckMeleeProximity(_currentTarget.transform);
+    }
+
+    public float GetDistanceToTarget()
+    {
+        float distance = Mathf.Abs(_currentTarget.transform.position.x - transform.position.x);
+        
+        return  distance;
+    }
+
+    public void FlipTowardsTarget()
+    {
+        if (!_currentTarget) return;
+        
+        Vector2 targetPosition = _currentTarget.transform.position;
+        Vector3 newScale = transform.localScale;
+
+        newScale.x = Mathf.Sign(targetPosition.x - transform.position.x);
+
+        transform.localScale = newScale;
     }
 
     #endregion
@@ -48,57 +67,47 @@ public class TargetChasing : MonoBehaviour
         TargetTextElement.text = $"Target: {newTarget.gameObject.name.ToString()}";
 
         // Set new target
-        currentTarget = newTarget;
+        _currentTarget = newTarget;
 
         // Unsubscribe from new target event
-        enemyData.TargetDetectionComponent.NewTargetEvent -= SetNewTarget;
-    }
-
-    private void FlipTowardsTarget()
-    {
-        Vector2 targetPosition = currentTarget.transform.position;
-        Vector3 newScale = transform.localScale;
-
-        newScale.x = Mathf.Sign(targetPosition.x - transform.position.x);
-
-        transform.localScale = newScale;
+        _enemyData.TargetDetectionComponent.NewTargetEvent -= SetNewTarget;
     }
 
     private void MoveTowardsTarget()
     {
-        Vector2 targetPosition = currentTarget.transform.position;
+        Vector2 targetPosition = _currentTarget.transform.position;
 
         // Check if target is already in proximity
         float distance = targetPosition.x - transform.position.x;
 
-        if (Mathf.Abs(distance) <= enemyData.DesiredProximity) return;
+        if (Mathf.Abs(distance) <= _enemyData.DesiredProximity) return;
 
         // Compare x world position to decide direction
         float direction = Mathf.Sign(distance);
 
         // Move towards target position with velocity movementSpeed
-        nextVelocity.x = direction * enemyData.MovementSpeed;
-        nextVelocity.y = enemyData.RB.velocity.y;
+        _nextVelocity.x = direction * _enemyData.MovementSpeed;
+        _nextVelocity.y = _enemyData.RB.velocity.y;
 
-        enemyData.RB.velocity = nextVelocity;
+        _enemyData.RB.velocity = _nextVelocity;
     }
 
     private void HandleObstacles()
     {
         // Check if moving
-        if (Mathf.Abs(enemyData.RB.velocity.x) < 1) return;
+        if (Mathf.Abs(_enemyData.RB.velocity.x) < 1) return;
 
-        if (enemyData.SidesCollider.IsTouchingLayers(enemyData.TerrainLayers)) Jump();
+        if (_enemyData.SidesCollider.IsTouchingLayers(_enemyData.TerrainLayers)) Jump();
     }
 
     private void Jump()
     {
-        if (!enemyData.FeetCollider.IsTouchingLayers(enemyData.TerrainLayers)) return;
+        if (!_enemyData.FeetCollider.IsTouchingLayers(_enemyData.TerrainLayers)) return;
 
-        nextVelocity.x = enemyData.RB.velocity.x;
-        nextVelocity.y = enemyData.JumpVelocity;
+        _nextVelocity.x = _enemyData.RB.velocity.x;
+        _nextVelocity.y = _enemyData.JumpVelocity;
 
-        enemyData.RB.velocity = nextVelocity;
+        _enemyData.RB.velocity = _nextVelocity;
     }
 
     #endregion

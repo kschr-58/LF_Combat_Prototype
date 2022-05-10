@@ -19,6 +19,14 @@ public class EnemyRunningState : EnemyGroundedState
 
     public override void Melee()
     {
-        stateManager.ChangeState(stateManager._dashAttackWindupState);
+        float targetDistance = enemyData.TargetChasingComponent.GetDistanceToTarget();
+
+        if (targetDistance <= enemyData.StandingMeleeProximity) stateManager.ChangeState(stateManager._quickAttackWindupState);
+        else stateManager.ChangeState(stateManager._dashAttackWindupState);
+    }
+
+    public override float GetMeleeProximity()
+    {
+        return enemyData.RunningMeleeProximity;
     }
 }
