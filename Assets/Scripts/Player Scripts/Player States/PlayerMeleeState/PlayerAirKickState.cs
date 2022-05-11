@@ -10,20 +10,11 @@ public class PlayerAirKickState : PlayerMeleeState
         this.animationBool = "Melee (Aerial Kick)";
     }
 
-    public override void Enter()
-    {
-        base.Enter();
-
-        isGrounded = false;
-    }
     public override void LogicUpdate()
     {
         base.LogicUpdate();
 
-        if (isGrounded)
-        {
-            stateManager.ChangeState(stateManager._landingState);
-        }
+        if (isGrounded) stateManager.ChangeState(stateManager._landingState);
     }
 
     public override void EndJump()

@@ -9,7 +9,7 @@ public class PlayerStandingKickState : PlayerMeleeState
         this.stateName = "Melee (Standing Kick)";
         this.animationBool = "Melee (Standing Kick)";
         this.decreasingVelocity = true;
-        this.velocityDecreaseModifier = 0.78f;
+        this.velocityDecreaseModifier = 0.85f; //FIXME magic number
     }
 
     public override void Enter()

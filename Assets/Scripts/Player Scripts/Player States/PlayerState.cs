@@ -7,12 +7,12 @@ public abstract class PlayerState: CharacterState
     protected PlayerStateManager stateManager;
 
     // Other Fields
-    public string stateName {get; protected set;}
     protected Vector2 nextVelocity;
+    public string stateName {get; protected set;}
+    protected string animationBool;
     protected float startTime;
     protected float horizontalInput;
     protected float verticalInput;
-    protected string animationBool;
     protected bool isMoving;
     protected bool isJumping;
     protected bool isFalling;
@@ -47,7 +47,7 @@ public abstract class PlayerState: CharacterState
 
     #endregion
 
-    #region Virtual Methods
+    #region Base Logic Methods
 
     public virtual void Enter()
     {
@@ -66,7 +66,6 @@ public abstract class PlayerState: CharacterState
         verticalInput = 0;
 
         // Perform physics checks to determine current state (e.g. grounded, jumping, falling, etc)
-        // TODO refactor aforementioned states as separate state pattern?
         DoChecks();
 
         // Start time for debugging purposes
@@ -92,6 +91,27 @@ public abstract class PlayerState: CharacterState
     {
         DoChecks();
     }
+
+    // Perform physics logic checks to determine what "Physics state" the player is currently in
+    // TODO refactor aforementioned states as separate state pattern?
+    protected virtual void DoChecks()
+    {
+        // Player is considered moving when the current horizontal velocity crosses the player running treshold
+        isMoving = Mathf.Abs(playerData.RB.velocity.x) > playerData.RunningTreshold;
+
+        // Player is considered jumping/in upward motion while horizontal velocity is above 0
+        isJumping = playerData.RB.velocity.y > 0;
+
+        // Player is considered grounded while feet collider is touching ground AND simultaneously not in a jumping state
+        isGrounded = playerData.FeetCollider.IsTouchingLayers(playerData.TerrainLayerMask) && !isJumping;
+
+        // Player is considered falling while not on the ground AND simultaneously having a negative vertical velocity
+        isFalling = !isGrounded && playerData.RB.velocity.y < 0;
+    }
+
+    #endregion
+
+    #region Virtual Methods
 
     public virtual void Launch()
     {
@@ -131,22 +151,6 @@ public abstract class PlayerState: CharacterState
         nextVelocity.y = playerData.RB.velocity.y;
 
         playerData.RB.velocity = nextVelocity;
-    }
-
-    // Perform physics logic checks to determine what "Physics state" the player is currently in
-    protected virtual void DoChecks()
-    {
-        // Player is considered moving when the current horizontal velocity crosses the player running treshold
-        isMoving = Mathf.Abs(playerData.RB.velocity.x) > playerData.RunningTreshold;
-
-        // Player is considered jumping/in upward motion while horizontal velocity is above 0
-        isJumping = playerData.RB.velocity.y > 0;
-
-        // Player is considered grounded while feet collider is touching ground AND simultaneously not in a jumping state
-        isGrounded = playerData.FeetCollider.IsTouchingLayers(playerData.TerrainLayerMask) && !isJumping;
-
-        // Player is considered falling while not on the ground AND simultaneously having a negative vertical velocity
-        isFalling = !isGrounded && playerData.RB.velocity.y < 0;
     }
 
     // Method called whenever animationTransmitter's OnAddVelocity event is invoked

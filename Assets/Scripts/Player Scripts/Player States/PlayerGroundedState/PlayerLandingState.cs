@@ -35,7 +35,7 @@ public class PlayerLandingState : PlayerGroundedState
 
     public override void Melee()
     {
-        return;
+        stateManager.ChangeState(stateManager._swipeState);
     }
 
     public override bool CanFlip()

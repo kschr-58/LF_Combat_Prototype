@@ -9,14 +9,14 @@ public class PlayerSpikeState : PlayerMeleeState
         this.stateName = "Melee (Spike)";
         this.animationBool = "Melee (Spike)";
         this.decreasingVelocity = true;
-        this.velocityDecreaseModifier = 0.95f;
+        this.velocityDecreaseModifier = 0.95f; //FIXME magic number
     }
 
-    public override void Enter()
+    public override void LogicUpdate()
     {
-        base.Enter();
+        base.LogicUpdate();
 
-        isGrounded = false;
+        if (isGrounded) stateManager.ChangeState(stateManager._landingState);
     }
 
     protected override void ExertMeleeVelocity()

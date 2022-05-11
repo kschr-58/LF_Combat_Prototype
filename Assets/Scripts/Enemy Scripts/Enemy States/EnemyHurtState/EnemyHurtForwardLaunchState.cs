@@ -25,6 +25,9 @@ public class EnemyHurtForwardLaunchState : EnemyHurtState
 
         HandleStateLock();
 
+        // To wallslump transition
+        if (enemyData.SidesCollider.IsTouchingLayers(enemyData.TerrainLayerMask) && isGrounded) stateManager.ChangeState(stateManager._wallslumpState);
+
         // To wallsplat transition
         if (enemyData.SidesCollider.IsTouchingLayers(enemyData.TerrainLayerMask)) stateManager.ChangeState(stateManager._wallsplatState);
 

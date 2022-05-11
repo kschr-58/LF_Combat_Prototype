@@ -277,7 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
-  m_AmplitudeGain: 3
+  m_AmplitudeGain: 0
   m_FrequencyGain: 1
   mNoiseOffsets: {x: -45.183807, y: 20.2807, z: -720.0918}
 --- !u!114 &515700674
@@ -399,9 +399,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.0086372355
+    x: 0.018779343
     y: 0.008517887
-    width: 0.9827255
+    width: 0.9615024
     height: 0.9812606
   near clip plane: 0.3
   far clip plane: 1000
@@ -21086,6 +21086,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6362792734597589893, guid: 21174484565b3144b82f470a97e94685, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.875
+      objectReference: {fileID: 0}
     - target: {fileID: 7831029200448076888, guid: 21174484565b3144b82f470a97e94685, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -21172,7 +21176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7901823774011076763, guid: 21174484565b3144b82f470a97e94685, type: 3}
       propertyPath: SpinkickVelocity.x
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7901823774011076763, guid: 21174484565b3144b82f470a97e94685, type: 3}
       propertyPath: SpinkickVelocity.y
@@ -21188,7 +21192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7901823774011076763, guid: 21174484565b3144b82f470a97e94685, type: 3}
       propertyPath: StandingKickVelocity.x
-      value: 40
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 8207763415634518335, guid: 21174484565b3144b82f470a97e94685, type: 3}
       propertyPath: m_Color.b

@@ -9,14 +9,7 @@ public class PlayerSpinkickState : PlayerMeleeState
         this.stateName = "Melee (Spinkick)";
         this.animationBool = "Melee (Spinkick)";
         this.decreasingVelocity = true;
-        this.velocityDecreaseModifier = 0.98f;
-    }
-
-    public override void Enter()
-    {
-        base.Enter();
-
-        isGrounded = false;
+        this.velocityDecreaseModifier = 0.97f; //FIXME magic number
     }
 
     public override void LogicUpdate()

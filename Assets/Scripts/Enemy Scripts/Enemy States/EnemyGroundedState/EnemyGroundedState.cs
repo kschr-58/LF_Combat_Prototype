@@ -4,7 +4,6 @@ using UnityEngine;
 
 public abstract class EnemyGroundedState : EnemyState
 {
-    protected bool isMoving;
 
     public EnemyGroundedState(EnemyData enemyData) : base(enemyData) {}
 
@@ -27,8 +26,6 @@ public abstract class EnemyGroundedState : EnemyState
         base.LogicUpdate();
 
         enemyData.TargetChasingComponent?.ChaseTarget();
-        
-        isMoving = Mathf.Abs(enemyData.RB.velocity.x) >= enemyData.RunningTreshold;
     }
 
     public override bool CanFlip()

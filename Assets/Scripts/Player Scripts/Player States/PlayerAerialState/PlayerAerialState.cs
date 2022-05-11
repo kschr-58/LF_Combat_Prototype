@@ -10,7 +10,7 @@ public abstract class PlayerAerialState : PlayerState
     {
         base.LogicUpdate();
         
-        if (isFalling)
+        if (!isJumping)
         {
             stateManager.ChangeState(stateManager._fallingState);
         }
