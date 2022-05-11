@@ -9,6 +9,13 @@ public class PlayerAirKickState : PlayerMeleeState
         this.stateName = "Melee (Aerial Kick)";
         this.animationBool = "Melee (Aerial Kick)";
     }
+
+    public override void Enter()
+    {
+        base.Enter();
+
+        isGrounded = false;
+    }
     public override void LogicUpdate()
     {
         base.LogicUpdate();

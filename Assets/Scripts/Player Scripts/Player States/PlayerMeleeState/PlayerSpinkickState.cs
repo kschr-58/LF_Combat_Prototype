@@ -15,6 +15,8 @@ public class PlayerSpinkickState : PlayerMeleeState
     public override void Enter()
     {
         base.Enter();
+
+        isGrounded = false;
     }
 
     public override void LogicUpdate()
@@ -24,10 +26,14 @@ public class PlayerSpinkickState : PlayerMeleeState
         if (isGrounded) stateManager.ChangeState(stateManager._landingState);
     }
 
+    public override void EndJump()
+    {
+        playerData.JumpingComponent.ShortHop();
+    }
     protected override void ExertMeleeVelocity()
     {
         nextVelocity.x = playerData.SpinkickVelocity.x * playerData.transform.localScale.x;
-        nextVelocity.y = playerData.SpinkickVelocity.y;
+        nextVelocity.y = playerData.RB.velocity.y;
 
         playerData.RB.velocity = nextVelocity;
     }

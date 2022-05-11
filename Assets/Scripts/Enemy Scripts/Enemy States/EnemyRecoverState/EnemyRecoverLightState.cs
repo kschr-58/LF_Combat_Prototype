@@ -10,6 +10,15 @@ public class EnemyRecoverLightState : EnemyRecoverState
         this.animationBool = "Recover (L)";
     }
 
+    public override void Enter()
+    {
+        base.Enter();
+
+        // Instantiate VFX
+        ScreenEffectHandler.Singleton.InstantiateVFX(enemyData.EffectLibrary.LandingEffect, enemyData.transform.position, Quaternion.identity, enemyData.transform.localScale);
+    }
+
+
     protected override void AnimationEndEvent()
     {
         stateManager.ChangeState(stateManager._idleState);

@@ -44,6 +44,7 @@
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerState.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\PlayerDamageManager.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\PlayerDodging.cs" />
+     <Compile Include="Assets\Scripts\Scriptable Objects\AnimationVelocityData.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyRecoverState\EnemyRecoverLightState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyState.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerDodgeState\PlayerDodgeState.cs" />
@@ -59,6 +60,7 @@
      <Compile Include="Assets\Scripts\Enemy Scripts\EnemyData.cs" />
      <Compile Include="Assets\Scripts\Enums\AttackTypeEnum.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerDodgeState\PlayerRunningDodgeState.cs" />
+     <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerMeleeState\PlayerSpinkickState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyHurtState.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerMeleeState\PlayerUppercutState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy AI\EnemyMeleeLogic.cs" />
@@ -119,8 +121,6 @@
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyGroundedState\EnemyGroundedState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyRecoverState\EnemyRecoverState.cs" />
      <Compile Include="Assets\Scripts\Character\PositionClone.cs" />
-     <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerMeleeState\PlayerSpinkickState.cs" />
-     <Compile Include="Assets\Scripts\Scriptable Objects\AnimationVelocityData.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

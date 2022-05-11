@@ -12,6 +12,13 @@ public class PlayerSpikeState : PlayerMeleeState
         this.velocityDecreaseModifier = 0.95f;
     }
 
+    public override void Enter()
+    {
+        base.Enter();
+
+        isGrounded = false;
+    }
+
     protected override void ExertMeleeVelocity()
     {
         nextVelocity.x = playerData.SpikeVelocity.x * playerData.transform.localScale.x;

@@ -3235,15 +3235,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.14545454
         value: 3
-        inSlope: 0
-        outSlope: 0
+        inSlope: 14.193441
+        outSlope: 14.193441
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.16363636
-        value: 3
+        value: 3.5806408
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -3357,6 +3357,34 @@ AnimationClip:
     attribute: m_IsActive
     path: Character 2/Hitboxes/Slice Hitbox
     classID: 1
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.16363636
+        value: -0.2903204
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Offset.x
+    path: Character 2/Hitboxes/Slice Hitbox
+    classID: 61
     script: {fileID: 0}
   m_PPtrCurves: []
   m_SampleRate: 55
@@ -3609,6 +3637,13 @@ AnimationClip:
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1687422867
+      attribute: 413499720
+      script: {fileID: 0}
+      typeID: 61
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
@@ -14175,15 +14210,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.14545454
         value: 3
-        inSlope: 0
-        outSlope: 0
+        inSlope: 14.193441
+        outSlope: 14.193441
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.16363636
-        value: 3
+        value: 3.5806408
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -14297,6 +14332,34 @@ AnimationClip:
     attribute: m_IsActive
     path: Character 2/Hitboxes/Slice Hitbox
     classID: 1
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.16363636
+        value: -0.2903204
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Offset.x
+    path: Character 2/Hitboxes/Slice Hitbox
+    classID: 61
     script: {fileID: 0}
   m_EulerEditorCurves:
   - curve:
