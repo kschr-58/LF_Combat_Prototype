@@ -6,8 +6,8 @@ public class PlayerUppercutState : PlayerMeleeState
 {
     public PlayerUppercutState(PlayerData playerData) : base(playerData)
     {
-        this.stateName = "Uppercut";
-        this.animationBool = "Uppercut";
+        this.stateName = "Melee (Uppercut)";
+        this.animationBool = "Melee (Uppercut)";
     }
 
     public override void Enter()

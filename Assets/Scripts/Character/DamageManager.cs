@@ -15,30 +15,73 @@ public abstract class DamageManager : MonoBehaviour
 
     #region Virtual Methods
 
-    public virtual void FaceAggresor(Transform aggresor)
+    public virtual void FaceAggresor(int direction)
     {
         Vector3 newScale = characterData.transform.localScale;
 
-        float direction = Mathf.Sign(aggresor.position.x - characterData.transform.position.x);
-
-        newScale.x = direction;
+        newScale.x = -direction;
 
         characterData.transform.localScale = newScale;
     }
 
-    #endregion
+    public virtual void ForwardLaunch()
+    {
+        characterData.GetCurrentState().ForwardLaunch();
 
-    #region Abstract Methods
+        // VFX
+        InstantiateVFX(characterData.EffectLibrary.HitEffect);
+        InstantiateVFX(characterData.EffectLibrary.MeleeSparksEffect);
 
-    public abstract void Launch();
+        MainCamera.Singleton.CameraShake(3, 0.2f);
+    }
 
-    public abstract void ForwardLaunch();
+    public virtual void Launch()
+    {
+        characterData.GetCurrentState().Launch();
 
-    public abstract void StraightForwardLaunch();
+        // VFX
+        InstantiateVFX(characterData.EffectLibrary.HitEffect);
+        InstantiateVFX(characterData.EffectLibrary.MeleeSparksEffect);
 
-    public abstract void Spike();
+        MainCamera.Singleton.CameraShake(3, 0.2f);
+    }
 
-    public abstract void Shot();
+    public virtual void LightHurt()
+    {
+        characterData.GetCurrentState().LightHurt();
+        
+        // VFX
+        InstantiateVFX(characterData.EffectLibrary.MeleeSparksEffect);
+
+        MainCamera.Singleton.CameraShake(3, 0.2f);
+    }
+
+    public virtual void Spike()
+    {
+        characterData.GetCurrentState().Spike();
+
+        // VFX
+        InstantiateVFX(characterData.EffectLibrary.DownHitEffect);
+        InstantiateVFX(characterData.EffectLibrary.MeleeSparksEffect);
+
+        MainCamera.Singleton.CameraShake(3, 0.2f);
+    }
+
+    public virtual void StraightForwardLaunch()
+    {
+        characterData.GetCurrentState().StraightForwardLaunch();
+
+        // VFX
+        InstantiateVFX(characterData.EffectLibrary.HitEffect);
+        InstantiateVFX(characterData.EffectLibrary.MeleeSparksEffect);
+
+        MainCamera.Singleton.CameraShake(3, 0.2f);
+    }
+
+    protected virtual void InstantiateVFX(GameObject prefab)
+    {
+        screenEffectHandler.InstantiateVFX(prefab, characterData.transform.position, Quaternion.identity, characterData.transform.localScale);
+    }
 
     #endregion
 }

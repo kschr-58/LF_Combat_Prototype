@@ -15,7 +15,7 @@ public interface CharacterState
     public void ForwardLaunch();
     public void StraightForwardLaunch();
     public void Spike();
-    public void Shot();
+    public void LightHurt();
     public string GetStateName();
     public bool CanFlip();
     public float GetMeleeProximity();

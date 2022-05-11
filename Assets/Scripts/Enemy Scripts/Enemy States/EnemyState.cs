@@ -120,7 +120,7 @@ public abstract class EnemyState: CharacterState
         stateManager.ChangeState(stateManager._dragState); // TODO to bounce state
     }
 
-    public virtual void Shot()
+    public virtual void LightHurt()
     {
         stateManager.ChangeState(stateManager._shotState);
     }

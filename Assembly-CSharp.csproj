@@ -88,7 +88,7 @@
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerMeleeState\PlayerAirKickState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyHurtLaunchState.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerAerialState\PlayerFallingState.cs" />
-     <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerMeleeState\PlayerMeleeSpikeState.cs" />
+     <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerMeleeState\PlayerSpikeState.cs" />
      <Compile Include="Assets\Scripts\Scriptable Objects\EffectLibrary.cs" />
      <Compile Include="Assets\Scripts\System\UI\WeaponUI.cs" />
      <Compile Include="Assets\Scripts\Weapons\Revolver.cs" />
@@ -119,6 +119,8 @@
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyGroundedState\EnemyGroundedState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyRecoverState\EnemyRecoverState.cs" />
      <Compile Include="Assets\Scripts\Character\PositionClone.cs" />
+     <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerMeleeState\PlayerSpinkickState.cs" />
+     <Compile Include="Assets\Scripts\Scriptable Objects\AnimationVelocityData.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

@@ -10,7 +10,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] Vector2 _knockBackVelocity;
 
     private Rigidbody2D _rb;
-    private float _initialDirection;
+    private int _initialDirection;
 
     #region Public Methods
 
@@ -23,7 +23,7 @@ public class Projectile : MonoBehaviour
 
         _rb.velocity = transform.right * _travelSpeed;
 
-        _initialDirection = Mathf.Sign(_rb.velocity.x);
+        _initialDirection = (int) Mathf.Sign(_rb.velocity.x);
         
         StartCoroutine(LifeTimeCoroutine());
     }
@@ -39,8 +39,8 @@ public class Projectile : MonoBehaviour
     private void HitTarget(Collider2D collider)
     {
         // Check for target
-        DamageManager damageManager = collider.GetComponent<DamageManager>();
-        Rigidbody2D colliderRB = collider.GetComponent<Rigidbody2D>();
+        DamageManager damageManager = collider.GetComponentInParent<DamageManager>();
+        Rigidbody2D colliderRB = collider.GetComponentInParent<Rigidbody2D>();
 
         // Failsafe in case components are not present
         if (!damageManager || !colliderRB) return;
@@ -51,7 +51,8 @@ public class Projectile : MonoBehaviour
 
         colliderRB.velocity = knockbackForce;
 
-        damageManager.Shot();
+        damageManager.FaceAggresor(_initialDirection);
+        damageManager.LightHurt();
     }
 
     #endregion

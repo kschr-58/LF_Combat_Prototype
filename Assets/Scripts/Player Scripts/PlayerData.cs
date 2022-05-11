@@ -39,6 +39,7 @@ public class PlayerData : CharacterData
     [SerializeField] internal Vector2 StandingKickVelocity;
     [SerializeField] internal Vector2 SwipeVelocity;
     [SerializeField] internal Vector2 SpikeVelocity;
+    [SerializeField] internal Vector2 SpinkickVelocity;
 
     [SerializeField] private Text _velocityText;
 

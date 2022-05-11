@@ -14,8 +14,6 @@ public class PlayerDodgeState : PlayerState
 
         playerData.DodgingComponent.OnDodge += OnDodgeChange;
 
-        isMovingForward = Mathf.Sign(playerData.RB.velocity.x) == Mathf.Sign(playerData.transform.localScale.x);
-
         playerData.Animator.SetBool("Moving Forward", isMovingForward);
     }
 

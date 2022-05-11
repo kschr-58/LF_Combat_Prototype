@@ -6,8 +6,8 @@ public class PlayerAirKickState : PlayerMeleeState
 {
     public PlayerAirKickState(PlayerData playerData) : base(playerData)
     {
-        this.stateName = "Air Kick";
-        this.animationBool = "Aerial Kick";
+        this.stateName = "Melee (Aerial Kick)";
+        this.animationBool = "Melee (Aerial Kick)";
     }
     public override void LogicUpdate()
     {

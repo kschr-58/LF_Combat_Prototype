@@ -6,8 +6,8 @@ public class PlayerStandingKickState : PlayerMeleeState
 {
     public PlayerStandingKickState(PlayerData playerData) : base(playerData)
     {
-        this.stateName = "Standing kick";
-        this.animationBool = "Standing Kick";
+        this.stateName = "Melee (Standing Kick)";
+        this.animationBool = "Melee (Standing Kick)";
         this.decreasingVelocity = true;
         this.velocityDecreaseModifier = 0.78f;
     }

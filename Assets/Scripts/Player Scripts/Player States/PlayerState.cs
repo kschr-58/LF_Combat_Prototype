@@ -49,7 +49,10 @@ public abstract class PlayerState: CharacterState
     public virtual void Enter()
     {
         playerData.AnimationTransmitter.OnAnimationEnd += AnimationEndEvent;
+        playerData.AnimationTransmitter.OnVelocityAdded += AddVelocity;
         playerData.Animator.SetBool(animationBool, true);
+
+        isMovingForward = Mathf.Sign(playerData.RB.velocity.x) == Mathf.Sign(playerData.transform.localScale.x);
 
         horizontalInput = 0;
         verticalInput = 0;
@@ -94,7 +97,7 @@ public abstract class PlayerState: CharacterState
         return;
     }
 
-    public virtual void Shot()
+    public virtual void LightHurt()
     {
         return;
     }
@@ -118,6 +121,14 @@ public abstract class PlayerState: CharacterState
         isGrounded = playerData.FeetCollider.IsTouchingLayers(playerData.TerrainLayerMask);
         isJumping = playerData.RB.velocity.y > 0 && !isGrounded;
         isFalling = playerData.RB.velocity.y < 0 && !isGrounded;
+    }
+
+    protected virtual void AddVelocity(Vector2 velocity)
+    {
+        nextVelocity.x = velocity.x * playerData.transform.localScale.x;
+        nextVelocity.y = velocity.y;
+
+        playerData.RB.velocity = nextVelocity;
     }
     
     #endregion

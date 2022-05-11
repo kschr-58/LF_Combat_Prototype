@@ -33,6 +33,8 @@ public abstract class PlayerAerialState : PlayerState
             stateManager.ChangeState(stateManager._spikeState);
         }
 
+        else if (horizontalInput == playerData.transform.localScale.x) stateManager.ChangeState(stateManager._spinkickState);
+
         else stateManager.ChangeState(stateManager._aerialKickState);
     }
 

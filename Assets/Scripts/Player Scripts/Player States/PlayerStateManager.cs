@@ -22,7 +22,8 @@ public class PlayerStateManager : StateManager
     public PlayerAirKickState _aerialKickState;
     public PlayerStandingKickState _standingKickState;
     public PlayerSwipeState _swipeState;
-    public PlayerMeleeSpikeState _spikeState;
+    public PlayerSpikeState _spikeState;
+    public PlayerSpinkickState _spinkickState;
 
     #endregion
 
@@ -73,6 +74,7 @@ public class PlayerStateManager : StateManager
         _aerialKickState = new PlayerAirKickState(_playerData);
         _standingKickState = new PlayerStandingKickState(_playerData);
         _swipeState = new PlayerSwipeState(_playerData);
-        _spikeState = new PlayerMeleeSpikeState(_playerData);
+        _spikeState = new PlayerSpikeState(_playerData);
+        _spinkickState = new PlayerSpinkickState(_playerData);
     }
 }

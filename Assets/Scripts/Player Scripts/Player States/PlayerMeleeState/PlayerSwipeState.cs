@@ -6,8 +6,8 @@ public class PlayerSwipeState : PlayerMeleeState
 {
     public PlayerSwipeState(PlayerData playerData) : base(playerData)
     {
-        this.stateName = "Swipe";
-        this.animationBool = "Swipe";
+        this.stateName = "Melee (Swipe)";
+        this.animationBool = "Melee (Swipe)";
     }
 
     protected override void ExertMeleeVelocity()
