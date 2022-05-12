@@ -55,7 +55,11 @@ public class Projectile : MonoBehaviour
         targetData.HurtManager.FaceAggresor(_initialDirection);
         targetData.HurtManager.LightHurt();
 
+        // Deal damage
         targetData.DamageSystem.DealDamage(_damage);
+
+        // Notify combo manager
+        ComboManager.s_instance.OnComboHit(targetData.transform);
     }
 
     #endregion

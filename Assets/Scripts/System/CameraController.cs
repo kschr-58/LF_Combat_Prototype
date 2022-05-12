@@ -43,8 +43,8 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         _currentCamera = _defaultCamera;
-        _defaultCamera.Follow = _followTarget;
-        _comboCamera.Follow = _followTarget;
+        // _defaultCamera.Follow = _followTarget;
+        // _comboCamera.Follow = _followTarget;
         _defaultOrthographicSize = _comboCamera.m_Lens.OrthographicSize;
 
         _cameraNoiseComponents = new CinemachineBasicMultiChannelPerlin[2] 

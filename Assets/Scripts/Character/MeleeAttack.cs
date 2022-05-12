@@ -58,6 +58,9 @@ public abstract class MeleeAttack : MonoBehaviour
 
         // Damage target
         targetData.DamageSystem.DealDamage(meleeData.Damage);
+
+        // Notify combo manager
+        ComboManager.s_instance.OnComboHit(targetData.transform);
     }
 
     protected virtual void ChangeTargetState(HurtManager hurtManager)
