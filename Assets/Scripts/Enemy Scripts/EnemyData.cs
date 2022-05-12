@@ -25,13 +25,17 @@ public class EnemyData : CharacterData
     [SerializeField] internal float ShotGravity;
     [SerializeField] internal float LaunchGravity;
     [SerializeField] internal float WallSplatGravity;
+    [SerializeField] internal float GroundBounceGravity;
 
-    [Header("Melee velocity")]
+    [Header("State velocity properties")]
+    [SerializeField] internal Vector2 GroundBounceVelocity;
+
+    [Header("Melee velocity properties")]
     [SerializeField] internal Vector2 DashAttackVelocity;
     [SerializeField] internal Vector2 QuickAttackVelocity;
     [SerializeField] internal Vector2 QuickAttackFollowup1Velocity;
 
-    [Header("Melee logic")]
+    [Header("Melee logic properties")]
     [SerializeField] internal float MeleeAttackDelay;
     [SerializeField] internal float RunningMeleeProximity;
     [SerializeField] internal float StandingMeleeProximity;

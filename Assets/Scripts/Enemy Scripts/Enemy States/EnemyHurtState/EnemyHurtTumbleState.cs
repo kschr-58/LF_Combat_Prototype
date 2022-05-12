@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHurtTumbleState : EnemyHurtState
+public class EnemyTumbleState : EnemyHurtState
 {
-    public EnemyHurtTumbleState(EnemyData enemyData) : base(enemyData)
+    public EnemyTumbleState(EnemyData enemyData) : base(enemyData)
     {
         this.stateName = "Hurt (Tumble)";
         this.animationBool = "Hurt (Tumble)";

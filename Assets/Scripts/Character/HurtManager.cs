@@ -80,7 +80,7 @@ public abstract class HurtManager : MonoBehaviour
 
     protected virtual void InstantiateVFX(GameObject prefab)
     {
-        screenEffectHandler.InstantiateVFX(prefab, characterData.transform.position, Quaternion.identity, characterData.transform.localScale);
+        screenEffectHandler.InstantiateVFX(prefab, characterData.transform.position, transform.rotation, characterData.transform.localScale);
     }
 
     #endregion

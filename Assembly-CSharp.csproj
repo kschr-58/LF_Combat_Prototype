@@ -46,6 +46,7 @@
      <Compile Include="Assets\Scripts\Scriptable Objects\AnimationVelocityData.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyRecoverState\EnemyRecoverLightState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyState.cs" />
+     <Compile Include="Assets\Scripts\System\UI\NoFlip.cs" />
      <Compile Include="Assets\Scripts\System\ComboManager.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerDodgeState\PlayerDodgeState.cs" />
      <Compile Include="Assets\Scripts\Character\StateManager.cs" />
@@ -54,7 +55,7 @@
      <Compile Include="Assets\Scripts\TEST\Dissolve.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerMeleeState\PlayerMeleeState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyMeleeState\EnemyQuickAttackState.cs" />
-     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyHurtForwardLaunchState.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyForwardLaunchState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyMeleeState\EnemyQuickAttackFollowup1WindupState.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerAerialState\PlayerAerialState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\EnemyData.cs" />
@@ -76,11 +77,10 @@
      <Compile Include="Assets\Scripts\Character\CharacterState.cs" />
      <Compile Include="Assets\Scripts\VFX\LightFlickering.cs" />
      <Compile Include="Assets\Scripts\System\CameraController.cs" />
-     <Compile Include="Assets\Combo Prototype Assets\Scripts\ComboTarget.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy AI\TargetDetection.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyMeleeState\EnemyDashAttackWindupState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy AI\TargetChasing.cs" />
-     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyHurtDragState.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyDragState.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\PlayerJumping.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\EnemyHurtManager.cs" />
      <Compile Include="Assets\Scripts\System\UI\CylinderHUD.cs" />
@@ -91,7 +91,7 @@
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerGroundedState\PlayerIdleState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy Attacking\EnemyMeleeAttack.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerMeleeState\PlayerAirKickState.cs" />
-     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyHurtLaunchState.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyLaunchState.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerAerialState\PlayerFallingState.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerMeleeState\PlayerSpikeState.cs" />
      <Compile Include="Assets\Scripts\Scriptable Objects\EffectLibrary.cs" />
@@ -99,7 +99,7 @@
      <Compile Include="Assets\Scripts\Weapons\Revolver.cs" />
      <Compile Include="Assets\Scripts\Character\HurtManager.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerMeleeState\PlayerSwipeState.cs" />
-     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyHurtWallslumpState.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyWallslumpState.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerMeleeState\PlayerStandingKickState.cs" />
      <Compile Include="Assets\Scripts\Scriptable Objects\MeleeData.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\PlayerData.cs" />
@@ -114,18 +114,19 @@
      <Compile Include="Assets\Scripts\Character\CharacterData.cs" />
      <Compile Include="Assets\Scripts\System\UI\ComboHUD.cs" />
      <Compile Include="Assets\Scripts\Weapons\Gun.cs" />
-     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyHurtWallsplatState.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyWallsplatState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyMeleeState\EnemyQuickAttackFollowup1State.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerStateManager.cs" />
      <Compile Include="Assets\Scripts\Character\CharacterFlipper.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyGroundedState\EnemyIdleState.cs" />
-     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyHurtShotState.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyLightHurtState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyMeleeState\EnemyDashAttackState.cs" />
      <Compile Include="Assets\Scripts\Character\AnimationTransmitter.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyGroundedState\EnemyGroundedState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyRecoverState\EnemyRecoverState.cs" />
      <Compile Include="Assets\Scripts\Character\PositionClone.cs" />
-     <Compile Include="Assets\Scripts\System\UI\NoFlip.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyDownwardLaunchState.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyGroundBounceState.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

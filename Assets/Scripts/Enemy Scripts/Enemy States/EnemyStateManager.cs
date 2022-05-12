@@ -9,18 +9,23 @@ public class EnemyStateManager : StateManager
     [SerializeField] EnemyData _enemyData;
     [SerializeField] Text _stateText;
 
-    // States
+    // Grounded states
     public EnemyIdleState _idleState;
     public EnemyRunningState _runningState;
-    public EnemyHurtLaunchState _launchState;
-    public EnemyHurtForwardLaunchState _forwardLaunchState;
-    public EnemyHurtDragState _dragState;
-    public EnemyHurtWallsplatState _wallsplatState;
-    public EnemyHurtWallslumpState _wallslumpState;
-    public EnemyHurtTumbleState _tumbleState;
-    public EnemyHurtShotState _shotState;
+    // Hurt states
+    public EnemyLaunchState _launchState;
+    public EnemyForwardLaunchState _forwardLaunchState;
+    public EnemyDragState _dragState;
+    public EnemyWallsplatState _wallsplatState;
+    public EnemyWallslumpState _wallslumpState;
+    public EnemyTumbleState _tumbleState;
+    public EnemyLightHurtState _lightHurtState;
+    public EnemyGroundBounceState _groundBounceState;
+    public EnemyDownwardLaunchState _downwardLaunchState;
+    // Recover states
     public EnemyRecoverLightState _recoverLightState;
     public EnemyRecoverDragState _recoverDragState;
+    // Attack states
     public EnemyDashAttackWindupState _dashAttackWindupState;
     public EnemyQuickAttackWindupState _quickAttackWindupState;
     public EnemyQuickAttackFollowup1WindupState _quickAttackFollowup1WindupState;
@@ -67,13 +72,15 @@ public class EnemyStateManager : StateManager
         _idleState = new EnemyIdleState(_enemyData);
         _runningState = new EnemyRunningState(_enemyData);
         
-        _launchState = new EnemyHurtLaunchState(_enemyData);
-        _forwardLaunchState = new EnemyHurtForwardLaunchState(_enemyData);
-        _dragState = new EnemyHurtDragState(_enemyData);
-        _wallsplatState = new EnemyHurtWallsplatState(_enemyData);
-        _wallslumpState = new EnemyHurtWallslumpState(_enemyData);
-        _tumbleState = new EnemyHurtTumbleState(_enemyData);
-        _shotState = new EnemyHurtShotState(_enemyData);
+        _launchState = new EnemyLaunchState(_enemyData);
+        _forwardLaunchState = new EnemyForwardLaunchState(_enemyData);
+        _dragState = new EnemyDragState(_enemyData);
+        _wallsplatState = new EnemyWallsplatState(_enemyData);
+        _wallslumpState = new EnemyWallslumpState(_enemyData);
+        _tumbleState = new EnemyTumbleState(_enemyData);
+        _lightHurtState = new EnemyLightHurtState(_enemyData);
+        _downwardLaunchState = new EnemyDownwardLaunchState(_enemyData);
+        _groundBounceState = new EnemyGroundBounceState(_enemyData);
 
         _recoverLightState = new EnemyRecoverLightState(_enemyData);
         _recoverDragState = new EnemyRecoverDragState(_enemyData);

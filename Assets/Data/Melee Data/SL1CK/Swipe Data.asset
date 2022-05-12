@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Swipe Data
   m_EditorClassIdentifier: 
   KnockBackForce: {x: 3, y: 5}
-  KnockBackType: 0
+  KnockBackType: 4
   Damage: 5

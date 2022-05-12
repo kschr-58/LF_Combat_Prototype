@@ -182,6 +182,8 @@ public class CameraController : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
 
+        //TODO gradually lower screenshake
+
         foreach(CinemachineBasicMultiChannelPerlin noiseComponent in _cameraNoiseComponents)
         {
             noiseComponent.m_AmplitudeGain = 0;

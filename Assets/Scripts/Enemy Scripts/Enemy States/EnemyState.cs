@@ -144,13 +144,13 @@ public abstract class EnemyState: CharacterState
     public virtual void Spike()
     {
         // Default transition to drag state
-        stateManager.ChangeState(stateManager._dragState); // TODO to bounce state
+        stateManager.ChangeState(stateManager._dragState);
     }
 
     public virtual void LightHurt()
     {
         // Default transition to shot state
-        stateManager.ChangeState(stateManager._shotState);
+        stateManager.ChangeState(stateManager._lightHurtState);
     }
 
     #endregion

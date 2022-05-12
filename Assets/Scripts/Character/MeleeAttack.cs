@@ -56,11 +56,7 @@ public abstract class MeleeAttack : MonoBehaviour
         // Change Target State
         ChangeTargetState(targetData.HurtManager);
 
-        // Damage target
-        targetData.DamageSystem.DealDamage(meleeData.Damage);
-
-        // Notify combo manager
-        ComboManager.s_instance.OnComboHit(targetData.transform);
+        DamageTarget(targetData);
     }
 
     protected virtual void ChangeTargetState(HurtManager hurtManager)
@@ -71,6 +67,12 @@ public abstract class MeleeAttack : MonoBehaviour
         if (meleeData.KnockBackType == AttackTypes.Spike) hurtManager.Spike();
         if (meleeData.KnockBackType == AttackTypes.Light_Hurt) hurtManager.LightHurt();
     }
+
+    #endregion
+
+    #region  Abstract Methods
+
+    protected abstract void DamageTarget(CharacterData targetData);
 
     #endregion
 }
