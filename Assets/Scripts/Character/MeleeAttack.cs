@@ -36,11 +36,11 @@ public abstract class MeleeAttack : MonoBehaviour
         targetsHit.Add(col.gameObject);
 
         // Gather target components
-        DamageManager damageManager = col.GetComponentInParent<DamageManager>();
+        CharacterData targetData = col.GetComponentInParent<CharacterData>();
         Rigidbody2D colliderRB = col.GetComponentInParent<Rigidbody2D>();
 
         // Failsafe in case components are not present
-        if (!damageManager || !colliderRB) return;
+        if (!targetData || !colliderRB) return;
 
         Vector2 knockbackForce = meleeData.KnockBackForce;
 
@@ -51,19 +51,22 @@ public abstract class MeleeAttack : MonoBehaviour
         colliderRB.velocity = knockbackForce;
 
         // Make target face aggresor
-        damageManager.FaceAggresor(direction);
+        targetData.HurtManager.FaceAggresor(direction);
 
         // Change Target State
-        ChangeTargetState(damageManager);
+        ChangeTargetState(targetData.HurtManager);
+
+        // Damage target
+        targetData.DamageSystem.DealDamage(meleeData.Damage);
     }
 
-    protected virtual void ChangeTargetState(DamageManager damageManager)
+    protected virtual void ChangeTargetState(HurtManager hurtManager)
     {
-        if (meleeData.KnockBackType == AttackTypes.Launch) damageManager.Launch();
-        if (meleeData.KnockBackType == AttackTypes.Forward_Launch) damageManager.ForwardLaunch();
-        if (meleeData.KnockBackType == AttackTypes.Forward_Straight_Launch) damageManager.StraightForwardLaunch();
-        if (meleeData.KnockBackType == AttackTypes.Spike) damageManager.Spike();
-        if (meleeData.KnockBackType == AttackTypes.Light_Hurt) damageManager.LightHurt();
+        if (meleeData.KnockBackType == AttackTypes.Launch) hurtManager.Launch();
+        if (meleeData.KnockBackType == AttackTypes.Forward_Launch) hurtManager.ForwardLaunch();
+        if (meleeData.KnockBackType == AttackTypes.Forward_Straight_Launch) hurtManager.StraightForwardLaunch();
+        if (meleeData.KnockBackType == AttackTypes.Spike) hurtManager.Spike();
+        if (meleeData.KnockBackType == AttackTypes.Light_Hurt) hurtManager.LightHurt();
     }
 
     #endregion

@@ -20,7 +20,7 @@ public class EnemyData : CharacterData
     [Header("Chasing properties")]
     [SerializeField] internal float DesiredProximity;
 
-    [Header("Damage properties")]
+    [Header("State Gravity properties")]
     [SerializeField] internal float DefaultGravity;
     [SerializeField] internal float ShotGravity;
     [SerializeField] internal float LaunchGravity;

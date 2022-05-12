@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   KnockBackForce: {x: 15, y: 10}
   KnockBackType: 0
+  Damage: 5

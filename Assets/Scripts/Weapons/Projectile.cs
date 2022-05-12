@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] GameObject _particlesPrefab;
-    [SerializeField] float _travelSpeed;
-    [SerializeField] float _lifeTime;
-    [SerializeField] Vector2 _knockBackVelocity;
+    [SerializeField] private GameObject _particlesPrefab;
+    [SerializeField] private float _damage;
+    [SerializeField] private float _travelSpeed;
+    [SerializeField] private float _lifeTime;
+    [SerializeField] private Vector2 _knockBackVelocity;
 
     private Rigidbody2D _rb;
     private int _initialDirection;
@@ -39,11 +40,11 @@ public class Projectile : MonoBehaviour
     private void HitTarget(Collider2D collider)
     {
         // Check for target
-        DamageManager damageManager = collider.GetComponentInParent<DamageManager>();
+        CharacterData targetData = collider.GetComponentInParent<CharacterData>();
         Rigidbody2D colliderRB = collider.GetComponentInParent<Rigidbody2D>();
 
         // Failsafe in case components are not present
-        if (!damageManager || !colliderRB) return;
+        if (!targetData|| !colliderRB) return;
 
         // Make horizontal knockback relative to bullet direction
         Vector2 knockbackForce = _knockBackVelocity;
@@ -51,8 +52,10 @@ public class Projectile : MonoBehaviour
 
         colliderRB.velocity = knockbackForce;
 
-        damageManager.FaceAggresor(_initialDirection);
-        damageManager.LightHurt();
+        targetData.HurtManager.FaceAggresor(_initialDirection);
+        targetData.HurtManager.LightHurt();
+
+        targetData.DamageSystem.DealDamage(_damage);
     }
 
     #endregion

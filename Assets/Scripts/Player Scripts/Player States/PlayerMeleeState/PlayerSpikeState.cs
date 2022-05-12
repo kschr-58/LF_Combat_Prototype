@@ -9,7 +9,7 @@ public class PlayerSpikeState : PlayerMeleeState
         this.stateName = "Melee (Spike)";
         this.animationBool = "Melee (Spike)";
         this.decreasingVelocity = true;
-        this.velocityDecreaseModifier = 0.95f; //FIXME magic number
+        this.velocityDecreaseModifier = 0.96f; //FIXME magic number
     }
 
     public override void LogicUpdate()
