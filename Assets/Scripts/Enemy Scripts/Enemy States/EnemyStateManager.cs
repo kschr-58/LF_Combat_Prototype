@@ -22,9 +22,11 @@ public class EnemyStateManager : StateManager
     public EnemyLightHurtState _lightHurtState;
     public EnemyGroundBounceState _groundBounceState;
     public EnemyDownwardLaunchState _downwardLaunchState;
+    public EnemyKnockdownState _knockdownState;
     // Recover states
-    public EnemyRecoverLightState _recoverLightState;
-    public EnemyRecoverDragState _recoverDragState;
+    public EnemyLightRecoveryState _lightRecoveryState;
+    public EnemyDragRecoveryState _dragRecoveryState;
+    public EnemyKnockdownRecoveryState _knockdownRecoveryState;
     // Attack states
     public EnemyDashAttackWindupState _dashAttackWindupState;
     public EnemyQuickAttackWindupState _quickAttackWindupState;
@@ -81,9 +83,11 @@ public class EnemyStateManager : StateManager
         _lightHurtState = new EnemyLightHurtState(_enemyData);
         _downwardLaunchState = new EnemyDownwardLaunchState(_enemyData);
         _groundBounceState = new EnemyGroundBounceState(_enemyData);
+        _knockdownState = new EnemyKnockdownState(_enemyData);
 
-        _recoverLightState = new EnemyRecoverLightState(_enemyData);
-        _recoverDragState = new EnemyRecoverDragState(_enemyData);
+        _lightRecoveryState = new EnemyLightRecoveryState(_enemyData);
+        _dragRecoveryState = new EnemyDragRecoveryState(_enemyData);
+        _knockdownRecoveryState = new EnemyKnockdownRecoveryState(_enemyData);
 
         _dashAttackWindupState = new EnemyDashAttackWindupState(_enemyData);
         _quickAttackWindupState = new EnemyQuickAttackWindupState(_enemyData);

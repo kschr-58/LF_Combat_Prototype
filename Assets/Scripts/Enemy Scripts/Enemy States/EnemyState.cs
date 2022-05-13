@@ -143,6 +143,13 @@ public abstract class EnemyState: CharacterState
 
     public virtual void Spike()
     {
+        // Killstate transition to groundbounce state
+        if (enemyData.DamageSystem.IsInKillstate())
+        {
+            stateManager.ChangeState(stateManager._downwardLaunchState);
+            return;
+        }
+
         // Default transition to drag state
         stateManager.ChangeState(stateManager._dragState);
     }

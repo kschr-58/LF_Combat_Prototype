@@ -2232,7 +2232,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"cbc26b087a60c0f408cb1cc56e5f64a6\",\"type\":3}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"10cc748c66d0a444b95880fc7e64b2f5\",\"type\":3}}",
         "m_Guid": ""
     },
     "isMainTexture": false,

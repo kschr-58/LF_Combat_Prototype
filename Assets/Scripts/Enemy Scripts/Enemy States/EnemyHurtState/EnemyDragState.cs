@@ -27,6 +27,6 @@ public class EnemyDragState : EnemyHurtState
     {
         base.LogicUpdate();
 
-        if (Mathf.Abs(enemyData.RB.velocity.x) <= 0.1f) stateManager.ChangeState(stateManager._recoverDragState);
+        if (Mathf.Abs(enemyData.RB.velocity.x) <= 0.1f) stateManager.ChangeState(stateManager._dragRecoveryState); //FIXME magic number
     }
 }

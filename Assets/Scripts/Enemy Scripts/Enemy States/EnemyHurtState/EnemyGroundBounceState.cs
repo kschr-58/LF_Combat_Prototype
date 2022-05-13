@@ -19,9 +19,12 @@ public class EnemyGroundBounceState : EnemyHurtState
         enemyData.RB.gravityScale = enemyData.GroundBounceGravity;
 
         nextVelocity = enemyData.GroundBounceVelocity;
-        nextVelocity.x *= enemyData.transform.localScale.x;
+        nextVelocity.x = enemyData.RB.velocity.x * 0.2f; //FIXME magic number
 
         enemyData.RB.velocity = nextVelocity;
+
+        // Instantiate VFX
+        ScreenEffectHandler.Singleton.InstantiateVFX(enemyData.EffectLibrary.LandingEffect, enemyData.transform.position, Quaternion.identity, enemyData.transform.localScale);
     }
 
     public override void LogicUpdate()
@@ -30,8 +33,8 @@ public class EnemyGroundBounceState : EnemyHurtState
 
         if (isStateLocked) return;
 
-        // To ground bounce transition
-        if (isGrounded) stateManager.ChangeState(stateManager._idleState);
+        // To knockdown transition
+        if (isGrounded) stateManager.ChangeState(stateManager._knockdownState);
     }
 
     protected override void AnimationEndEvent()

@@ -6071,17 +6071,17 @@ MonoBehaviour:
   EffectLibrary: {fileID: 11400000, guid: f89e131a9eb377d41a16570e0fb9df23, type: 2}
   AnimationTransmitter: {fileID: 6362792734560798894}
   CharacterFlipper: {fileID: 7808469781473677286}
-  HurtManager: {fileID: 0}
-  DamageSystem: {fileID: 0}
+  HurtManager: {fileID: 4323118230081251016}
+  DamageSystem: {fileID: 232409737129539190}
   MovementSpeed: 10
   JumpVelocity: 20
   RunningTreshold: 5
   FlipVelocityTreshold: 1
-  MaxDamage: 0
-  DamageRegenDelay: 0
-  DamageRegenRate: 0
-  KillStateDuration: 0
-  KillStateDamageRecovery: 0
+  MaxDamage: 100
+  DamageRegenDelay: 3
+  DamageRegenRate: 10
+  KillStateDuration: 5
+  KillStateDamageRecovery: 50
   JumpingComponent: {fileID: 6362792733983299086}
   DodgingComponent: {fileID: 6362792734459175382}
   DodgeTrailComponent: {fileID: 8117948835941998483}
@@ -6100,7 +6100,7 @@ MonoBehaviour:
   AimDuration: 0.3
   UppercutVelocity: {x: 3.5, y: 14}
   AerialKickVelocity: {x: 0, y: 4}
-  StandingKickVelocity: {x: 35, y: 0}
+  StandingKickVelocity: {x: 30, y: 0}
   SwipeVelocity: {x: 0.5, y: 0}
   SpikeVelocity: {x: 25, y: 10}
   SpinkickVelocity: {x: 15, y: 0}
@@ -6344,6 +6344,24 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4828374222916332677, guid: ee758f55f42b4444aa4e08c194c2a697, type: 3}
   m_PrefabInstance: {fileID: 141207247543822171}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4824621805192596449 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4828374222916332730, guid: ee758f55f42b4444aa4e08c194c2a697, type: 3}
+  m_PrefabInstance: {fileID: 141207247543822171}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &455296285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824621805192596449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22ef056c680b58546acbc3c288315a37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parentTransform: {fileID: 7901823774011076756}
 --- !u!114 &4824621805433956740 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4828374222620446431, guid: ee758f55f42b4444aa4e08c194c2a697, type: 3}

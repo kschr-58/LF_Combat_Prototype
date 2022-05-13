@@ -24,7 +24,7 @@ public class EnemyLaunchState : EnemyHurtState
         HandleStateLock();
 
         // To recover transition
-        if (isGrounded && !isStateLocked) stateManager.ChangeState(stateManager._recoverLightState);
+        if (isGrounded && !isStateLocked) stateManager.ChangeState(stateManager._lightRecoveryState);
     }
 
     private void HandleStateLock()
