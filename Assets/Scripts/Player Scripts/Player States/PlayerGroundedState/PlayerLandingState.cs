@@ -15,7 +15,11 @@ public class PlayerLandingState : PlayerGroundedState
         base.Enter();
 
         // Instantiate VFX
-        ScreenEffectHandler.Singleton.InstantiateVFX(playerData.EffectLibrary.LandingEffect, playerData.transform.position, Quaternion.identity, playerData.transform.localScale);
+        GameObject vfx = playerData.EffectLibrary.LandingEffect;
+        Vector2 feetPos = playerData.FeetCollider.transform.position;
+        Vector3 playerScale = playerData.transform.localScale;
+
+        ScreenEffectHandler.Instance.InstantiateVFX(vfx, feetPos, Quaternion.identity, playerScale);
     }
 
     public override void LogicUpdate()

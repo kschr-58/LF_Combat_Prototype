@@ -11,19 +11,22 @@ public class ScreenEffectHandler : MonoBehaviour
     [SerializeField] float _executionTimeScale;
     [SerializeField] float _executionEffectDuration;
 
-    public static ScreenEffectHandler Singleton { get; private set; }
+    public static ScreenEffectHandler Instance { get; private set; }
 
     private Light2D[] _sceneLights;
     private GameObject[] _objectsToHide;
     private float _globalLightValue;
 
+    public delegate void ImpactEventHandler();
+    public event ImpactEventHandler OnBigImpact;
+
     #region Unity Callback Methods
 
     private void Awake()
     {
-        if (Singleton != null) Destroy(this);
+        if (Instance != null) Destroy(this);
 
-        else Singleton = this;
+        else Instance = this;
     }
 
     private void Start()
@@ -54,9 +57,9 @@ public class ScreenEffectHandler : MonoBehaviour
 
     #region Public Methods
 
-    public void MeleeHit()
+    public void TriggerBigImpact()
     {
-        StartCoroutine(SlowEffectCoroutine(_meleeTimeScale, _meleeSlowDuration));
+        OnBigImpact?.Invoke();
     }
 
     public void Execution()

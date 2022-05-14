@@ -20,7 +20,7 @@ public class PlayerStandingKickState : PlayerMeleeState
         Vector3 effectScale = playerData.transform.localScale;
         effectScale.x *= -1;
         
-        ScreenEffectHandler.Singleton.InstantiateVFX(playerData.EffectLibrary.ForwardJumpEffect, playerData.transform.position, Quaternion.identity, effectScale);
+        ScreenEffectHandler.Instance.InstantiateVFX(playerData.EffectLibrary.ForwardJumpEffect, playerData.transform.position, Quaternion.identity, effectScale);
     }
 
     protected override void ExertMeleeVelocity()

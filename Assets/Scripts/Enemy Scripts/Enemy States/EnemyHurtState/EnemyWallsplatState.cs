@@ -16,7 +16,7 @@ public class EnemyWallsplatState : EnemyHurtState
 
         enemyData.RB.gravityScale = enemyData.WallSplatGravity;
 
-        CameraController.s_instance.ShakeScreen(1.5f, 1, 0.3f);
+        CameraController.Instance.ShakeScreen(1.5f, 1, 0.3f);
     }
 
     public override void LogicUpdate()

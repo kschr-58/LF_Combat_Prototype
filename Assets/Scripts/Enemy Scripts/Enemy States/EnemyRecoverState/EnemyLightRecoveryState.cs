@@ -15,7 +15,7 @@ public class EnemyLightRecoveryState : EnemyRecoverState
         base.Enter();
 
         // Instantiate VFX
-        ScreenEffectHandler.Singleton.InstantiateVFX(enemyData.EffectLibrary.LandingEffect, enemyData.transform.position, Quaternion.identity, enemyData.transform.localScale);
+        ScreenEffectHandler.Instance.InstantiateVFX(enemyData.EffectLibrary.LandingEffect, enemyData.transform.position, Quaternion.identity, enemyData.transform.localScale);
     }
 
 

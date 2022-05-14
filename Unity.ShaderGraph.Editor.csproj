@@ -197,10 +197,10 @@
      <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.6\Editor\Data\Util\GraphUtil.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.6\Editor\Generation\Descriptors\StencilDescriptor.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.6\Editor\Data\Nodes\Input\Scene\CameraNode.cs" />
+     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.6\Editor\Drawing\SearchWindowProvider.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.6\Editor\Data\Nodes\Utility\DropdownNode.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.6\Editor\Data\Legacy\UnlitMasterNode1.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.6\Editor\Generation\Contexts\TargetPropertyGUIContext.cs" />
-     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.6\Editor\Drawing\SearchWindowProvider.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.6\Editor\Drawing\Inspector\PropertyDrawers\SampleVirtualTextureNodePropertyDrawer.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.6\Editor\Generation\Collections\IncludeCollection.cs" />
      <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.6\Editor\Generation\Attributes\GenerateBlocksAttribute.cs" />

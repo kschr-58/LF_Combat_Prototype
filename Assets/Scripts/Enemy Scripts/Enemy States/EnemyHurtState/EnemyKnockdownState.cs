@@ -17,7 +17,7 @@ public class EnemyKnockdownState : EnemyHurtState
         isStateLocked = true;
 
         // Instantiate VFX
-        ScreenEffectHandler.Singleton.InstantiateVFX(enemyData.EffectLibrary.LandingEffect, enemyData.transform.position, Quaternion.identity, enemyData.transform.localScale);
+        ScreenEffectHandler.Instance.InstantiateVFX(enemyData.EffectLibrary.LandingEffect, enemyData.transform.position, Quaternion.identity, enemyData.transform.localScale);
     }
 
     public override void LogicUpdate()

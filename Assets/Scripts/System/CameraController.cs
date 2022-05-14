@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] float _maxDutch = 3;
 
     // Components
-    public static CameraController s_instance {get; private set;}
+    public static CameraController Instance {get; private set;}
     private CinemachineBasicMultiChannelPerlin[] _cameraNoiseComponents;
     private CinemachineVirtualCamera _currentCamera;
     private Transform _comboTarget;
@@ -35,9 +35,9 @@ public class CameraController : MonoBehaviour
     private void Awake()
     {
         // Singleton
-        if (s_instance != null) Destroy(this);
+        if (Instance != null) Destroy(this);
 
-        s_instance = this;
+        Instance = this;
     }
 
     private void Start()

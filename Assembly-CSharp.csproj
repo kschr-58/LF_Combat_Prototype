@@ -39,6 +39,7 @@
      <Compile Include="Assets\Scripts\Character\SpriteClone.cs" />
      <Compile Include="Assets\Scripts\System\Crosshair.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyHurtTumbleState.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyKnockdownState.cs" />
      <Compile Include="Assets\Scripts\VFX\VFX.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerState.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\PlayerHurtManager.cs" />
@@ -117,6 +118,7 @@
      <Compile Include="Assets\Scripts\System\UI\ComboHUD.cs" />
      <Compile Include="Assets\Scripts\Weapons\Gun.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyWallsplatState.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyRecoverState\EnemyKnockdownRecoveryState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyMeleeState\EnemyQuickAttackFollowup1State.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerStateManager.cs" />
      <Compile Include="Assets\Scripts\Character\CharacterFlipper.cs" />
@@ -127,8 +129,8 @@
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyGroundedState\EnemyGroundedState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyRecoverState\EnemyRecoverState.cs" />
      <Compile Include="Assets\Scripts\Character\PositionClone.cs" />
-     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyKnockdownState.cs" />
-     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyRecoverState\EnemyKnockdownRecoveryState.cs" />
+     <Compile Include="Assets\Scripts\Prop.cs" />
+     <Compile Include="Assets\Scripts\BouncingProp.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

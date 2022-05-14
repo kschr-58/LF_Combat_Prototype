@@ -54,7 +54,7 @@ public class ComboManager : MonoBehaviour
     {
         IncrementCombo();
 
-        CameraController.s_instance.OnComboHit(target);
+        CameraController.Instance.OnComboHit(target);
     }
 
     public void EndCombo()
@@ -67,7 +67,7 @@ public class ComboManager : MonoBehaviour
         UpdateComboText();
 
         // Reset camera to default state
-        CameraController.s_instance.ResetCamera();
+        CameraController.Instance.ResetCamera();
     }
 
     #endregion

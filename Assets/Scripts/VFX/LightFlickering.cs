@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class LightFlickering : MonoBehaviour
+public class LightFlickering : Prop
 {
     [SerializeField] float timeTillFlicker;
     [SerializeField] float flickerIntensity;
@@ -15,8 +15,10 @@ public class LightFlickering : MonoBehaviour
     float _timer;
     Coroutine _flickerCoroutine;
     
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+
         _light = GetComponent<Light2D>();
         _defaultIntensity = _light.intensity;
         _timer = 0;
@@ -47,5 +49,12 @@ public class LightFlickering : MonoBehaviour
             _timer = 0;
             _flickerCoroutine = null;
         }
+    }
+
+    protected override void OnBigImpact()
+    {
+        if (_flickerCoroutine != null) StopCoroutine(_flickerCoroutine);
+        _timer = 0;
+        _flickerCoroutine = StartCoroutine(Flicker());
     }
 }

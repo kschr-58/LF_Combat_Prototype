@@ -24,7 +24,13 @@ public class EnemyGroundBounceState : EnemyHurtState
         enemyData.RB.velocity = nextVelocity;
 
         // Instantiate VFX
-        ScreenEffectHandler.Singleton.InstantiateVFX(enemyData.EffectLibrary.LandingEffect, enemyData.transform.position, Quaternion.identity, enemyData.transform.localScale);
+        ScreenEffectHandler.Instance.InstantiateVFX(enemyData.EffectLibrary.LandingEffect, enemyData.transform.position, Quaternion.identity, enemyData.transform.localScale);
+
+        // Screen impact effect
+        ScreenEffectHandler.Instance.TriggerBigImpact();
+
+        // Screen shake
+        CameraController.Instance.ShakeScreen(1.5f, 1.2f, 0.25f);
     }
 
     public override void LogicUpdate()

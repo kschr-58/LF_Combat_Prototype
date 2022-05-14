@@ -10,7 +10,7 @@ public abstract class HurtManager : MonoBehaviour
 
     private void Start()
     {
-        screenEffectHandler = ScreenEffectHandler.Singleton;
+        screenEffectHandler = ScreenEffectHandler.Instance;
     }
 
     #region Virtual Methods
@@ -32,7 +32,7 @@ public abstract class HurtManager : MonoBehaviour
         InstantiateVFX(characterData.EffectLibrary.HitEffect);
         InstantiateVFX(characterData.EffectLibrary.MeleeSparksEffect);
 
-        CameraController.s_instance.ShakeScreen(0.2f);
+        CameraController.Instance.ShakeScreen(0.2f);
     }
 
     public virtual void Launch()
@@ -43,7 +43,7 @@ public abstract class HurtManager : MonoBehaviour
         InstantiateVFX(characterData.EffectLibrary.HitEffect);
         InstantiateVFX(characterData.EffectLibrary.MeleeSparksEffect);
 
-        CameraController.s_instance.ShakeScreen(0.2f);
+        CameraController.Instance.ShakeScreen(0.2f);
     }
 
     public virtual void LightHurt()
@@ -53,7 +53,7 @@ public abstract class HurtManager : MonoBehaviour
         // VFX
         InstantiateVFX(characterData.EffectLibrary.MeleeSparksEffect);
 
-        CameraController.s_instance.ShakeScreen(0.2f);
+        CameraController.Instance.ShakeScreen(0.2f);
     }
 
     public virtual void Spike()
@@ -64,7 +64,7 @@ public abstract class HurtManager : MonoBehaviour
         InstantiateVFX(characterData.EffectLibrary.DownHitEffect);
         InstantiateVFX(characterData.EffectLibrary.MeleeSparksEffect);
 
-        CameraController.s_instance.ShakeScreen(2, 1, 0.2f);
+        CameraController.Instance.ShakeScreen(2, 1, 0.2f);
     }
 
     public virtual void StraightForwardLaunch()
@@ -75,7 +75,7 @@ public abstract class HurtManager : MonoBehaviour
         InstantiateVFX(characterData.EffectLibrary.HitEffect);
         InstantiateVFX(characterData.EffectLibrary.MeleeSparksEffect);
 
-        CameraController.s_instance.ShakeScreen(0.2f);
+        CameraController.Instance.ShakeScreen(0.2f);
     }
 
     protected virtual void InstantiateVFX(GameObject prefab)

@@ -95,7 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5975764622363130797}
   - component: {fileID: 5975764622363130796}
-  - component: {fileID: 861032949}
+  - component: {fileID: 243236473}
   m_Layer: 0
   m_Name: Light Source
   m_TagString: Untagged
@@ -196,7 +196,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!114 &861032949
+--- !u!114 &243236473
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1376835d3a367a4bb006d42d6e1e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeTillFlicker: 12
-  flickerIntensity: 0.1
+  timeTillFlicker: 4
+  flickerIntensity: 0.8
   flickerCount: 3
-  flickerInterval: 0.025
+  flickerInterval: 0.02

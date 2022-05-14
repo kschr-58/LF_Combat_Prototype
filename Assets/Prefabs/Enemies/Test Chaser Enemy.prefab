@@ -1025,7 +1025,7 @@ MonoBehaviour:
   JumpVelocity: 10
   RunningTreshold: 1
   FlipVelocityTreshold: 1
-  MaxDamage: 25
+  MaxDamage: 10
   DamageRegenDelay: 3
   DamageRegenRate: 10
   KillStateDuration: 6

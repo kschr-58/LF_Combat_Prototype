@@ -15,7 +15,7 @@ public abstract class MeleeAttack : MonoBehaviour
 
     private void Start()
     {
-        screenEffectHandler = ScreenEffectHandler.Singleton;
+        screenEffectHandler = ScreenEffectHandler.Instance;
     }
 
     private void OnEnable()
