@@ -15,7 +15,7 @@ public abstract class HurtManager : MonoBehaviour
 
     #region Virtual Methods
 
-    public virtual void FaceAggresor(int direction)
+    public virtual void ChangeDirection(int direction)
     {
         Vector3 newScale = characterData.transform.localScale;
 

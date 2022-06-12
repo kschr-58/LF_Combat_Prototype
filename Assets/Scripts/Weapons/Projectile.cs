@@ -52,7 +52,7 @@ public class Projectile : MonoBehaviour
 
         colliderRB.velocity = knockbackForce;
 
-        targetData.HurtManager.FaceAggresor(_initialDirection);
+        targetData.HurtManager.ChangeDirection(_initialDirection);
         targetData.HurtManager.LightHurt();
 
         // Deal damage

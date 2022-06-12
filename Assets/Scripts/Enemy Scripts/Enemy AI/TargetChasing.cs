@@ -97,7 +97,7 @@ public class TargetChasing : MonoBehaviour
         // Check if moving
         if (Mathf.Abs(_enemyData.RB.velocity.x) < 1) return;
 
-        if (_enemyData.SidesCollider.IsTouchingLayers(_enemyData.TerrainLayers)) Jump();
+        // if (_enemyData.SidesCollider.IsTouchingLayers(_enemyData.TerrainLayers)) Jump(); TODO jumping logic
     }
 
     private void Jump()

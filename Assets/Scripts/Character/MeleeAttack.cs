@@ -47,17 +47,20 @@ public abstract class MeleeAttack : MonoBehaviour
 
         Vector2 knockbackForce = meleeData.KnockBackForce;
 
-        // Make horizontal knockback relative to player direction
-        knockbackForce.x *= characterData.transform.localScale.x;
+        // Make horizontal knockback relative to position of target
+        // FIXME better naming
+        int targetRelativePosition = (int) Mathf.Sign(targetData.transform.position.x - characterData.transform.position.x);
+
+        knockbackForce.x *= targetRelativePosition;
+
+        // Make target face aggresor
+        if (meleeData.FaceAggresor) targetData.HurtManager.ChangeDirection(targetRelativePosition);
 
         // Apply knockback
         colliderRB.velocity = knockbackForce;
 
-        // Make target face aggresor
-        targetData.HurtManager.FaceAggresor(direction);
-
         // Change Target State
-        ChangeTargetState(targetData.HurtManager);
+        ChangeTargetState(targetData);
 
         // Damage target
         targetData.DamageSystem.DealDamage(meleeData.Damage);
@@ -65,8 +68,10 @@ public abstract class MeleeAttack : MonoBehaviour
         DamageTarget(targetData);
     }
 
-    protected virtual void ChangeTargetState(HurtManager hurtManager)
+    protected virtual void ChangeTargetState(CharacterData targetData)
     {
+        HurtManager hurtManager = targetData.HurtManager;
+        
         if (meleeData.KnockBackType == AttackTypes.Launch) hurtManager.Launch();
         if (meleeData.KnockBackType == AttackTypes.Forward_Launch) hurtManager.ForwardLaunch();
         if (meleeData.KnockBackType == AttackTypes.Forward_Straight_Launch) hurtManager.StraightForwardLaunch();

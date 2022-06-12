@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2170a323e175eef4896e881b1edd0718, type: 3}
   m_Name: Spike Data
   m_EditorClassIdentifier: 
-  KnockBackForce: {x: 30, y: -18}
+  KnockBackForce: {x: 25, y: -18}
   KnockBackType: 3
   Damage: 20
+  FaceAggresor: 1

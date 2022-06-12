@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2170a323e175eef4896e881b1edd0718, type: 3}
   m_Name: Straight Forward Launch Data
   m_EditorClassIdentifier: 
-  KnockBackForce: {x: 23, y: 0}
+  KnockBackForce: {x: 20, y: 0}
   KnockBackType: 2
   Damage: 15
+  FaceAggresor: 1

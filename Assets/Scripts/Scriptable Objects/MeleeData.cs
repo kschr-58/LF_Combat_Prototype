@@ -6,4 +6,5 @@ public class MeleeData: ScriptableObject
     [SerializeField] public Vector2 KnockBackForce;
     [SerializeField] public AttackTypes KnockBackType;
     [SerializeField] public float Damage;
+    [SerializeField] public bool FaceAggresor;
 }

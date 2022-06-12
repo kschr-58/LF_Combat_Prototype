@@ -415,6 +415,8 @@
 "Assets/Scripts/Enemy Scripts/Enemy States/EnemyRecoverState/EnemyRecoverState.cs"
 "Assets/Scripts/Enemy Scripts/Enemy States/EnemyState.cs"
 "Assets/Scripts/Enemy Scripts/Enemy States/EnemyStateManager.cs"
+"Assets/Scripts/Enemy Scripts/Enemy Types/EnemyGunner.cs"
+"Assets/Scripts/Enemy Scripts/Enemy Types/EnemyType.cs"
 "Assets/Scripts/Enemy Scripts/EnemyData.cs"
 "Assets/Scripts/Enemy Scripts/EnemyHurtManager.cs"
 "Assets/Scripts/Enums/AttackTypeEnum.cs"
