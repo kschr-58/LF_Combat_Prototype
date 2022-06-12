@@ -29,7 +29,7 @@ public abstract class HurtManager : MonoBehaviour
         characterData.GetCurrentState().ForwardLaunch();
 
         // VFX
-        InstantiateVFX(characterData.EffectLibrary.HitEffect);
+        InstantiateVFX(characterData.EffectLibrary.BigHitEffect);
         InstantiateVFX(characterData.EffectLibrary.MeleeSparksEffect);
 
         CameraController.Instance.ShakeScreen(0.2f);
@@ -72,10 +72,32 @@ public abstract class HurtManager : MonoBehaviour
         characterData.GetCurrentState().StraightForwardLaunch();
 
         // VFX
+        InstantiateVFX(characterData.EffectLibrary.BigHitEffect);
+        InstantiateVFX(characterData.EffectLibrary.MeleeSparksEffect);
+
+        CameraController.Instance.ShakeScreen(0.2f);
+    }
+
+    public virtual void GutHurt()
+    {
+        characterData.GetCurrentState().GutHurt();
+        
+        // VFX
         InstantiateVFX(characterData.EffectLibrary.HitEffect);
         InstantiateVFX(characterData.EffectLibrary.MeleeSparksEffect);
 
         CameraController.Instance.ShakeScreen(0.2f);
+    }
+
+    public virtual void GroundedExecution()
+    {
+        characterData.GetCurrentState().GroundedExecution();
+
+        // VFX
+        InstantiateVFX(characterData.EffectLibrary.BigHitEffect);
+        InstantiateVFX(characterData.EffectLibrary.MeleeSparksEffect);
+
+        CameraController.Instance.ShakeScreen(1, 1, 0.5f);
     }
 
     protected virtual void InstantiateVFX(GameObject prefab)

@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
         HandleFireInput();
         HandleReloadInput();
         HandleMeleeInput();
+        HandleInteractionInput();
     }
 
     private void HandleHorizontalInput()
@@ -84,6 +85,27 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire2"))
         {
             _playerData.GetCurrentState().Melee();
+        }
+    }
+
+    private void HandleInteractionInput()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            // Perform check to see if an interactable is present
+            Interactable interactable = _playerData.InteractionSensor.GetCurrentInteractable();
+            
+            if (!interactable) return;
+
+            // Determine interactable type
+            if (interactable is ExecutionTarget)
+            {
+                ExecutionTarget target = interactable.GetComponent<ExecutionTarget>();
+
+                _playerData.GetCurrentState().Execute(target);
+            }
+
+            interactable.Interact();
         }
     }
 

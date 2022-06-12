@@ -154,10 +154,26 @@ public abstract class EnemyState: CharacterState
         stateManager.ChangeState(stateManager._dragState);
     }
 
+    public virtual void Execute(ExecutionTarget target)
+    {
+        return;
+    }
+
+    public virtual void GroundedExecution()
+    {
+        stateManager.ChangeState(stateManager._dragState);
+    }
+
     public virtual void LightHurt()
     {
         // Default transition to shot state
         stateManager.ChangeState(stateManager._lightHurtState);
+    }
+
+    public virtual void GutHurt()
+    {
+        // Default transition to shot state
+        stateManager.ChangeState(stateManager._gutHurtState);
     }
 
     #endregion

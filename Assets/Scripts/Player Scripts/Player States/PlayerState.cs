@@ -138,6 +138,21 @@ public abstract class PlayerState: CharacterState
         return;
     }
 
+    public virtual void GutHurt()
+    {
+        return;
+    }
+
+    public virtual void Execute(ExecutionTarget target)
+    {
+        Debug.Log("Execution for current state missing");
+    }
+
+    public virtual void GroundedExecution()
+    {
+        return;
+    }
+
     public virtual string GetStateName()
     {
         return this.stateName;

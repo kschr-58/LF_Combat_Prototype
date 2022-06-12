@@ -39,7 +39,7 @@ public class TargetDetection : MonoBehaviour
     private void DetectTargets()
     {
         // Circle cast in detection range radius to find possible targets
-        RaycastHit2D raycastHit = Physics2D.CircleCast(transform.position, enemyData.DetectionRadius, new Vector2(0, 0), 0f, enemyData.TargetLayers);
+        RaycastHit2D raycastHit = Physics2D.CircleCast(transform.position, enemyData.DetectionRadius, Vector2.right, 0f, enemyData.TargetLayers);
 
         if (!raycastHit) return;
 

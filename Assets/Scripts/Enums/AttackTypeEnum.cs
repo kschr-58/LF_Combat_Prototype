@@ -4,5 +4,7 @@ public enum AttackTypes : int
     Forward_Launch,
     Forward_Straight_Launch,
     Spike,
-    Light_Hurt
+    Light_Hurt,
+    Gut_Hurt,
+    Grounded_Execution
 }

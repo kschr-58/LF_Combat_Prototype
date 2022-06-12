@@ -9,21 +9,30 @@ public class PlayerStateManager : StateManager
     [SerializeField] PlayerData _playerData;
     [SerializeField] Text _stateText; //TODO remove
 
-    // States
+    // Grounded states
     public PlayerIdleState _idleState;
     public PlayerRunningState _runningState;
+    public PlayerLandingState _landingState;
+
+    // Aerial states
     public PlayerJumpingState _jumpingState;
     public PlayerFallingState _fallingState;
-    public PlayerLandingState _landingState;
+
+    // Dodge states
     public PlayerStandingDodgeState _standingDodgeState;
     public PlayerRunningDodgeState _runningDodgeState;
     public PlayerAerialDodgeState _aerialDodgeState;
+
+    // Melee states
     public PlayerUppercutState _uppercutState;
     public PlayerAirKickState _aerialKickState;
     public PlayerStandingKickState _standingKickState;
     public PlayerSwipeState _swipeState;
     public PlayerSpikeState _spikeState;
     public PlayerSpinkickState _spinkickState;
+
+    // Execution states
+    public GroundedExecutionState _groundedExecutionState;
 
     #endregion
 
@@ -64,17 +73,22 @@ public class PlayerStateManager : StateManager
     {
         _idleState = new PlayerIdleState(_playerData);
         _runningState = new PlayerRunningState(_playerData);
+        _landingState = new PlayerLandingState(_playerData);
+        
         _jumpingState = new PlayerJumpingState(_playerData);
         _fallingState = new PlayerFallingState(_playerData);
-        _landingState = new PlayerLandingState(_playerData);
+
         _standingDodgeState = new PlayerStandingDodgeState(_playerData);
         _runningDodgeState = new PlayerRunningDodgeState(_playerData);
         _aerialDodgeState = new PlayerAerialDodgeState(_playerData);
+
         _uppercutState = new PlayerUppercutState(_playerData);
         _aerialKickState = new PlayerAirKickState(_playerData);
         _standingKickState = new PlayerStandingKickState(_playerData);
         _swipeState = new PlayerSwipeState(_playerData);
         _spikeState = new PlayerSpikeState(_playerData);
         _spinkickState = new PlayerSpinkickState(_playerData);
+
+        _groundedExecutionState = new GroundedExecutionState(_playerData);
     }
 }

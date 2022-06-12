@@ -61,6 +61,8 @@ public class DamageSystem : MonoBehaviour
         // Add damage and set timer to damage regen delay whenever object takes damage
         _currentDamage += damage;
         _regenTimer = _characterData.DamageRegenDelay;
+
+        if (_killStateTimer > 0) _killStateTimer = _characterData.KillStateDuration;
     }
 
     #endregion

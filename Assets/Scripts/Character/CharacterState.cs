@@ -15,7 +15,10 @@ public interface CharacterState
     public void ForwardLaunch();
     public void StraightForwardLaunch();
     public void Spike();
+    public void Execute(ExecutionTarget target);
     public void LightHurt();
+    public void GutHurt();
+    public void GroundedExecution();
     public string GetStateName();
     public bool CanFlip();
     public float GetMeleeProximity();

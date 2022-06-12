@@ -23,6 +23,7 @@ public class EnemyStateManager : StateManager
     public EnemyGroundBounceState _groundBounceState;
     public EnemyDownwardLaunchState _downwardLaunchState;
     public EnemyKnockdownState _knockdownState;
+    public EnemyHurtGutState _gutHurtState;
     // Recover states
     public EnemyLightRecoveryState _lightRecoveryState;
     public EnemyDragRecoveryState _dragRecoveryState;
@@ -84,6 +85,7 @@ public class EnemyStateManager : StateManager
         _downwardLaunchState = new EnemyDownwardLaunchState(_enemyData);
         _groundBounceState = new EnemyGroundBounceState(_enemyData);
         _knockdownState = new EnemyKnockdownState(_enemyData);
+        _gutHurtState = new EnemyHurtGutState(_enemyData);
 
         _lightRecoveryState = new EnemyLightRecoveryState(_enemyData);
         _dragRecoveryState = new EnemyDragRecoveryState(_enemyData);

@@ -21,6 +21,11 @@ public abstract class PlayerGroundedState : PlayerState
         }
     }
 
+    public override void Execute(ExecutionTarget target)
+    {
+        stateManager.ChangeState(stateManager._groundedExecutionState);
+    }
+
     public override bool CanFlip()
     {
         return true;

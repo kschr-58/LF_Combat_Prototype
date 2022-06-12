@@ -17,6 +17,8 @@ public class PlayerData : CharacterData
     [SerializeField] internal Gun Gun;
     [SerializeField] internal Crosshair Crosshair;
     [SerializeField] internal SmokeTrail SmokeTrail;
+    [SerializeField] internal InteractionSensor InteractionSensor;
+    [SerializeField] internal Transform CinematicPoint;
 
     [Header("Player Movement Properties")]
     [SerializeField] internal float ShortHopModifier;
@@ -41,6 +43,11 @@ public class PlayerData : CharacterData
     [SerializeField] internal Vector2 SpikeVelocity;
     [SerializeField] internal Vector2 SpinkickVelocity;
 
+    [Header("Interaction Properties")]
+    [SerializeField] internal LayerMask InteractionLayerMask;
+    [SerializeField] internal float InteractionRadius;
+
+    [Header("Debugging")]
     [SerializeField] private Text _velocityText;
 
     private void Update()

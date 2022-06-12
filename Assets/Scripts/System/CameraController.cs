@@ -9,6 +9,7 @@ public class CameraController : MonoBehaviour
     [Header("Components")]
     [SerializeField] private CinemachineVirtualCamera _defaultCamera;
     [SerializeField] private CinemachineVirtualCamera _comboCamera;
+    [SerializeField] private CinemachineVirtualCamera _cinematicCamera;
     [SerializeField] private Transform _followTarget;
     [SerializeField] private Transform _comboCenterPoint;
 
@@ -108,6 +109,25 @@ public class CameraController : MonoBehaviour
 
         // Swap back to default camera
         if (_currentCamera != _defaultCamera) SwapCamera();
+    }
+
+    public void ToCinematicCamera(Transform followTarget)
+    {
+        _cinematicCamera.Follow = followTarget;
+
+        _currentCamera = _cinematicCamera;
+        _cinematicCamera.Priority = 10;
+        _comboCamera.Priority = 1;
+        _defaultCamera.Priority = 1;
+    }
+
+    public void SwitchOutCinematicCamera()
+    {
+        _currentCamera = _defaultCamera;
+        _defaultCamera.Priority = 10;
+        _defaultCamera.m_Lens.Dutch = 0;
+        _comboCamera.Priority = 1;
+        _cinematicCamera.Priority = 1;
     }
 
     #endregion

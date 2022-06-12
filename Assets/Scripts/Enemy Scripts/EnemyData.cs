@@ -10,6 +10,7 @@ public class EnemyData : CharacterData
     [SerializeField] internal EnemyMeleeLogic EnemyMeleeLogicComponent;
     [SerializeField] internal BoxCollider2D SidesCollider;
     [SerializeField] internal SmokeTrail SmokeTrail;
+    [SerializeField] internal Collider2D ExecutionProximityCollider;
 
     [Header("Detection Properties")]
     [SerializeField] internal LayerMask TargetLayers;

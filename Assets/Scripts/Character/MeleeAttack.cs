@@ -7,7 +7,7 @@ public abstract class MeleeAttack : MonoBehaviour
     [SerializeField] protected CharacterData characterData;
     [SerializeField] protected MeleeData meleeData;
 
-    protected List<GameObject> targetsHit = new List<GameObject>();
+    protected List<CharacterData> targetsHit = new List<CharacterData>();
     protected ScreenEffectHandler screenEffectHandler;
     protected int direction;
 
@@ -30,17 +30,20 @@ public abstract class MeleeAttack : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D col)
     {
-        // Target can only be hit once by the same hitbox
-        if (targetsHit.Contains(col.gameObject)) return;
-
-        targetsHit.Add(col.gameObject);
-
         // Gather target components
         CharacterData targetData = col.GetComponentInParent<CharacterData>();
         Rigidbody2D colliderRB = col.GetComponentInParent<Rigidbody2D>();
 
         // Failsafe in case components are not present
         if (!targetData || !colliderRB) return;
+
+        // Target can only be hit once by the same hitbox
+        // if (targetsHit.Contains(targetData)) return;
+
+        // FIXME Only hit a single target (?)
+        if (targetsHit.Count > 0) return;
+
+        targetsHit.Add(targetData);
 
         Vector2 knockbackForce = meleeData.KnockBackForce;
 
@@ -56,6 +59,9 @@ public abstract class MeleeAttack : MonoBehaviour
         // Change Target State
         ChangeTargetState(targetData.HurtManager);
 
+        // Damage target
+        targetData.DamageSystem.DealDamage(meleeData.Damage);
+
         DamageTarget(targetData);
     }
 
@@ -66,6 +72,8 @@ public abstract class MeleeAttack : MonoBehaviour
         if (meleeData.KnockBackType == AttackTypes.Forward_Straight_Launch) hurtManager.StraightForwardLaunch();
         if (meleeData.KnockBackType == AttackTypes.Spike) hurtManager.Spike();
         if (meleeData.KnockBackType == AttackTypes.Light_Hurt) hurtManager.LightHurt();
+        if (meleeData.KnockBackType == AttackTypes.Gut_Hurt) hurtManager.GutHurt();
+        if (meleeData.KnockBackType == AttackTypes.Grounded_Execution) hurtManager.GroundedExecution();
     }
 
     #endregion

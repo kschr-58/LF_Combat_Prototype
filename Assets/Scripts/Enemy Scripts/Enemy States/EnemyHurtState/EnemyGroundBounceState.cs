@@ -31,6 +31,16 @@ public class EnemyGroundBounceState : EnemyHurtState
 
         // Screen shake
         CameraController.Instance.ShakeScreen(1.5f, 1.2f, 0.25f);
+
+        // Enable execution collider
+        enemyData.ExecutionProximityCollider.enabled = true;
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+
+        enemyData.ExecutionProximityCollider.enabled = false;
     }
 
     public override void LogicUpdate()
