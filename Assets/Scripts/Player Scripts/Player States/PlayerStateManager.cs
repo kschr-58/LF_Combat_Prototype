@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerStateManager : StateManager
 {
     #region Fields
+    
     [SerializeField] PlayerData _playerData;
     [SerializeField] Text _stateText; //TODO remove
 
@@ -69,6 +70,8 @@ public class PlayerStateManager : StateManager
 
     #endregion
 
+    #region Protected Methods
+
     protected override void InitializeStates()
     {
         _idleState = new PlayerIdleState(_playerData);
@@ -91,4 +94,6 @@ public class PlayerStateManager : StateManager
 
         _groundedExecutionState = new GroundedExecutionState(_playerData);
     }
+
+    #endregion
 }

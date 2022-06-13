@@ -10,11 +10,6 @@ public class PlayerIdleState : PlayerGroundedState
         this.animationBool = "Idle";
     }
 
-    public override void Enter()
-    {
-        base.Enter();
-    }
-
     public override void LogicUpdate()
     {
         base.LogicUpdate();

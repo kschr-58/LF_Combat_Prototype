@@ -7,12 +7,16 @@ public abstract class PlayerState: CharacterState
     protected PlayerStateManager stateManager;
 
     // Other Fields
-    protected Vector2 nextVelocity;
     public string stateName {get; protected set;}
+
+    protected Vector2 nextVelocity;
+
     protected string animationBool;
+
     protected float startTime;
     protected float horizontalInput;
     protected float verticalInput;
+
     protected bool isMoving;
     protected bool isJumping;
     protected bool isFalling;

@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637871070919875653
-    m_Hash: 1091430765
+      ticks: 637907101980073063
+    m_Hash: 1509385444
   m_LockFileStatus:
     m_FilePath: D:/Unity/Repos/LF/LF_Prototype/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637871070919875653
-    m_Hash: 1632291732
+      ticks: 637907101980339355
+    m_Hash: 2476632031
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -128,14 +128,18 @@ m_ResolvedPackages:
     - 7.0.3
     - 7.0.4
     - 7.0.5
+    - 7.0.6
     - 8.0.0-pre.3
     - 8.0.0-pre.4
     - 8.0.0
     - 8.0.1
+    - 8.0.2
+    - 9.0.0-pre.1
     compatible:
     - 7.0.4
     - 7.0.5
-    verified: 7.0.5
+    - 7.0.6
+    verified: 7.0.6
   dependencies:
   - name: com.unity.2d.common
     version: 6.0.3
@@ -337,12 +341,16 @@ m_ResolvedPackages:
     - 6.0.1
     - 6.0.2
     - 6.0.3
+    - 6.0.4
     - 7.0.0-pre.3
     - 7.0.0-pre.4
     - 7.0.0
+    - 7.0.1
+    - 8.0.0-pre.1
     compatible:
     - 6.0.3
-    verified: 6.0.3
+    - 6.0.4
+    verified: 6.0.4
   dependencies:
   - name: com.unity.2d.animation
     version: 7.0.4
@@ -539,6 +547,7 @@ m_ResolvedPackages:
     - 8.0.0-pre.4
     - 8.0.0-pre.5
     - 8.0.0
+    - 9.0.0-pre.1
     compatible:
     - 7.0.4
     verified: 7.0.4
@@ -713,6 +722,8 @@ m_ResolvedPackages:
     - 2.6.9
     - 2.6.10
     - 2.6.11
+    - 2.6.14
+    - 2.6.15
     - 2.7.1
     - 2.7.2
     - 2.7.3
@@ -728,13 +739,15 @@ m_ResolvedPackages:
     - 2.8.2
     - 2.8.3
     - 2.8.4
+    - 2.8.6
     - 2.9.0-pre.1
     - 2.9.0-pre.6
     compatible:
     - 2.8.4
+    - 2.8.6
     - 2.9.0-pre.1
     - 2.9.0-pre.6
-    verified: 2.8.4
+    verified: 2.8.6
   dependencies: []
   resolvedDependencies: []
   keywords:
@@ -3590,15 +3603,21 @@ m_ResolvedPackages:
     - 1.6.3
     - 1.6.4
     - 1.6.5
+    - 1.6.6
     - 1.7.0-pre.1
     - 1.7.0
     - 1.7.1
+    - 1.7.2
+    - 1.8.0-pre.1
     compatible:
     - 1.6.5
+    - 1.6.6
     - 1.7.0-pre.1
     - 1.7.0
     - 1.7.1
-    verified: 1.6.5
+    - 1.7.2
+    - 1.8.0-pre.1
+    verified: 1.6.6
   dependencies:
   - name: com.unity.mathematics
     version: 1.2.1
@@ -4010,6 +4029,7 @@ m_ResolvedPackages:
     - 7.0.0-pre.3
     - 7.0.0-pre.4
     - 7.0.0
+    - 8.0.0-pre.1
     compatible:
     - 6.0.3
     verified: 6.0.3

@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\TEST\Dissolve.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerMeleeState\PlayerMeleeState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyMeleeState\EnemyQuickAttackState.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyHurtGutState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyForwardLaunchState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyMeleeState\EnemyQuickAttackFollowup1WindupState.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerAerialState\PlayerAerialState.cs" />
@@ -130,15 +131,14 @@
      <Compile Include="Assets\Scripts\BouncingProp.cs" />
      <Compile Include="Assets\Scripts\Character\CharacterFlipper.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyGroundedState\EnemyIdleState.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy Types\EnemyGunner.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyLightHurtState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyMeleeState\EnemyDashAttackState.cs" />
      <Compile Include="Assets\Scripts\Character\AnimationTransmitter.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy Types\EnemyType.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyGroundedState\EnemyGroundedState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyRecoverState\EnemyRecoverState.cs" />
      <Compile Include="Assets\Scripts\Character\PositionClone.cs" />
-     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyHurtGutState.cs" />
-     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy Types\EnemyType.cs" />
-     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy Types\EnemyGunner.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -776,10 +776,6 @@
       <Project>{dd4488b5-0d27-4abb-3f22-49ccb5efa6bb}</Project>
       <Name>Unity.InternalAPIEngineBridge.001</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.VSCode.Editor.csproj">
-      <Project>{f2335f2d-d2e4-6f47-9c48-cbaff7c001d8}</Project>
-      <Name>Unity.VSCode.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.2D.PixelPerfect.csproj">
       <Project>{b20f5b5d-1fbf-5dfa-8d0e-a133e7191993}</Project>
       <Name>Unity.2D.PixelPerfect</Name>
@@ -939,6 +935,10 @@
     <ProjectReference Include="Unity.2D.SpriteShape.Runtime.csproj">
       <Project>{18a4699c-d97c-6f9e-b1c7-947c70a2bbe2}</Project>
       <Name>Unity.2D.SpriteShape.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VSCode.Editor.csproj">
+      <Project>{f2335f2d-d2e4-6f47-9c48-cbaff7c001d8}</Project>
+      <Name>Unity.VSCode.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
