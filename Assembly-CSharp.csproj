@@ -54,7 +54,6 @@
      <Compile Include="Assets\Scripts\Character\StateManager.cs" />
      <Compile Include="Assets\Scripts\Character\MeleeAttack.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyRecoverState\EnemyDragRecoveryState.cs" />
-     <Compile Include="Assets\Scripts\TEST\Dissolve.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\Player States\PlayerMeleeState\PlayerMeleeState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyMeleeState\EnemyQuickAttackState.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy States\EnemyHurtState\EnemyHurtGutState.cs" />

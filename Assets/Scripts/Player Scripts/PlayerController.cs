@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // Serialized fields
-    [SerializeField] PlayerData _playerData;
+    [SerializeField] private PlayerData _playerData;
 
     // Other references
     private Vector2 _directionalInput;
